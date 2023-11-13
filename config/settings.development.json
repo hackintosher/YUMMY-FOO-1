@@ -9,5 +9,13 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "defaultRecipe": [
+    { "name": "Salad", "time": "17:45", "cost": "$18:56", "filter": "Dairy-Free, Veggie",
+      "image": "https://www.budgetbytes.com/wp-content/uploads/2013/07/How-to-Calculate-Recipe-Costs-H.jpg",
+      "appliances": "None, ", "ingredients": "lettuce",
+      "recipe": "Put lettuce into a bowel then eat said bowl of lettuce",
+      "owner": "System" }
   ]
 }
