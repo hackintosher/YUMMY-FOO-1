@@ -26,3 +26,9 @@ body {
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}

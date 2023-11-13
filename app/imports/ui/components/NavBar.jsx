@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Col, Container, Image, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 
 const NavBar = () => {
@@ -15,9 +15,9 @@ const NavBar = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand as={NavLink} to="/">
-          <h2>meteor-application-template-react</h2>
-        </Navbar.Brand>
+        <Navbar>
+          <Image width="125px" src="https://raw.githubusercontent.com/eat-sleep-fortnite-repeat/YUMMY-FOO/main/yummy-foo-logo-cropped.png" />
+        </Navbar>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
