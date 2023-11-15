@@ -1,21 +1,24 @@
 import React from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-/* A simple static component to render some text for the landing page. */
-const Landing = () => (
-  <Container id="landing-page" fluid className="py-3">
-    <Row className="align-middle text-center">
-      <Col xs={4}>
-        <Image roundedCircle src="/images/meteor-logo.png" width="150px" />
-      </Col>
+const Landing = () => {
 
-      <Col xs={8} className="d-flex flex-column justify-content-center">
-        <h1>Welcome to this template</h1>
-        <p>Now get to work and modify this app!</p>
-      </Col>
+  const body = document.body;
+  body.style.background = 'url("https://github.com/aidenlkw/publicimages/raw/e4d6e1945ec72f3e9bb97e27ddd2ebc7e1b64388/Runway%202023-11-13T20_37_49.641Z%20Upscale%20Image%20Upscaled%20Image%203409%20x%201920.jpg") center center/cover no-repeat';
+  const handleZoomClick = () => {
+    document.body.classList.toggle('zoomed');
+  };
 
-    </Row>
-  </Container>
-);
+  return (
+    <Container fluid className="my-auto text-center">
+      <Link to="/search" style={{ textDecoration: 'none' }}>
+        <Button size="lg" className="landing-button" style={{ backgroundColor: '#98C1D9' }} onClick={handleZoomClick}>
+          Get Started
+        </Button>
+      </Link>
+    </Container>
+  );
+};
 
 export default Landing;
