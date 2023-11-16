@@ -17,7 +17,7 @@ const ExampleRecipe = () => {
                 <Col>
                   <Row><Card.Title>Recipe Name</Card.Title></Row>
                   <Row>
-                    <Col><Card.Text>Ingrediants and Appliances</Card.Text></Col>
+                    <Col><Card.Text>Ingredients and Appliances</Card.Text></Col>
                     <Col><Card.Text>Restrictions</Card.Text></Col>
                     <Col><Card.Text>Cost Per Serving</Card.Text></Col>
                     <Col><Card.Text>Time</Card.Text></Col>
