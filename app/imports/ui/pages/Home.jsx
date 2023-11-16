@@ -14,7 +14,7 @@ const Home = () => (
           </Button>
         </Link>
       </Col>
-      <Col xs={1}>
+      <Col xs={1} className="w-25">
         <Link to="/add-recipe">
           <Button variant="primary" block>
             Add Recipe
