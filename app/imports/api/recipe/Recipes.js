@@ -16,8 +16,9 @@ class RecipeCollection {
       image: String,
       time: String,
       cost: String,
-      filter: String,      // Make array?
-      appliances: String,  // Make array?
+      filter: String, // Make array?
+      description: String,
+      appliances: String, // Make array?
       ingredients: String, // Make array
       recipe: String,
       owner: String,
