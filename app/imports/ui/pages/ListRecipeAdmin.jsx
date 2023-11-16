@@ -38,7 +38,7 @@
 
 // export default ListRecipeAdmin;
 import React, { useState } from 'react';
-import { Col, Container, Row, Card, Form, Button } from 'react-bootstrap';
+import { Col, Container, Row, Card, Form } from 'react-bootstrap';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 // Hard-coded recipes for testing
@@ -81,14 +81,12 @@ const ListRecipeAdmin = () => {
   // Simulate the ready state since we're using hard-coded data
   const ready = true;
 
-  const filteredRecipes = hardCodedRecipes.filter((recipe) => {
-    return (
-      (categoryFilter === 'All' || recipe.category === categoryFilter) &&
+  const filteredRecipes = hardCodedRecipes.filter((recipe) => (
+    (categoryFilter === 'All' || recipe.category === categoryFilter) &&
       (titleFilter === '' || recipe.title.toLowerCase().includes(titleFilter.toLowerCase())) &&
       (costFilter === 'All' || recipe.cost === costFilter) &&
       (timeFilter === 'All' || recipe.time === timeFilter)
-    );
-  });
+  ));
 
   const handleCategoryChange = (e) => {
     setCategoryFilter(e.target.value);
