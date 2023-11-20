@@ -24,6 +24,7 @@ import AddRecipe from '../pages/AddRecipe';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
+  const isLogged = Meteor.userId() !== null;
   const { ready } = useTracker(() => {
     const rdy = Roles.subscription.ready();
     return {
@@ -35,14 +36,17 @@ const App = () => {
       <div className="d-flex flex-column min-vh-100">
         <NavBar />
         <Routes>
+          {isLogged ? (
+            <Route path="/" element={<ProtectedRoute><UserHome /></ProtectedRoute>} />
+          ) : (
+            <Route path="/" element={<Landing />} />
+          )}
           <Route exact path="/" element={<Landing />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/about" element={<About />} />
           <Route path="/addrecipe" element={<AddRecipe />} />
-          <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
-          <Route path="/" element={<ProtectedRoute><UserHome /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
           <Route path="/examplerecipe" element={<ProtectedRoute><ExampleRecipe /></ProtectedRoute>} />
