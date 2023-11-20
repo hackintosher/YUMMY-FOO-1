@@ -12,6 +12,7 @@
  */
 body {
   --bs-light-rgb: var(--matr-navbar-bg-rgb);
+  background-color: #C4E8F6;
 }
 
 /* Set the alert background on the signin and signup pages. */
