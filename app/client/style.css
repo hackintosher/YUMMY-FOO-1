@@ -41,6 +41,7 @@ body {
   overflow: hidden;
 }
 
-#carousel-item Image{
-  object-fit: cover;
+.carousel-image {
+  max-width: 600px;
+  max-height: 400px;
 }
