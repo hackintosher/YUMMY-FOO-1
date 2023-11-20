@@ -3,7 +3,7 @@ import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Home = () => (
+const UserHome = () => (
   <Container>
     <h1>Favorites</h1>
     <Row className="mt-2">
@@ -63,4 +63,4 @@ const Home = () => (
   </Container>
 );
 
-export default Home;
+export default UserHome();
