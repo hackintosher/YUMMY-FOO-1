@@ -32,3 +32,14 @@ body {
   height: 100px;
   object-fit: cover;
 }
+
+#carousel {
+  max-width: 600px;
+  max-height: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+#carousel-item Image{
+  object-fit: cover;
+}
