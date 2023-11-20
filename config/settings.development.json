@@ -9,5 +9,37 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
-  ]
+  ],
+
+  "listRecipe": [
+  {
+    "_id": "1",
+    "title": "Burger",
+    "description": "This is a description of a burger.",
+    "image": "https://www.foodiesfeed.com/wp-content/uploads/2023/04/cheeseburger.jpg",
+    "category": "Main Dish",
+    "cost": "Medium",
+    "time": "30 minutes"
+  },
+  {
+    "_id": "2",
+    "title": "Pancakes",
+    "description": "This is a description of pancakes.",
+    "image": "https://www.foodiesfeed.com/wp-content/uploads/2023/06/pouring-honey-on-pancakes.jpg",
+    "category": "Breakfast",
+    "cost": "Low",
+    "time": "20 minutes"
+  },
+  {
+    "_id": "3",
+    "title": "Tacos",
+    "description": "This is a description of tacos.",
+    "image": "https://www.preparedfoodphotos.com/wp-content/uploads/Tacos_1109-6-500x333.jpg",
+    "category": "Mexican",
+    "cost": "Low",
+    "time": "40 minutes"
+  }
+]
 }
+
+
