@@ -16,7 +16,13 @@ const NavBar = () => {
     <Navbar className="border-bottom border-dark" bg="light" expand="lg">
       <Container>
         <Navbar>
-          <Image width="125px" src="https://raw.githubusercontent.com/eat-sleep-fortnite-repeat/YUMMY-FOO/main/yummy-foo-logo-cropped.png" />
+          <a href="/">
+            <Image
+              width="125px"
+              src="https://raw.githubusercontent.com/eat-sleep-fortnite-repeat/YUMMY-FOO/main/yummy-foo-logo-cropped.png"
+              alt="Yummy Foo Logo"
+            />
+          </a>
         </Navbar>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
