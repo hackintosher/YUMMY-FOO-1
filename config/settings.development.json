@@ -4,10 +4,74 @@
     { "email": "john@foo.com", "password": "changeme" }
   ],
 
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
-  ]
+  "defaultRecipes": [
+  {
+    "name": "Classic Spaghetti Bolognese",
+    "ingredients": [
+      {"name": "Ground beef"},
+      {"name": "Onion"},
+      {"name": "Garlic"},
+      {"name": "Tomato sauce"},
+      {"name": "Italian herbs"},
+      {"name": "Spaghetti pasta"}
+    ],
+    "preparation": "1. Sauté chopped onions and garlic.\n2. Add ground beef and brown.\n3. Stir in tomato sauce and Italian herbs.\n4. Simmer for 30 minutes.\n5. Cook spaghetti according to package instructions.\n6. Serve sauce over spaghetti.",
+    "difficulty": "medium"
+  },
+  {
+    "name": "Vegetarian Chickpea Curry",
+    "ingredients": [
+      {"name": "Chickpeas"},
+      {"name": "Onion"},
+      {"name": "Tomatoes"},
+      {"name": "Coconut milk"},
+      {"name": "Curry spices"},
+      {"name": "Basmati rice"}
+    ],
+    "preparation": "1. Sauté diced onions until golden.\n2. Add chickpeas, diced tomatoes, and coconut milk.\n3. Stir in curry spices.\n4. Simmer until flavors meld.\n5. Serve over cooked basmati rice.",
+    "difficulty": "medium"
+  },
+  {
+    "name": "Grilled Lemon Herb Chicken",
+    "ingredients": [
+      {"name": "Chicken breasts"},
+      {"name": "Lemon"},
+      {"name": "Olive oil"},
+      {"name": "Garlic"},
+      {"name": "Fresh herbs (rosemary, thyme)"},
+      {"name": "Salt and pepper"}
+    ],
+    "preparation": "1. Marinate chicken in lemon juice, olive oil, minced garlic, and herbs.\n2. Grill until cooked through.\n3. Season with salt and pepper.\n4. Serve with a side of roasted vegetables.",
+    "difficulty": "medium"
+  },
+  {
+    "name": "Quinoa Salad with Avocado and Black Beans",
+    "ingredients": [
+      {"name": "Quinoa"},
+      {"name": "Black beans"},
+      {"name": "Cherry tomatoes"},
+      {"name": "Avocado"},
+      {"name": "Red onion"},
+      {"name": "Cilantro"}
+    ],
+    "preparation": "1. Cook quinoa according to package instructions.\n2. Combine cooked quinoa, black beans, diced tomatoes, diced avocado, chopped red onion, and cilantro.\n3. Toss with a simple vinaigrette.\n4. Chill before serving.",
+    "difficulty": "medium"
+  },
+  {
+    "name": "Chocolate Chip Cookies",
+    "ingredients": [
+      {"name": "All-purpose flour"},
+      {"name": "Butter"},
+      {"name": "Brown sugar"},
+      {"name": "White sugar"},
+      {"name": "Eggs"},
+      {"name": "Vanilla extract"},
+      {"name": "Baking soda"},
+      {"name": "Chocolate chips"}
+    ],
+    "preparation": "1. Cream together butter and sugars.\n2. Beat in eggs and vanilla.\n3. In a separate bowl, whisk together flour and baking soda.\n4. Combine wet and dry ingredients.\n5. Fold in chocolate chips.\n6. Drop spoonfuls onto a baking sheet and bake until golden.",
+    "difficulty": "medium"
+  }
+]
+
 }
