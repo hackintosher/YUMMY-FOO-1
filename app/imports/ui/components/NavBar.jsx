@@ -16,7 +16,7 @@ const NavBar = () => {
     <Navbar className="border-bottom border-dark" bg="light" expand="lg">
       <Container>
         <Navbar>
-          <Nav.Link id="nav-logo" as={NavLink} to="/">
+          <Nav.Link id="nav-logo" as={NavLink} to="/home">
             <Image width="125px" alt="Yummy Foo Logo" src="https://cdn.discordapp.com/attachments/1169481660971106346/1174539902910730371/IMG_3155.png?ex=6567f686&is=65558186&hm=1d9799bc7974761808a31982a378a5e99bfb07c5ab33fb48d56ad13f6d68fe09&" />
           </Nav.Link>
         </Navbar>
@@ -28,6 +28,7 @@ const NavBar = () => {
               <Nav.Link id="list-stuff-nav" as={NavLink} to="/list" key="list">List Stuff</Nav.Link>,
               <Nav.Link id="example-recipe-nav" as={NavLink} to="/examplerecipe" key="examplerecipe">Example Recipe</Nav.Link>,
               <Nav.Link id="user-nav" as={NavLink} to="/user" key="list">User Home Page</Nav.Link>,
+              <Nav.Link id="favorites" as={NavLink} to="/favorites" key="favorites">Favorites</Nav.Link>,
             ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>
