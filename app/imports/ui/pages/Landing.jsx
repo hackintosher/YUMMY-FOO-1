@@ -24,17 +24,31 @@ const Landing = () => {
           />
         </Carousel.Item>
       </Carousel>
-      <Row>
-        <Col><Image src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVjaXBlfGVufDB8fDB8fHww" className="py-5" width="400px" /></Col>
-        <Col>
-          <div className="landing-blurb1 pe-5 fs-5">
-            Yummy Foo is dedicated to setting up college students for success in the kitchen!
-            <br />
-            <br />
-            With our continuously growing databse of recipes our goal is to provide students with affordable and accessible meals within their time and skill range.
-          </div>
-        </Col>
-      </Row>
+      <Row> <br /> </Row>
+      <Container>
+        <Row>
+          <Col><Image src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVjaXBlfGVufDB8fDB8fHww" className="py-5" width="400px" /></Col>
+          <Col>
+            <div className="landing-blurb1 pe-5 fs-5">
+              Yummy Foo is dedicated to setting up college students for success in the kitchen!
+              <br />
+              <br />
+              With our continuously growing database of recipes our goal is to provide students with affordable and accessible meals within their time and skill range.
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <div className="landing-blurb2 ps-5 fs-5">
+              Students can browse through recipes provided by their fellow students and learn to cook new dishes!
+              <br />
+              <br />
+              Please feel free to add in any of your own special recipes and secret techniques as well!
+            </div>
+          </Col>
+          <Col><Image src="https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/uhm-students-courtyard-1024x597.jpg" className="py-5" width="400px" /></Col>
+        </Row>
+      </Container>
     </Container>
   );
 };
