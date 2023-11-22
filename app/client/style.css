@@ -45,3 +45,8 @@ body {
   max-width: 600px;
   max-height: 400px;
 }
+
+.landing-blurb1 {
+  padding-top: 90px;
+  text-align: left;
+}

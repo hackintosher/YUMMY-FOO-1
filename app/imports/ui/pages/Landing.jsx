@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Carousel, Image } from 'react-bootstrap';
+import { Container, Carousel, Image, Row, Col } from 'react-bootstrap';
 
 const Landing = () => {
   const body = document.body;
   body.style.backgroundColor = '#00000';
   return (
     <Container fluid className="my-auto text-center">
-      <Carousel id="carousel">
+      <Carousel className="py-5" id="carousel">
         <Carousel.Item id="carousel-item">
           <Image src="https://theunlikelybaker.com/wp-content/uploads/2016/05/Turon-Banana-Lumpia-Feature.jpg" text="First slide" className="carousel-image" />
         </Carousel.Item>
@@ -24,6 +24,17 @@ const Landing = () => {
           />
         </Carousel.Item>
       </Carousel>
+      <Row>
+        <Col><Image src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVjaXBlfGVufDB8fDB8fHww" className="py-5" width="400px" /></Col>
+        <Col>
+          <div className="landing-blurb1 pe-5 fs-5">
+            Yummy Foo is dedicated to setting up college students for success in the kitchen!
+            <br />
+            <br />
+            With our continuously growing databse of recipes our goal is to provide students with affordable and accessible meals within their time and skill range.
+          </div>
+        </Col>
+      </Row>
     </Container>
   );
 };
