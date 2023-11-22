@@ -4,10 +4,40 @@
     { "email": "john@foo.com", "password": "changeme" }
   ],
 
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  "defaultRecipes": [
+    {
+      "name": "Homemade Pizza",
+      "image": "https://thecozycook.com/wp-content/uploads/2023/03/Homemade-Pizza-f-500x375.jpg",
+      "time": "1 hour",
+      "cost": "$15",
+      "filter": ["Italian", "Homemade"],
+      "appliances": ["Oven", "Rolling pin"],
+      "ingredients": ["Pizza dough", "Tomato sauce", "Cheese", "Pepperoni"],
+      "recipe": "1. Roll out the pizza dough...\n2. Spread tomato sauce...\n3. Add cheese and pepperoni...\n4. Bake in the oven...",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Greek Salad",
+      "image": "https://www.foodnetwork.com/content/dam/images/food/fullset/2010/4/23/0/BX0204_greek-salad_s4x3.jpg",
+      "time": "15 minutes",
+      "cost": "$8",
+      "filter": ["Vegetarian", "Greek"],
+      "appliances": ["Knife", "Bowl"],
+      "ingredients": ["Cucumbers", "Tomatoes", "Feta cheese", "Olives", "Olive oil"],
+      "recipe": "1. Dice cucumbers and tomatoes...\n2. Crumble feta cheese...\n3. Combine all ingredients in a bowl...\n4. Drizzle with olive oil...",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Chocolate Brownies",
+      "image": "https://cdn.vox-cdn.com/thumbor/i9Eph9e6QuT9cSXQ63-7ManDq1E=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/20069650/brownies_pre_freezer.jpg",
+      "time": "40 minutes",
+      "cost": "$12",
+      "filter": ["Dessert", "Chocolate"],
+      "appliances": ["Baking pan", "Mixing bowl"],
+      "ingredients": ["Flour", "Cocoa powder", "Sugar", "Butter", "Eggs"],
+      "recipe": "1. Mix flour and cocoa powder...\n2. Cream butter and sugar...\n3. Beat in eggs...\n4. Bake in a preheated oven...",
+      "owner": "john@foo.com"
+    }
   ]
+
 }

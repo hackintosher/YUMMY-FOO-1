@@ -17,13 +17,15 @@ import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
-import Home from '../pages/Home';
+import UserHome from '../pages/UserHome';
 import About from '../pages/About';
 import ExampleRecipe from '../pages/ExampleRecipe';
 import AddRecipe from '../pages/AddRecipe';
+import Search from '../pages/Search';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
+  const isLogged = Meteor.userId() !== null;
   const { ready } = useTracker(() => {
     const rdy = Roles.subscription.ready();
     return {
@@ -35,17 +37,21 @@ const App = () => {
       <div className="d-flex flex-column min-vh-100">
         <NavBar />
         <Routes>
+          {isLogged ? (
+            <Route path="/" element={<ProtectedRoute><UserHome /></ProtectedRoute>} />
+          ) : (
+            <Route path="/" element={<Landing />} />
+          )}
           <Route exact path="/" element={<Landing />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/about" element={<About />} />
           <Route path="/addrecipe" element={<AddRecipe />} />
-          <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
-          <Route path="/user" element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
           <Route path="/examplerecipe" element={<ProtectedRoute><ExampleRecipe /></ProtectedRoute>} />
+          <Route path="/search" element={<Search />} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListRecipeAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
