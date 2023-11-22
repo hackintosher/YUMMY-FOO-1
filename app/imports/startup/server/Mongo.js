@@ -4,15 +4,15 @@ import { Recipes } from '../../api/recipes/Recipes.js';
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
-const addData = (data) => {
-  console.log(`  Adding: ${data.name} (${data.owner})`);
-  Recipes.collection.insert(data);
+const addRecipe = (recipe) => {
+  console.log(`  Adding: ${recipe.name} (${recipe.owner})`);
+  Recipes.collection.insert(recipe);
 };
 
 // Initialize the RecipesCollection if empty.
 if (Recipes.collection.find().count() === 0) {
   if (Meteor.settings.defaultRecipes) {
-    console.log('Creating default data.');
-    Meteor.settings.defaultRecipes.forEach(data => addData(data));
+    console.log('Creating default recipe.');
+    Meteor.settings.defaultRecipes.forEach(recipe => addRecipe(recipe));
   }
 }

@@ -21,6 +21,7 @@ import UserHome from '../pages/UserHome';
 import About from '../pages/About';
 import ExampleRecipe from '../pages/ExampleRecipe';
 import AddRecipe from '../pages/AddRecipe';
+import Search from '../pages/Search';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -50,6 +51,7 @@ const App = () => {
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
           <Route path="/examplerecipe" element={<ProtectedRoute><ExampleRecipe /></ProtectedRoute>} />
+          <Route path="/search" element={<Search />} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListRecipeAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
