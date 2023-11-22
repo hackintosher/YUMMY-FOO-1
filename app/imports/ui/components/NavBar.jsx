@@ -16,7 +16,9 @@ const NavBar = () => {
     <Navbar className="border-bottom border-dark" bg="light" expand="lg">
       <Container>
         <Navbar>
-          <Image width="125px" src="https://cdn.discordapp.com/attachments/1169481660971106346/1174539902910730371/IMG_3155.png?ex=6567f686&is=65558186&hm=1d9799bc7974761808a31982a378a5e99bfb07c5ab33fb48d56ad13f6d68fe09&" />
+          <Nav.Link id="nav-logo" as={NavLink} to="/">
+            <Image width="125px" alt="Yummy Foo Logo" src="https://cdn.discordapp.com/attachments/1169481660971106346/1174539902910730371/IMG_3155.png?ex=6567f686&is=65558186&hm=1d9799bc7974761808a31982a378a5e99bfb07c5ab33fb48d56ad13f6d68fe09&" />
+          </Nav.Link>
         </Navbar>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
