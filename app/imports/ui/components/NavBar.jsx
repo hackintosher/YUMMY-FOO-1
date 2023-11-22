@@ -22,10 +22,10 @@ const NavBar = () => {
         </Navbar>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto justify-content-center">
+          <Nav className="mx-auto">
             {currentUser ? ([
-              <Nav.Link id="add-recipe-nav" as={NavLink} to="/addrecipe" key="examplerecipe">Add Recipe</Nav.Link>,
-              <Nav.Link id="favorites" as={NavLink} to="/favorites" key="favorites">Favorites</Nav.Link>,
+              <Nav.Link className="px-2" id="add-recipe-nav" as={NavLink} to="/addrecipe" key="examplerecipe">Add Recipe</Nav.Link>,
+              <Nav.Link className="px-2" id="favorites" as={NavLink} to="/favorites" key="favorites">Favorites</Nav.Link>,
             ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>
