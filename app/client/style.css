@@ -12,6 +12,7 @@
  */
 body {
   --bs-light-rgb: var(--matr-navbar-bg-rgb);
+  background-color: #C4E8F6;
 }
 
 /* Set the alert background on the signin and signup pages. */
@@ -31,4 +32,16 @@ body {
   width: 100px;
   height: 100px;
   object-fit: cover;
+}
+
+#carousel {
+  max-width: 600px;
+  max-height: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-image {
+  max-width: 600px;
+  max-height: 400px;
 }

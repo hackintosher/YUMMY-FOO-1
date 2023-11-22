@@ -1,22 +1,29 @@
 import React from 'react';
-import { Container, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Container, Carousel, Image } from 'react-bootstrap';
 
 const Landing = () => {
-
   const body = document.body;
-  body.style.background = 'url("https://github.com/aidenlkw/publicimages/raw/e4d6e1945ec72f3e9bb97e27ddd2ebc7e1b64388/Runway%202023-11-13T20_37_49.641Z%20Upscale%20Image%20Upscaled%20Image%203409%20x%201920.jpg") center center/cover no-repeat';
-  const handleZoomClick = () => {
-    document.body.classList.toggle('zoomed');
-  };
-
+  body.style.backgroundColor = '#00000';
   return (
     <Container fluid className="my-auto text-center">
-      <Link to="/search" style={{ textDecoration: 'none' }}>
-        <Button size="lg" className="landing-button" style={{ backgroundColor: '#98C1D9' }} onClick={handleZoomClick}>
-          Get Started
-        </Button>
-      </Link>
+      <Carousel id="carousel">
+        <Carousel.Item id="carousel-item">
+          <Image src="https://theunlikelybaker.com/wp-content/uploads/2016/05/Turon-Banana-Lumpia-Feature.jpg" text="First slide" className="carousel-image" />
+        </Carousel.Item>
+        <Carousel.Item id="carousel-item">
+          <Image src="https://christieathome.com/wp-content/uploads/2019/05/Kimchi-Fried-Rice-16.jpg" text="Second slide" className="carousel-image" />
+        </Carousel.Item>
+        <Carousel.Item id="carousel-item">
+          <Image src="https://www.justonecookbook.com/wp-content/uploads/2021/10/Japanese-Chicken-Curry-3787-I-1.jpg" text="Third slide" className="carousel-image" />
+        </Carousel.Item>
+        <Carousel.Item className="carousel-image">
+          <Image
+            src="https://www.foodandwine.com/thmb/ENYQLnsTy3NmDhYkddQvVFiA5OM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-shoyu-musubi-XL-RECIPE2017-1edaba16f64441d3914da883f9c4e2bc.jpg"
+            text="Fourth slide"
+            className="carousel-image"
+          />
+        </Carousel.Item>
+      </Carousel>
     </Container>
   );
 };
