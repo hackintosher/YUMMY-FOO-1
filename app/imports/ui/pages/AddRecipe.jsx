@@ -12,8 +12,6 @@ const formSchema = new SimpleSchema({
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
-const body = document.body;
-body.style.background = 'url("https://github.com/aidenlkw/publicimages/raw/e4d6e1945ec72f3e9bb97e27ddd2ebc7e1b64388/Runway%202023-11-13T20_37_49.641Z%20Upscale%20Image%20Upscaled%20Image%203409%20x%201920.jpg") center center/cover no-repeat';
 const AddStuff = () => (
   <Container className="py-3">
     <Row className="justify-content-center">
