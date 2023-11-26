@@ -17,10 +17,10 @@ import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
-import UserHome from '../pages/UserHome';
 import About from '../pages/About';
 import ExampleRecipe from '../pages/ExampleRecipe';
 import AddRecipe from '../pages/AddRecipe';
+import Favorites from '../pages/Favorites';
 import Search from '../pages/Search';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -38,20 +38,22 @@ const App = () => {
         <NavBar />
         <Routes>
           {isLogged ? (
-            <Route path="/" element={<ProtectedRoute><UserHome /></ProtectedRoute>} />
+            <Route path="/" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
           ) : (
             <Route path="/" element={<Landing />} />
           )}
           <Route exact path="/" element={<Landing />} />
+          <Route exact path="/home" element={<Landing />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/about" element={<About />} />
           <Route path="/addrecipe" element={<AddRecipe />} />
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
+          <Route path="/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
+          <Route path="/search" element={<ProtectedRoute><Search /></ProtectedRoute>} />
           <Route path="/examplerecipe" element={<ProtectedRoute><ExampleRecipe /></ProtectedRoute>} />
-          <Route path="/search" element={<Search />} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListRecipeAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
