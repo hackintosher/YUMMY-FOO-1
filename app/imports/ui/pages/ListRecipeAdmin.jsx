@@ -3,9 +3,9 @@ import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Recipes } from '../../api/recipes/Recipes';
-import LoadingSpinner from './LoadingSpinner';
-import Recipe from './Recipe';
-import EditRecipe from '../pages/EditRecipe';
+import LoadingSpinner from '../components/LoadingSpinner';
+import Recipe from '../components/Recipe';
+import EditRecipe from './EditRecipe';
 
 const ListRecipeAdmin = () => {
   const { ready, recipes } = useTracker(() => {
