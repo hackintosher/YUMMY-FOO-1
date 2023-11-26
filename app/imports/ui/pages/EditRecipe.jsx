@@ -1,62 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import swal from 'sweetalert';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, HiddenField, SubmitField, TextField } from 'uniforms-bootstrap5';
-import { Meteor } from 'meteor/meteor';
-import { useTracker } from 'meteor/react-meteor-data';
+import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import { useParams } from 'react-router';
-import { Recipes } from '../../api/recipe/Recipes'; // Adjust the path accordingly
-import LoadingSpinner from '../components/LoadingSpinner';
+import PropTypes from 'prop-types';
+import { Recipes } from '../../api/recipes/Recipes';
 
 const bridge = new SimpleSchema2Bridge(Recipes.schema);
 
-/* Renders the EditRecipe page for editing a single document. */
-const EditRecipe = () => {
-  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
-  const { _id } = useParams();
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { doc, ready } = useTracker(() => {
-    // Get access to Recipe documents.
-    const subscription = Meteor.subscribe(Recipes.adminPublicationName);
-    // Determine if the subscription is ready
-    const rdy = subscription.ready();
-    // Get the document
-    const document = Recipes.collection.findOne(_id);
-    return {
-      doc: document,
-      ready: rdy,
-    };
-  }, [_id]);
+const EditRecipe = ({ recipe, onClose }) => {
+  const [formData, setFormData] = useState(recipe);
 
-  // On successful submit, update the data.
-  const submit = (data) => {
-    const { name, image, time, cost, filter, appliances, ingredients, recipe, owner } = data;
+  const submit = () => {
+    // eslint-disable-next-line no-shadow
+    const { _id, name, image, time, cost, filter, appliances, ingredients, recipe } = formData;
+
     Recipes.collection.update(_id, {
-      $set: { name, image, time, cost, filter, appliances, ingredients, recipe, owner },
-    }, (error) => (error ?
-      swal('Error', error.message, 'error') :
-      swal('Success', 'Recipe updated successfully', 'success')));
+      $set: {
+        name,
+        image,
+        time,
+        cost,
+        filter,
+        appliances,
+        ingredients,
+        recipe,
+      },
+    }, (error) => {
+      if (error) {
+        swal('Error', error.message, 'error');
+      } else {
+        swal('Success', 'Recipe updated successfully', 'success');
+        onClose();
+      }
+    });
   };
 
-  return ready ? (
+  const handleFieldChange = (field, value) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [field]: value,
+    }));
+  };
+
+  return (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col xs={8}>
-          <Col className="text-center"><h2>Edit Recipe</h2></Col>
-          <AutoForm schema={bridge} onSubmit={(data) => submit(data)} model={doc}>
+        <Col>
+          <Col className="text-center"><h2 className="text-white">Edit Recipe</h2></Col>
+          <AutoForm schema={bridge} onSubmit={submit} model={formData}>
             <Card>
               <Card.Body>
-                <TextField name="name" />
-                <TextField name="image" />
-                <TextField name="time" />
-                <TextField name="cost" />
-                <TextField name="filter" />
-                <TextField name="appliances" />
-                <TextField name="ingredients" />
-                <TextField name="recipe" />
-                <HiddenField name="owner" />
-                <SubmitField value="Submit" />
+                <Row>
+                  <Col><TextField name="name" label="Recipe Name" onChange={(value) => handleFieldChange('name', value)} /></Col>
+                  <Col><TextField name="image" label="Image URL" onChange={(value) => handleFieldChange('image', value)} /></Col>
+                  <Col><TextField name="time" label="Time" onChange={(value) => handleFieldChange('time', value)} /></Col>
+                  <Col><TextField name="cost" label="Cost" onChange={(value) => handleFieldChange('cost', value)} /></Col>
+                </Row>
+                <LongTextField name="recipe" label="Recipe" onChange={(value) => handleFieldChange('recipe', value)} />
+                <Row>
+                  <Col><LongTextField name="ingredients" label="Ingredients" onChange={(value) => handleFieldChange('ingredients', value)} /></Col>
+                  <Col><LongTextField name="appliances" label="Appliances" onChange={(value) => handleFieldChange('appliances', value)} /></Col>
+                </Row>
+                <SubmitField value="Submit" className="text-center" />
                 <ErrorsField />
               </Card.Body>
             </Card>
@@ -64,7 +70,13 @@ const EditRecipe = () => {
         </Col>
       </Row>
     </Container>
-  ) : <LoadingSpinner />;
+  );
+};
+
+EditRecipe.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  recipe: PropTypes.any.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default EditRecipe;

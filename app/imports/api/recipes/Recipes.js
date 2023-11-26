@@ -50,10 +50,6 @@ class RecipesCollection {
         type: String,
         label: 'Recipe',
       },
-      owner: {
-        type: String,
-        label: 'Owner',
-      },
     });
 
     this.collection.attachSchema(this.schema);

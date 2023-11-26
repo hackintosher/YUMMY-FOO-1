@@ -1,94 +1,132 @@
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import React, { useState } from 'react';
-import { Col, Container, Row, Card, Button, Modal } from 'react-bootstrap';
+import { Recipes } from '../../api/recipes/Recipes';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { Recipes } from '../recipe/Recipe'; // Adjust the path accordingly
-import EditRecipe from './EditRecipe'; // Import the EditRecipe component
+import Recipe from '../components/Recipe';
+import EditRecipe from './EditRecipe';
 
-const ListRecipeAdmin = () => {
+const AdminListRecipe = () => {
   const { ready, recipes } = useTracker(() => {
-    const subscription = Meteor.subscribe(Recipes.adminPublicationName);
-    const rdy = subscription.ready();
-    const recipeItems = Recipes.collection.find({}).fetch();
+    const subscription = Meteor.subscribe(Recipes.userPublicationName);
     return {
-      recipes: recipeItems,
-      ready: rdy,
+      recipes: Recipes.collection.find({}).fetch(),
+      ready: subscription.ready(),
     };
   }, []);
 
-  const [showEditModal, setShowEditModal] = useState(false);
-  const [selectedRecipeId, setSelectedRecipeId] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [data, setData] = useState(recipes);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [editModalOpen, setEditModalOpen] = useState(false);
 
-  const handleRemoveRecipe = (recipeId) => {
-    Meteor.call('recipes.remove', recipeId, (error) => {
-      if (error) {
-        console.error('Error removing recipe:', error.reason);
-      }
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const applySearch = () => {
+    if (!searchTerm.trim()) {
+      setData(recipes);
+      return;
+    }
+
+    const filteredData = recipes.filter((item) => {
+      const fieldsToSearch = ['name', 'time', 'cost', 'filter', 'appliances', 'ingredients', 'recipe'];
+
+      return fieldsToSearch.some((field) => {
+        const fieldValue = item[field];
+        if (Array.isArray(fieldValue)) {
+          return fieldValue.some(
+            (element) => typeof element === 'string' &&
+              element.toLowerCase().includes(searchTerm.toLowerCase()),
+          );
+        } if (typeof fieldValue === 'string') {
+          return fieldValue.toLowerCase().includes(searchTerm.toLowerCase());
+        }
+        return false;
+      });
     });
+
+    setData(filteredData);
   };
 
-  const handleEditRecipe = (recipeId) => {
-    setSelectedRecipeId(recipeId);
-    setShowEditModal(true);
+  useEffect(() => {
+    if (ready) {
+      applySearch();
+    }
+  }, [ready, searchTerm, recipes]);
+
+  const resetSearch = () => {
+    setSearchTerm('');
+    setData(recipes);
   };
 
-  const handleCloseEditModal = () => {
-    setSelectedRecipeId(null);
-    setShowEditModal(false);
+  const removeRecipe = (recipeId) => {
+    Meteor.call('recipes.remove', recipeId);
+  };
+
+  const openEditModal = (recipeId) => {
+    setSelectedRecipe(recipeId);
+    setEditModalOpen(true);
+  };
+
+  const closeEditModal = () => {
+    setEditModalOpen(false);
+    setSelectedRecipe(null);
   };
 
   return ready ? (
-    <Container className="py-3">
-      <Row className="justify-content-center">
-        <Col>
-          <Col className="text-center">
-            <h2>List Recipes (Admin)</h2>
+    <Container>
+      <Form>
+        <Row>
+          <Col>
+            <Form.Group>
+              <h1 className="text-center">Admin Recipe List</h1>
+              <Form.Control
+                type="text"
+                name="search"
+                placeholder="Search"
+                value={searchTerm}
+                onChange={handleSearchChange}
+              />
+            </Form.Group>
           </Col>
-          <Row xs={1} md={2} lg={3} className="g-4">
-            {recipes.map((recipe) => (
-              <Col key={recipe._id}>
-                <Card>
-                  <Card.Header>
-                    <Card.Title>{recipe.name}</Card.Title>
-                    <Card.Subtitle>{recipe.filter}</Card.Subtitle>
-                  </Card.Header>
-                  <Card.Body>
-                    <Card.Text>{recipe.time} {recipe.cost}</Card.Text>
-                    <footer className="blockquote-footer">{recipe.owner}</footer>
-                    <Button variant="danger" onClick={() => handleRemoveRecipe(recipe._id)}>
-                      Remove Recipe
-                    </Button>
-                    <Button variant="primary" onClick={() => handleEditRecipe(recipe._id)}>
-                      Edit Recipe
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Col>
+        </Row>
+        <Button variant="secondary" className="mt-3" onClick={resetSearch}>
+          Reset Search
+        </Button>
+      </Form>
+      <Row className="mt-4">
+        {data.map((item, index) => (
+          <Col key={index} sm={6} md={4} lg={6} className="mb-4">
+            <Recipe recipe={item} />
+            <Button variant="danger" onClick={() => removeRecipe(item._id)}>
+              Remove Recipe
+            </Button>
+            <Button variant="info" onClick={() => openEditModal(item._id)}>
+              Edit Recipe
+            </Button>
+          </Col>
+        ))}
       </Row>
 
-      {/* Modal for editing recipes */}
-      <Modal show={showEditModal} onHide={handleCloseEditModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Edit Recipe</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {/* Pass the recipeId to the EditRecipe component */}
-          {selectedRecipeId && <EditRecipe recipeId={selectedRecipeId} />}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseEditModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      {/* Render the EditRecipe component as a modal */}
+      {selectedRecipe && (
+        <Modal show={editModalOpen} onHide={closeEditModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>Edit Recipe</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {/* Pass the recipeId to the EditRecipe component */}
+            <EditRecipe recipeId={selectedRecipe} onClose={closeEditModal} />
+          </Modal.Body>
+        </Modal>
+      )}
     </Container>
   ) : (
     <LoadingSpinner />
   );
 };
 
-export default ListRecipeAdmin;
+export default AdminListRecipe;
