@@ -78,7 +78,6 @@ Recipe.propTypes = {
     appliances: String, // Make array?
     ingredients: String, // Make array
     recipe: String,
-    owner: String,
   }).isRequired,
 };
 

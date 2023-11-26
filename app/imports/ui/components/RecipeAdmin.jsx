@@ -12,7 +12,6 @@ const RecipeAdmin = ({ recipe }) => (
     </Card.Header>
     <Card.Body>
       <Card.Text>{recipe.time} {recipe.cost}</Card.Text>
-      <footer className="blockquote-footer">{recipe.owner}</footer>
     </Card.Body>
   </Card>
 );
@@ -28,7 +27,6 @@ RecipeAdmin.propTypes = {
     appliances: String, // Make array?
     ingredients: String, // Make array
     recipe: String,
-    owner: String,
   }).isRequired,
 };
 
