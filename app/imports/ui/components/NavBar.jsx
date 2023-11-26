@@ -16,13 +16,11 @@ const NavBar = () => {
     <Navbar className="border-bottom border-dark" bg="light" expand="lg">
       <Container>
         <Navbar>
-          <Nav.Link id="nav-logo" as={NavLink} to="/home">
-            <Image width="125px" alt="Yummy Foo Logo" src="https://cdn.discordapp.com/attachments/1169481660971106346/1174539902910730371/IMG_3155.png?ex=6567f686&is=65558186&hm=1d9799bc7974761808a31982a378a5e99bfb07c5ab33fb48d56ad13f6d68fe09&" />
-          </Nav.Link>
+          <Image width="125px" src="https://raw.githubusercontent.com/eat-sleep-fortnite-repeat/YUMMY-FOO/main/yummy-foo-logo-cropped.png" />
         </Navbar>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto">
+          <Nav className="me-auto justify-content-start">
             {currentUser ? ([
               <Nav.Link id="add-recipe-nav" as={NavLink} to="/addrecipe" key="examplerecipe">Add Recipe</Nav.Link>,
               <Nav.Link id="search" as={NavLink} to="/search" key="search">Search</Nav.Link>,
