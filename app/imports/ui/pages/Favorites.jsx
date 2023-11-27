@@ -31,14 +31,14 @@ const UserHome = () => {
     <Container>
       <h1 className="py-3">Favorites</h1>
       <Row className="mt-2 pb-4">
-        <Col xs={1}>
+        <Col className="px-3" xs={1}>
           <Link to="/search">
             <Button variant="primary" block>
               Search
             </Button>
           </Link>
         </Col>
-        <Col xs={1} className="w-25">
+        <Col xs={1} className="w-25 px-3">
           <Link to="/addrecipe">
             <Button variant="primary" block>
               Add Recipe
@@ -46,7 +46,7 @@ const UserHome = () => {
           </Link>
         </Col>
       </Row>
-      <Row xs={1} md={2} lg={3} className="g-4">
+      <Row xs={1} md={2} lg={3} className="g-4 pb-5">
         {recipeInfo.map((recipe) => (<Col key={recipe._id}><Recipe recipe={recipe} /></Col>))}
       </Row>
     </Container>
