@@ -23,10 +23,6 @@ const ListRecipeAdmin = () => {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [editModalOpen, setEditModalOpen] = useState(false);
 
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
   const applySearch = () => {
     if (!searchTerm.trim()) {
       setData(recipes);
@@ -65,14 +61,12 @@ const ListRecipeAdmin = () => {
   };
 
   const removeRecipe = (recipeId) => {
-    // Remove the recipe from the local state (data)
     setData((prevData) => prevData.filter((recipe) => recipe._id !== recipeId));
-
-    // Display success message
     swal('Success', 'Recipe removed successfully', 'success');
   };
 
   const openEditModal = (recipeId) => {
+    // eslint-disable-next-line no-shadow
     const selectedRecipe = recipes.find((recipe) => recipe._id === recipeId);
     setSelectedRecipe(selectedRecipe);
     setEditModalOpen(true);
