@@ -39,7 +39,7 @@ const UserHome = () => {
           </Link>
         </Col>
         <Col xs={1} className="w-25">
-          <Link to="/add-recipe">
+          <Link to="/addrecipe">
             <Button variant="primary" block>
               Add Recipe
             </Button>
@@ -48,44 +48,6 @@ const UserHome = () => {
       </Row>
       <Row xs={1} md={2} lg={3} className="g-4">
         {recipeInfo.map((recipe) => (<Col key={recipe._id}><Recipe recipe={recipe} /></Col>))}
-      </Row>
-      <Row>
-        <Col>
-          <Card>
-            <Link to="/burger">
-              <Card.Img variant="top" src="https://www.foodiesfeed.com/wp-content/uploads/2023/04/cheeseburger.jpg" style={{ height: '400px', objectFit: 'cover' }} />
-            </Link>
-            <Card.Body>
-              <Link to="/burger">
-                <Card.Title>Burger</Card.Title>
-              </Link>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card>
-            <Link to="/pancakes">
-              <Card.Img variant="top" src="https://www.foodiesfeed.com/wp-content/uploads/2023/06/pouring-honey-on-pancakes.jpg" style={{ height: '400px', objectFit: 'cover' }} />
-            </Link>
-            <Card.Body>
-              <Link to="/pancakes">
-                <Card.Title>Pancakes</Card.Title>
-              </Link>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card>
-            <Link to="/tacos">
-              <Card.Img variant="top" src="https://www.preparedfoodphotos.com/wp-content/uploads/Tacos_1109-6-500x333.jpg" style={{ height: '400px', objectFit: 'cover' }} />
-            </Link>
-            <Card.Body>
-              <Link to="/tacos">
-                <Card.Title>Tacos</Card.Title>
-              </Link>
-            </Card.Body>
-          </Card>
-        </Col>
       </Row>
     </Container>
   ) : <LoadingSpinner />);
