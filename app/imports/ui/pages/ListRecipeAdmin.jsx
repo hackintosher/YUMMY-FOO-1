@@ -5,7 +5,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import swal from 'sweetalert';
 import { Recipes } from '../../api/recipes/Recipes';
 import LoadingSpinner from '../components/LoadingSpinner';
-import Recipe from '../components/Recipe';
+import RecipeAdmin from '../components/RecipeAdmin';
 import EditRecipe from './EditRecipe';
 import '../../api/recipes/methods';
 
@@ -96,7 +96,7 @@ const ListRecipeAdmin = () => {
       <Row className="mt-4">
         {data.map((item, index) => (
           <Col key={index} sm={6} md={4} lg={6} className="mb-4">
-            <Recipe recipe={item} onDeleteClick={removeRecipe} />
+            <RecipeAdmin recipe={item} onDeleteClick={removeRecipe} />
             <Button variant="info" onClick={() => openEditModal(item._id)}>
               Edit Recipe
             </Button>

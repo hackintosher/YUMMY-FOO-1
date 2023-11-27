@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Col, Row, Button } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 
-const Recipe = ({ recipe, onDeleteClick }) => {
+const Recipe = ({ recipe }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const handleFavoriteToggle = () => {
@@ -44,9 +44,6 @@ const Recipe = ({ recipe, onDeleteClick }) => {
             </Link>
           </Col>
           <Col>
-            <Button variant="danger" onClick={() => onDeleteClick(recipe._id)}>
-              Remove Recipe
-            </Button>
             {/* eslint-disable-next-line react/button-has-type */}
             <button
               onClick={handleFavoriteToggle}
@@ -86,7 +83,6 @@ Recipe.propTypes = {
     ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
     recipe: PropTypes.string.isRequired,
   }).isRequired,
-  onDeleteClick: PropTypes.func.isRequired, // Callback for delete action
 };
 
 export default Recipe;
