@@ -11,6 +11,34 @@ class RecipesCollection {
         label: 'Recipe Name',
         max: 100,
       },
+      image: {
+        type: String,
+        label: 'Image URL',
+      },
+      time: {
+        type: String,
+        label: 'Time',
+      },
+      cost: {
+        type: String,
+        label: 'Cost',
+      },
+      filter: {
+        type: Array,
+        label: 'Filter',
+        optional: true,
+      },
+      'filter.$': {
+        type: String,
+      },
+      appliances: {
+        type: Array,
+        label: 'Appliances',
+        optional: true,
+      },
+      'appliances.$': {
+        type: String,
+      },
       ingredients: {
         type: Array,
         label: 'Ingredients',
@@ -18,20 +46,19 @@ class RecipesCollection {
       'ingredients.$': {
         type: String,
       },
-      preparation: {
+      recipe: {
         type: String,
-        label: 'Preparation Steps',
+        label: 'Recipe',
       },
-      difficulty: {
+      owner: {
         type: String,
-        allowedValues: ['easy', 'medium', 'hard'],
-        defaultValue: 'medium',
-        label: 'Difficulty Level',
+        label: 'Owner',
       },
     });
 
     this.collection.attachSchema(this.schema);
-    this.publicationName = `${this.name}.publication`;
+    this.userPublicationName = `${this.name}.publication.user`;
+    this.adminPublicationName = `${this.name}.publication.admin`;
   }
 }
 

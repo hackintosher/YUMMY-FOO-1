@@ -1,38 +1,32 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
+import { useParams } from 'react-router';
+import { Recipes } from '../../api/recipes/Recipes';
+import LoadingSpinner from '../components/LoadingSpinner';
+import Recipe from '../components/Recipe';
 
 const ExampleRecipe = () => {
-  const body = document.body;
-  body.style.background = 'url("https://github.com/aidenlkw/publicimages/raw/e4d6e1945ec72f3e9bb97e27ddd2ebc7e1b64388/Runway%202023-11-13T20_37_49.641Z%20Upscale%20Image%20Upscaled%20Image%203409%20x%201920.jpg") center center/cover no-repeat';
+  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
+  const { _id } = useParams();
+  // console.log('EditContact', _id);
+  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+  const { recipe, ready } = useTracker(() => {
+    // Get access to Stuff documents.
+    const subscription = Meteor.subscribe(Recipes.userPublicationName);
+    // Determine if the subscription is ready
+    const rdy = subscription.ready();
+    // Get the document
+    const recipeItem = Recipes.collection.findOne(_id);
+    return {
+      recipe: recipeItem,
+      ready: rdy,
+    };
+  }, [_id]);
 
-  return (
-    <Container className="py-3">
-      <Row className="justify-content-center">
-        <Col xs={10}>
-          <Col className="text-center"><h2>Example Recipe</h2></Col>
-          <Card>
-            <Card.Img variant="top" src="https://raw.githubusercontent.com/eat-sleep-fortnite-repeat/YUMMY-FOO/main/yummy-foo-logo-cropped.png" height="400px" />
-            <Card.Body>
-              <Row>
-                <Col>
-                  <Row><Card.Title>Recipe Name</Card.Title></Row>
-                  <Row>
-                    <Col><Card.Text>Ingredients and Appliances</Card.Text></Col>
-                    <Col><Card.Text>Restrictions</Card.Text></Col>
-                    <Col><Card.Text>Cost Per Serving</Card.Text></Col>
-                    <Col><Card.Text>Time</Card.Text></Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col><Card.Text>Recipe</Card.Text></Col>
-              </Row>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
-  );
+  return (ready ? (
+    <Recipe recipe={recipe} />
+  ) : <LoadingSpinner />);
 };
 
 export default ExampleRecipe;
