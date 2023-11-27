@@ -62,6 +62,7 @@ const ListRecipeAdmin = () => {
 
   const removeRecipe = (recipeId) => {
     setData((prevData) => prevData.filter((recipe) => recipe._id !== recipeId));
+    Recipes.collection.remove(recipeId);
     swal('Success', 'Recipe removed successfully', 'success');
   };
 
