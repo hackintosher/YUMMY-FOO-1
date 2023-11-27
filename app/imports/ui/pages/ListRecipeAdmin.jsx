@@ -73,7 +73,8 @@ const ListRecipeAdmin = () => {
   };
 
   const openEditModal = (recipeId) => {
-    setSelectedRecipe(recipeId);
+    const selectedRecipe = recipes.find((recipe) => recipe._id === recipeId);
+    setSelectedRecipe(selectedRecipe);
     setEditModalOpen(true);
   };
 
