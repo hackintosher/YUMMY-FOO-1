@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 
-/** Renders a single row in the List Recipe (Admin) table. See pages/ListRecipeAdmin.jsx. */
-const Recipe = ({ recipe }) => {
+const Recipe = ({ recipe, onDeleteClick }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const handleFavoriteToggle = () => {
@@ -45,7 +44,10 @@ const Recipe = ({ recipe }) => {
             </Link>
           </Col>
           <Col>
-            {/* eslint-disable-next-line react/button-has-type,jsx-a11y/control-has-associated-label */}
+            <Button variant="danger" onClick={() => onDeleteClick(recipe._id)}>
+              Remove Recipe
+            </Button>
+            {/* eslint-disable-next-line react/button-has-type */}
             <button
               onClick={handleFavoriteToggle}
               style={{
@@ -72,20 +74,19 @@ const Recipe = ({ recipe }) => {
   );
 };
 
-// Require a document to be passed to this component.
 Recipe.propTypes = {
   recipe: PropTypes.shape({
-    name: PropTypes.string,
-    image: PropTypes.string,
-    time: PropTypes.string,
-    cost: PropTypes.string,
-    filter: PropTypes.string, // Make array?
-    appliances: PropTypes.string, // Make array?
-    ingredients: PropTypes.string, // Make array
-    recipe: PropTypes.string,
-    owner: PropTypes.string,
-    _id: PropTypes.string,
+    _id: PropTypes.string.isRequired, // Ensure _id is present
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+    cost: PropTypes.string.isRequired,
+    filter: PropTypes.arrayOf(PropTypes.string).isRequired,
+    appliances: PropTypes.arrayOf(PropTypes.string).isRequired,
+    ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
+    recipe: PropTypes.string.isRequired,
   }).isRequired,
+  onDeleteClick: PropTypes.func.isRequired, // Callback for delete action
 };
 
 export default Recipe;

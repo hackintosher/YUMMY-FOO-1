@@ -1,164 +1,120 @@
-// import React from 'react';
-// import { Meteor } from 'meteor/meteor';
-// import { useTracker } from 'meteor/react-meteor-data';
-// import { Col, Container, Row } from 'react-bootstrap';
-// import LoadingSpinner from '../components/LoadingSpinner';
-// import RecipeAdmin from '../components/RecipeAdmin';
-
-/* Renders a table containing all of the Stuff documents. Use <StuffItemAdmin> to render each row. */
-// const ListRecipeAdmin = () => {
-//   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-//   const { ready, recipes } = useTracker(() => {
-//     // Get access to Stuff documents.
-//     const subscription = Meteor.subscribe(Recipes.adminPublicationName);
-//     // Determine if the subscription is ready
-//     const rdy = subscription.ready();
-//     // Get the Stuff documents
-//     const recipeItems = Recipes.collection.find({}).fetch();
-//     return {
-//       recipes: recipeItems,
-//       ready: rdy,
-//     };
-//   }, []);
-//   return (ready ? (
-//     <Container className="py-3">
-//       <Row className="justify-content-center">
-//         <Col>
-//           <Col className="text-center">
-//             <h2>List Recipes (Admin)</h2>
-//           </Col>
-//           <Row xs={1} md={2} lg={3} className="g-4">
-//             {recipes.map((recipe) => (<Col key={recipe._id}><RecipeAdmin recipe={recipe} /></Col>))}
-//           </Row>
-//         </Col>
-//       </Row>
-//     </Container>
-//   ) : <LoadingSpinner />);
-// };
-
-// export default ListRecipeAdmin;
-import React, { useState } from 'react';
-import { Col, Container, Row, Card, Form } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap';
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
+import swal from 'sweetalert';
+import { Recipes } from '../../api/recipes/Recipes';
 import LoadingSpinner from '../components/LoadingSpinner';
-
-// Hard-coded recipes for testing
-const hardCodedRecipes = [
-  {
-    _id: '1',
-    title: 'Burger',
-    description: 'This is a description of a burger.',
-    image: 'https://www.foodiesfeed.com/wp-content/uploads/2023/04/cheeseburger.jpg',
-    category: 'Main Dish',
-    cost: 'Medium',
-    time: '30 minutes',
-  },
-  {
-    _id: '2',
-    title: 'Pancakes',
-    description: 'This is a description of pancakes.',
-    image: 'https://www.foodiesfeed.com/wp-content/uploads/2023/06/pouring-honey-on-pancakes.jpg',
-    category: 'Breakfast',
-    cost: 'Low',
-    time: '20 minutes',
-  },
-  {
-    _id: '3',
-    title: 'Tacos',
-    description: 'This is a description of tacos.',
-    image: 'https://www.preparedfoodphotos.com/wp-content/uploads/Tacos_1109-6-500x333.jpg',
-    category: 'Mexican',
-    cost: 'Low',
-    time: '40 minutes',
-  },
-];
+import Recipe from '../components/Recipe';
+import EditRecipe from './EditRecipe';
+import '../../api/recipes/methods';
 
 const ListRecipeAdmin = () => {
-  const [categoryFilter, setCategoryFilter] = useState('All');
-  const [titleFilter, setTitleFilter] = useState('');
-  const [costFilter, setCostFilter] = useState('All');
-  const [timeFilter, setTimeFilter] = useState('All');
+  const { ready, recipes } = useTracker(() => {
+    const subscription = Meteor.subscribe(Recipes.userPublicationName);
+    return {
+      recipes: Recipes.collection.find({}).fetch(),
+      ready: subscription.ready(),
+    };
+  }, []);
 
-  // Simulate the ready state since we're using hard-coded data
-  const ready = true;
+  const [searchTerm, setSearchTerm] = useState('');
+  const [data, setData] = useState(recipes);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [editModalOpen, setEditModalOpen] = useState(false);
 
-  const filteredRecipes = hardCodedRecipes.filter((recipe) => (
-    (categoryFilter === 'All' || recipe.category === categoryFilter) &&
-      (titleFilter === '' || recipe.title.toLowerCase().includes(titleFilter.toLowerCase())) &&
-      (costFilter === 'All' || recipe.cost === costFilter) &&
-      (timeFilter === 'All' || recipe.time === timeFilter)
-  ));
+  const applySearch = () => {
+    if (!searchTerm.trim()) {
+      setData(recipes);
+      return;
+    }
 
-  const handleCategoryChange = (e) => {
-    setCategoryFilter(e.target.value);
+    const filteredData = recipes.filter((item) => {
+      const fieldsToSearch = ['name', 'time', 'cost', 'filter', 'appliances', 'ingredients', 'recipe'];
+
+      return fieldsToSearch.some((field) => {
+        const fieldValue = item[field];
+        if (Array.isArray(fieldValue)) {
+          return fieldValue.some(
+            (element) => typeof element === 'string' &&
+              element.toLowerCase().includes(searchTerm.toLowerCase()),
+          );
+        } if (typeof fieldValue === 'string') {
+          return fieldValue.toLowerCase().includes(searchTerm.toLowerCase());
+        }
+        return false;
+      });
+    });
+
+    setData(filteredData);
   };
 
-  const handleTitleChange = (e) => {
-    setTitleFilter(e.target.value);
+  useEffect(() => {
+    if (ready) {
+      applySearch();
+    }
+  }, [ready, searchTerm, recipes]);
+
+  const resetSearch = () => {
+    setSearchTerm('');
+    setData(recipes);
   };
 
-  const handleCostChange = (e) => {
-    setCostFilter(e.target.value);
+  const removeRecipe = (recipeId) => {
+    setData((prevData) => prevData.filter((recipe) => recipe._id !== recipeId));
+    Recipes.collection.remove(recipeId);
+    swal('Success', 'Recipe removed successfully', 'success');
   };
 
-  const handleTimeChange = (e) => {
-    setTimeFilter(e.target.value);
+  const openEditModal = (recipeId) => {
+    // eslint-disable-next-line no-shadow
+    const selectedRecipe = recipes.find((recipe) => recipe._id === recipeId);
+    setSelectedRecipe(selectedRecipe);
+    setEditModalOpen(true);
+  };
+
+  const closeEditModal = () => {
+    setEditModalOpen(false);
+    setSelectedRecipe(null);
+
+    const updatedRecipes = Recipes.collection.find({}).fetch();
+    setData(updatedRecipes);
   };
 
   return ready ? (
-    <Container className="py-3">
-      <Row className="justify-content-center">
-        <Col>
-          <Col className="text-center">
-            <h2>List Recipes (Admin)</h2>
+    <Container>
+      <Form>
+        <Row>
+          <Col>
+            {/* ... (search form) */}
           </Col>
-          <Row className="mb-3">
-            <Col md={3} className="mb-2">
-              <Form.Control as="select" onChange={handleCategoryChange}>
-                <option value="All">All Categories</option>
-                <option value="Main Dish">Main Dish</option>
-                <option value="Breakfast">Breakfast</option>
-                <option value="Mexican">Mexican</option>
-                {/* Add more categories as needed */}
-              </Form.Control>
-            </Col>
-            <Col md={3} className="mb-2">
-              <Form.Control type="text" placeholder="Search by title" onChange={handleTitleChange} />
-            </Col>
-            <Col md={3} className="mb-2">
-              <Form.Control as="select" onChange={handleCostChange}>
-                <option value="All">All Costs</option>
-                <option value="Low">Low</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
-              </Form.Control>
-            </Col>
-            <Col md={3} className="mb-2">
-              <Form.Control as="select" onChange={handleTimeChange}>
-                <option value="All">All Times</option>
-                <option value="20 minutes">20 minutes</option>
-                <option value="30 minutes">30 minutes</option>
-                <option value="40 minutes">40 minutes</option>
-                {/* Add more time options as needed */}
-              </Form.Control>
-            </Col>
-          </Row>
-          <Row xs={1} md={2} lg={3} className="g-4">
-            {filteredRecipes.map((recipe) => (
-              <Col key={recipe._id}>
-                <Card>
-                  <Card.Img variant="top" src={recipe.image} style={{ height: '400px', objectFit: 'cover' }} />
-                  <Card.Body>
-                    <Card.Title>{recipe.title}</Card.Title>
-                    <Card.Text>{recipe.description}</Card.Text>
-                    <p>Cost: {recipe.cost}</p>
-                    <p>Time: {recipe.time}</p>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Col>
+        </Row>
+        <Button variant="secondary" className="mt-3" onClick={resetSearch}>
+          Reset Search
+        </Button>
+      </Form>
+      <Row className="mt-4">
+        {data.map((item, index) => (
+          <Col key={index} sm={6} md={4} lg={6} className="mb-4">
+            <Recipe recipe={item} onDeleteClick={removeRecipe} />
+            <Button variant="info" onClick={() => openEditModal(item._id)}>
+              Edit Recipe
+            </Button>
+          </Col>
+        ))}
       </Row>
+
+      {selectedRecipe && (
+        <Modal show={editModalOpen} onHide={closeEditModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>Edit Recipe</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {/* Pass the selected recipe, not just the recipe ID */}
+            <EditRecipe recipe={selectedRecipe} onClose={closeEditModal} />
+          </Modal.Body>
+        </Modal>
+      )}
     </Container>
   ) : (
     <LoadingSpinner />
