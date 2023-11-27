@@ -12,7 +12,6 @@ const RecipeAdmin = ({ recipe }) => (
     </Card.Header>
     <Card.Body>
       <Card.Text>{recipe.time} {recipe.cost}</Card.Text>
-      <footer className="blockquote-footer">{recipe.owner}</footer>
     </Card.Body>
   </Card>
 );
@@ -20,15 +19,14 @@ const RecipeAdmin = ({ recipe }) => (
 // Require a document to be passed to this component.
 RecipeAdmin.propTypes = {
   recipe: PropTypes.shape({
-    name: String,
-    image: String,
-    time: String,
-    cost: String,
-    filter: String, // Make array?
-    appliances: String, // Make array?
-    ingredients: String, // Make array
-    recipe: String,
-    owner: String,
+    name: PropTypes.string,
+    image: PropTypes.string,
+    time: PropTypes.string,
+    cost: PropTypes.string,
+    filter: PropTypes.string, // Change to PropTypes.array if it's an array
+    appliances: PropTypes.string, // Change to PropTypes.array if it's an array
+    ingredients: PropTypes.string, // Change to PropTypes.array if it's an array
+    recipe: PropTypes.string,
   }).isRequired,
 };
 

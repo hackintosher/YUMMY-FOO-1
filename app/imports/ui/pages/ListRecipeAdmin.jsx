@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
+import swal from 'sweetalert';
 import { Recipes } from '../../api/recipes/Recipes';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Recipe from '../components/Recipe';
 import EditRecipe from './EditRecipe';
+import '../../api/recipes/methods';
 
 const ListRecipeAdmin = () => {
   const { ready, recipes } = useTracker(() => {
@@ -63,7 +65,11 @@ const ListRecipeAdmin = () => {
   };
 
   const removeRecipe = (recipeId) => {
-    Meteor.call('recipes.remove', recipeId);
+    // Remove the recipe from the local state (data)
+    setData((prevData) => prevData.filter((recipe) => recipe._id !== recipeId));
+
+    // Display success message
+    swal('Success', 'Recipe removed successfully', 'success');
   };
 
   const openEditModal = (recipeId) => {
@@ -74,6 +80,9 @@ const ListRecipeAdmin = () => {
   const closeEditModal = () => {
     setEditModalOpen(false);
     setSelectedRecipe(null);
+
+    const updatedRecipes = Recipes.collection.find({}).fetch();
+    setData(updatedRecipes);
   };
 
   return ready ? (
@@ -81,16 +90,7 @@ const ListRecipeAdmin = () => {
       <Form>
         <Row>
           <Col>
-            <Form.Group>
-              <h1 className="text-center">Admin Recipe List</h1>
-              <Form.Control
-                type="text"
-                name="search"
-                placeholder="Search"
-                value={searchTerm}
-                onChange={handleSearchChange}
-              />
-            </Form.Group>
+            {/* ... (search form) */}
           </Col>
         </Row>
         <Button variant="secondary" className="mt-3" onClick={resetSearch}>
@@ -100,10 +100,7 @@ const ListRecipeAdmin = () => {
       <Row className="mt-4">
         {data.map((item, index) => (
           <Col key={index} sm={6} md={4} lg={6} className="mb-4">
-            <Recipe recipe={item} />
-            <Button variant="danger" onClick={() => removeRecipe(item._id)}>
-              Remove Recipe
-            </Button>
+            <Recipe recipe={item} onDeleteClick={removeRecipe} />
             <Button variant="info" onClick={() => openEditModal(item._id)}>
               Edit Recipe
             </Button>
@@ -111,15 +108,14 @@ const ListRecipeAdmin = () => {
         ))}
       </Row>
 
-      {/* Render the EditRecipe component as a modal */}
       {selectedRecipe && (
         <Modal show={editModalOpen} onHide={closeEditModal}>
           <Modal.Header closeButton>
             <Modal.Title>Edit Recipe</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {/* Pass the recipeId to the EditRecipe component */}
-            <EditRecipe recipeId={selectedRecipe} onClose={closeEditModal} />
+            {/* Pass the selected recipe, not just the recipe ID */}
+            <EditRecipe recipe={selectedRecipe} onClose={closeEditModal} />
           </Modal.Body>
         </Modal>
       )}

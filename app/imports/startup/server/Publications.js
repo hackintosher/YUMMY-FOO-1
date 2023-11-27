@@ -5,7 +5,7 @@ import { Recipes } from '../../api/recipes/Recipes';
 // User-level publication for Contacts.
 // Publish all recipes to all users.
 Meteor.publish(Recipes.userPublicationName, function () {
-  return Recipes.collection.find();
+  return Recipes.collection.find({}, { /* any additional options */ });
 });
 
 // Admin-level publication for Contacts.
