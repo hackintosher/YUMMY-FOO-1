@@ -1,38 +1,36 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Meteor } from 'meteor/meteor';
+import { Col, Row } from 'react-bootstrap';
+import { useTracker } from 'meteor/react-meteor-data';
+import { Recipes } from '../../api/recipes/Recipes';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const ExampleRecipe = () => {
-  const body = document.body;
-  body.style.background = 'url("https://github.com/aidenlkw/publicimages/raw/e4d6e1945ec72f3e9bb97e27ddd2ebc7e1b64388/Runway%202023-11-13T20_37_49.641Z%20Upscale%20Image%20Upscaled%20Image%203409%20x%201920.jpg") center center/cover no-repeat';
+  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+  const { ready, recipeInfo } = useTracker(() => {
+    // Note that this subscription will get cleaned up
+    // when your component is unmounted or deps change.
+    // Get access to Stuff documents.
+    const subscription = Meteor.subscribe(Recipes.userPublicationName);
+    // Determine if the subscription is ready
+    const rdy = subscription.ready();
+    // Get the ContactAdmin documents
+    const recipeItems = Recipes.collection.find({}).fetch();
+    return {
+      recipeInfo: recipeItems,
+      ready: rdy,
+    };
+  }, []);
 
-  return (
-    <Container className="py-3">
-      <Row className="justify-content-center">
-        <Col xs={10}>
-          <Col className="text-center"><h2>Example Recipe</h2></Col>
-          <Card>
-            <Card.Img variant="top" src="https://raw.githubusercontent.com/eat-sleep-fortnite-repeat/YUMMY-FOO/main/yummy-foo-logo-cropped.png" height="400px" />
-            <Card.Body>
-              <Row>
-                <Col>
-                  <Row><Card.Title>Recipe Name</Card.Title></Row>
-                  <Row>
-                    <Col><Card.Text>Ingredients and Appliances</Card.Text></Col>
-                    <Col><Card.Text>Restrictions</Card.Text></Col>
-                    <Col><Card.Text>Cost Per Serving</Card.Text></Col>
-                    <Col><Card.Text>Time</Card.Text></Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col><Card.Text>Recipe</Card.Text></Col>
-              </Row>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
-  );
+  return (ready ? (
+    <Row className="justify-content-center">
+      <Col>
+        <Row>
+          {recipeInfo.map((recipe) => (<Col key={recipe._id}><Recipes recipe={recipe} /></Col>))}
+        </Row>
+      </Col>
+    </Row>
+  ) : <LoadingSpinner />);
 };
 
 export default ExampleRecipe;

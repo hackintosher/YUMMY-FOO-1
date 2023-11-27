@@ -40,7 +40,7 @@ const Recipe = ({ recipe }) => {
             </Card.Title>
           </Col>
           <Col>
-            {/* eslint-disable-next-line react/button-has-type */}
+            {/* eslint-disable-next-line react/button-has-type,jsx-a11y/control-has-associated-label */}
             <button
               onClick={handleFavoriteToggle}
               style={{
@@ -79,6 +79,7 @@ Recipe.propTypes = {
     ingredients: String, // Make array
     recipe: String,
     owner: String,
+    _id: String,
   }).isRequired,
 };
 
