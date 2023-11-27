@@ -1,7 +1,7 @@
 // components/HomePage.jsx
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -29,8 +29,8 @@ const UserHome = () => {
 
   return (ready ? (
     <Container>
-      <h1>Favorites</h1>
-      <Row className="mt-2">
+      <h1 className="py-3">Favorites</h1>
+      <Row className="mt-2 pb-4">
         <Col xs={1}>
           <Link to="/search">
             <Button variant="primary" block>
