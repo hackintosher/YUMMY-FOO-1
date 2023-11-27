@@ -55,16 +55,15 @@ const UserHome = () => {
 
 Recipe.propTypes = {
   recipe: PropTypes.shape({
-    name: PropTypes.String,
-    image: PropTypes.String,
-    time: PropTypes.String,
-    cost: PropTypes.String,
-    filter: PropTypes.String, // Make array?
-    appliances: PropTypes.String, // Make array?
-    ingredients: PropTypes.String, // Make array
-    recipe: PropTypes.String,
-    owner: PropTypes.String,
-    _id: PropTypes.String,
+    _id: PropTypes.string.isRequired, // Ensure _id is present
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+    cost: PropTypes.string.isRequired,
+    filter: PropTypes.arrayOf(PropTypes.string).isRequired,
+    appliances: PropTypes.arrayOf(PropTypes.string).isRequired,
+    ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
+    recipe: PropTypes.string.isRequired,
   }).isRequired,
 };
 
