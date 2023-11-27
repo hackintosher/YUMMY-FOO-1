@@ -9,6 +9,8 @@ const formSchema = new SimpleSchema({
   recipeInstruction: String,
   time: Number,
   cost: Number,
+  ingredients: String,
+  appliances: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -27,8 +29,8 @@ const AddStuff = () => (
               </Row>
               <LongTextField name="recipeInstruction" label="Recipe" />
               <Row>
-                <Col><LongTextField name="recipeInstruction" label="List Ingredients Needed" /></Col>
-                <Col><LongTextField name="recipeInstruction" label="List Appliances Needed" /></Col>
+                <Col><LongTextField name="ingredients" label="List Ingredients Needed" /></Col>
+                <Col><LongTextField name="appliances" label="List Appliances Needed" /></Col>
               </Row>
               <Form.Group controlId="formFile" className="mb-3">
                 <Form.Label>Attach Image of Dish</Form.Label>
