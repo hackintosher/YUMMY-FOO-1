@@ -4,6 +4,7 @@ import { Card, Col, Row, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Recipe = ({ recipe, onDeleteClick }) => {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -15,28 +16,32 @@ const Recipe = ({ recipe, onDeleteClick }) => {
   return (
     <Card className="h-100 grow-on-hover" style={{ boxShadow: '0 12px 24px rgba(0, 0, 0, 0.2)', border: 'none', borderRadius: '15px', borderBottomRadius: '0px', overflow: 'hidden', position: 'relative' }}>
       <Card.Header style={{ height: '250px', overflow: 'hidden', position: 'relative' }}>
-        <Card.Img
-          variant="top"
-          src={recipe.image}
-          alt={recipe.name}
-          style={{
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            left: 0,
-            bottom: 0,
-            maxHeight: '250px',
-            objectFit: 'cover',
-            borderTop: '15px',
-          }}
-        />
+        <Link to={`/examplerecipe/${recipe._id}`}>
+          <Card.Img
+            variant="top"
+            src={recipe.image}
+            alt={recipe.name}
+            style={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              left: 0,
+              bottom: 0,
+              maxHeight: '250px',
+              objectFit: 'cover',
+              borderTop: '15px',
+            }}
+          />
+        </Link>
       </Card.Header>
       <Card.Body style={{ color: 'black', position: 'relative', zIndex: 1 }}>
         <Row>
           <Col>
-            <Card.Title style={{ fontSize: 'xx-large', marginBottom: '10px' }}>
-              {recipe.name}
-            </Card.Title>
+            <Link to={`/examplerecipe/${recipe._id}`}>
+              <Card.Title style={{ fontSize: 'xx-large', marginBottom: '10px' }}>
+                {recipe.name}
+              </Card.Title>
+            </Link>
           </Col>
           <Col>
             <Button variant="danger" onClick={() => onDeleteClick(recipe._id)}>
