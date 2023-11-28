@@ -54,7 +54,6 @@ class NavBar {
   }
 
   async gotoAboutPage(testController) {
-    await testController.click('button.navbar-toggler');
     await testController.click('#about-nav');
   }
 
