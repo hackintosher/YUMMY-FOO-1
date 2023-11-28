@@ -82,11 +82,11 @@ const ListRecipeAdmin = () => {
   };
 
   return ready ? (
-    <Container>
-      <Form>
-        <Row>
-          <Col>
-            {/* ... (search form) */}
+    <Container id="list-recipe-admin-page" className="py-3">
+      <Row className="justify-content-center">
+        <Col>
+          <Col className="text-center">
+            <h2>List Recipes (Admin)</h2>
           </Col>
         </Row>
         <Button variant="secondary" className="mt-3" onClick={resetSearch}>

@@ -5,7 +5,7 @@ const Landing = () => {
   const body = document.body;
   body.style.backgroundColor = '#00000';
   return (
-    <Container fluid className="my-auto text-center" id="landing-page">
+    <Container id="landing-page" fluid className="my-auto text-center">
       <Carousel className="py-5" id="carousel">
         <Carousel.Item id="carousel-item">
           <Image src="https://theunlikelybaker.com/wp-content/uploads/2016/05/Turon-Banana-Lumpia-Feature.jpg" text="First slide" className="carousel-image" />
