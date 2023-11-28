@@ -7,7 +7,7 @@ const About = () => {
   body.style.backgroundColor = '#97eaea';
 
   return (
-    <Container fluid className="my-auto text-center">
+    <Container id="about-page" fluid className="my-auto text-center">
       <h2>About The Project</h2><br />
       <h3>Our Goal</h3>
       <p>

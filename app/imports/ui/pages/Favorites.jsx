@@ -28,7 +28,7 @@ const UserHome = () => {
   }, []);
 
   return (ready ? (
-    <Container>
+    <Container id="favorites-page">
       <h1 className="py-3">Favorites</h1>
       <Row className="mt-2 pb-4">
         <Col className="px-3" xs={1}>

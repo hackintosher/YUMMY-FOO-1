@@ -13,7 +13,7 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 const AddStuff = () => (
-  <Container className="py-3">
+  <Container id="add-recipe-page" className="py-3">
     <Row className="justify-content-center">
       <Col>
         <Col className="text-center"><h2 className="text-white">Add Recipe</h2></Col>

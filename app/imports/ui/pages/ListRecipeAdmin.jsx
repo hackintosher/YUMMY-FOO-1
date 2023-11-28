@@ -105,7 +105,7 @@ const ListRecipeAdmin = () => {
   };
 
   return ready ? (
-    <Container className="py-3">
+    <Container id="list-recipe-admin-page" className="py-3">
       <Row className="justify-content-center">
         <Col>
           <Col className="text-center">

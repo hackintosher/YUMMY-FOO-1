@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
+// import Favorites from '../pages/Favorites';
 
 /** Renders a single row in the List Recipe (Admin) table. See pages/ListRecipeAdmin.jsx. */
 const Recipe = ({ recipe }) => {
@@ -13,6 +14,22 @@ const Recipe = ({ recipe }) => {
   const handleFavoriteToggle = () => {
     setIsFavorite(!isFavorite);
   };
+
+  // On submit, insert the data.
+  //  const handleFavoriteToggle = (recipe, formRef) => {
+  //    const { _id, name, image, time, cost, filter, appliances, ingredients, recipe } = data;
+  //   const owner = Meteor.user().username;
+  //     { name, quantity, condition, owner },
+  //     (error) => {
+  //       if (error) {
+  //         swal('Error', error.message, 'error');
+  //       } else {
+  //         swal('Success', 'Item added successfully', 'success');
+  //         formRef.reset();
+  //       }
+  //     },
+  //   );
+  // };
 
   return (
     <Card className="h-100 grow-on-hover" style={{ boxShadow: '0 12px 24px rgba(0, 0, 0, 0.2)', border: 'none', borderRadius: '15px', borderBottomRadius: '0px', overflow: 'hidden', position: 'relative' }}>

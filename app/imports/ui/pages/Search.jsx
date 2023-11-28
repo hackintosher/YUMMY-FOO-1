@@ -60,7 +60,7 @@ const Search = () => {
   };
 
   return ready ? (
-    <Container>
+    <Container id="search-page">
       <Form>
         <Row>
           <Col>
