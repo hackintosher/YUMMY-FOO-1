@@ -14,6 +14,7 @@ class RecipesCollection {
       image: {
         type: String,
         label: 'Image URL',
+        optional: true,
       },
       time: {
         type: String,
@@ -49,6 +50,10 @@ class RecipesCollection {
       recipe: {
         type: String,
         label: 'Recipe',
+      },
+      imageId: {
+        type: String,
+        optional: true,
       },
       owner: {
         type: String,
