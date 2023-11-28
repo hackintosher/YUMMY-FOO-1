@@ -12,4 +12,4 @@ class SearchPage {
   }
 }
 
-export const searchPage = new SearchPage();
+export const searchPage = new SearchPage(); 
