@@ -62,7 +62,7 @@ const About = () => (
         </p>
       </Col>
     </Row>
-    <br /> {/* Add a line break */}
+    <br /> { /* Add a line break */ }
     <p>
       Check out our <a href="https://github.com/eat-sleep-fortnite-repeat" target="_blank" rel="noopener noreferrer">GitHub Organization</a>.
     </p>
