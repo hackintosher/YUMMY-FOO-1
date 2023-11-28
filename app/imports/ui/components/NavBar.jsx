@@ -23,7 +23,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link className="px-2" id="about-nav" as={NavLink} to="/about" key="about">About Us</Nav.Link>,
+            <Nav.Link className="px-2" id="about-nav" as={NavLink} to="/about" key="about">About Us</Nav.Link>
             {currentUser ? ([
               <Nav.Link className="px-2" id="add-recipe-nav" as={NavLink} to="/addrecipe" key="examplerecipe">Add Recipe</Nav.Link>,
               <Nav.Link className="px-2" id="favorites-nav" as={NavLink} to="/favorites" key="favorites">Favorites</Nav.Link>,

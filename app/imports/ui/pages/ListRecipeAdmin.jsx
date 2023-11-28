@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap';
+import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import swal from 'sweetalert';
@@ -88,11 +88,11 @@ const ListRecipeAdmin = () => {
           <Col className="text-center">
             <h2>List Recipes (Admin)</h2>
           </Col>
-        </Row>
-        <Button variant="secondary" className="mt-3" onClick={resetSearch}>
-          Reset Search
-        </Button>
-      </Form>
+          <Button variant="secondary" className="mt-3" onClick={resetSearch}>
+            Reset Search
+          </Button>
+        </Col>
+      </Row>
       <Row className="mt-4">
         {data.map((item, index) => (
           <Col key={index} sm={6} md={4} lg={6} className="mb-4">
