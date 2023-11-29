@@ -54,7 +54,7 @@ const Recipe = ({ recipe }) => {
       <Card.Body style={{ color: 'black', position: 'relative', zIndex: 1 }}>
         <Row>
           <Col>
-            <Link to={`/examplerecipe/${recipe._id}`}>
+            <Link id="recipe-page" to={`/examplerecipe/${recipe._id}`}>
               <Card.Title style={{ fontSize: 'xx-large', marginBottom: '10px' }}>
                 {recipe.name}
               </Card.Title>

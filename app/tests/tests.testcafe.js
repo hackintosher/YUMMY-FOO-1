@@ -7,6 +7,7 @@ import { favoritesPage } from './favorites.page';
 import { adminPage } from './admin.page';
 import { addRecipePage } from './addrecipe.page';
 import { searchPage } from './search.page';
+import { recipePage } from './recipe.page';
 
 /* global fixture:false, test:false */
 
@@ -64,4 +65,14 @@ test('Test that the admin page shows', async (testController) => {
   await navBar.isLoggedIn(testController, credentials2.username);
   await navBar.gotoAdminPage(testController);
   await adminPage.isDisplayed(testController);
+});
+
+test('Test that the recipe page shows', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoFavoritesPage(testController);
+  await favoritesPage.isDisplayed(testController);
+  await navBar.gotoRecipePage(testController);
+  await recipePage.isDisplayed(testController);
 });
