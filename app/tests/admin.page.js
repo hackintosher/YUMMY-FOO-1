@@ -3,6 +3,7 @@ import { Selector } from 'testcafe';
 class AdminPage {
   constructor() {
     this.pageId = '#list-recipe-admin-page';
+    this.editButtonId = '#admin-edit-button';
     this.pageSelector = Selector(this.pageId);
   }
 

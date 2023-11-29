@@ -64,4 +64,5 @@ test('Test that the admin page shows', async (testController) => {
   await navBar.isLoggedIn(testController, credentials2.username);
   await navBar.gotoAdminPage(testController);
   await adminPage.isDisplayed(testController);
+  await navBar.gotoAdminEdit(testController);
 });
