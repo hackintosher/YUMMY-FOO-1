@@ -21,7 +21,6 @@ import About from '../pages/About';
 import ExampleRecipe from '../pages/ExampleRecipe';
 import AddRecipe from '../pages/AddRecipe';
 import Favorites from '../pages/Favorites';
-import Search from '../pages/Search';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
