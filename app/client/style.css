@@ -13,6 +13,7 @@
 body {
   --bs-light-rgb: var(--matr-navbar-bg-rgb);
   background-color: #C4E8F6;
+  top: 0 !important;
 }
 
 /* Set the alert background on the signin and signup pages. */
@@ -54,4 +55,19 @@ body {
 .landing-blurb2 {
   padding-top: 90px;
   text-align: left;
+}
+
+body > .skiptranslate {
+  display: none;
+}
+
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO {
+  display: none;
+}
+
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO-ti6hGc {
+  display: none;
+}
+.IpgJd-ZVi9od-aZ2wEe-wOHMyf {
+  display: none;
 }
