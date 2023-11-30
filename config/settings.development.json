@@ -7,7 +7,7 @@
   "defaultRecipes": [
     {
       "name": "Homemade Pizza",
-      "image": "https://thecozycook.com/wp-content/uploads/2023/03/Homemade-Pizza-f-500x375.jpg",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/pizza.jpg?raw=true",
       "time": "1 hour",
       "cost": "$15",
       "filter": ["Italian", "Homemade"],
@@ -18,7 +18,7 @@
     },
     {
       "name": "Greek Salad",
-      "image": "https://www.foodnetwork.com/content/dam/images/food/fullset/2010/4/23/0/BX0204_greek-salad_s4x3.jpg",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/greekSalad.jpg?raw=true",
       "time": "15 minutes",
       "cost": "$8",
       "filter": ["Vegetarian", "Greek"],
@@ -29,7 +29,7 @@
     },
     {
       "name": "Chocolate Brownies",
-      "image": "https://cdn.vox-cdn.com/thumbor/i9Eph9e6QuT9cSXQ63-7ManDq1E=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/20069650/brownies_pre_freezer.jpg",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/brownies.jpg?raw=true",
       "time": "40 minutes",
       "cost": "$12",
       "filter": ["Dessert", "Chocolate"],
