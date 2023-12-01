@@ -1,4 +1,4 @@
-name: YUMMY-FOO
+name: yummy-foo
 
 on:
   push:
