@@ -37,9 +37,118 @@
       "ingredients": ["Flour", "Cocoa powder", "Sugar", "Butter", "Eggs"],
       "recipe": "1. Mix flour and cocoa powder...\n2. Cream butter and sugar...\n3. Beat in eggs...\n4. Bake in a preheated oven...",
       "owner": "john@foo.com"
+    },
+    {
+      "name": "Caprese Salad",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/caprese.jpg?raw=true",
+      "time": "10 minutes",
+      "cost": "$10",
+      "filter": ["Vegetarian", "Italian"],
+      "appliances": ["Knife", "Plate"],
+      "ingredients": ["Tomatoes", "Fresh mozzarella", "Basil leaves", "Balsamic glaze", "Salt", "Pepper"],
+      "recipe": "1. Slice tomatoes and fresh mozzarella...\n2. Arrange slices on a plate...\n3. Tuck basil leaves between slices...\n4. Drizzle with balsamic glaze...",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Chicken Stir-Fry",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/chickenStirFry.jpg?raw=true",
+      "time": "25 minutes",
+      "cost": "$18",
+      "filter": ["Asian", "Poultry"],
+      "appliances": ["Wok", "Spatula"],
+      "ingredients": ["Chicken breast", "Broccoli", "Bell peppers", "Soy sauce", "Ginger", "Garlic", "Sesame oil"],
+      "recipe": "1. Cut chicken into bite-sized pieces...\n2. Stir-fry chicken in sesame oil...\n3. Add broccoli and bell peppers...\n4. Mix in soy sauce, ginger, and garlic...",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Quinoa Salad with Avocado",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/quinoa.jpg?raw=true",
+      "time": "30 minutes",
+      "cost": "$14",
+      "filter": ["Vegetarian", "Healthy"],
+      "appliances": ["Saucepan", "Bowl"],
+      "ingredients": ["Quinoa", "Avocado", "Cherry tomatoes", "Cucumber", "Red onion", "Lemon", "Olive oil", "Salt", "Pepper"],
+      "recipe": "1. Cook quinoa according to package instructions...\n2. Dice avocado, cherry tomatoes, cucumber, and red onion...\n3. Combine cooked quinoa and diced vegetables...\n4. Squeeze lemon juice, drizzle olive oil, and season with salt and pepper...",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Margherita Pizza",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/margheritaPizza.jpg?raw=true",
+      "time": "1 hour",
+      "cost": "$14",
+      "filter": ["Italian", "Homemade"],
+      "appliances": ["Oven", "Rolling pin"],
+      "ingredients": ["Pizza dough", "Tomato sauce", "Fresh mozzarella", "Basil leaves"],
+      "recipe": "1. Roll out the pizza dough...\n2. Spread tomato sauce...\n3. Arrange fresh mozzarella slices...\n4. Tuck basil leaves on top...\n5. Bake in the oven...",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Vegetable Biryani",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/vegetableBiryani.jpg?raw=true",
+      "time": "45 minutes",
+      "cost": "$16",
+      "filter": ["Indian", "Vegetarian"],
+      "appliances": ["Pot", "Spatula"],
+      "ingredients": ["Basmati rice", "Mixed vegetables", "Spices", "Ghee"],
+      "recipe": "1. Rinse and soak basmati rice...\n2. Sauté spices in ghee...\n3. Add mixed vegetables and rice...\n4. Cook until rice is tender...",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Lemon Garlic Shrimp",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/lemonGarlicShrimp.jpg?raw=true",
+      "time": "20 minutes",
+      "cost": "$20",
+      "filter": ["Seafood"],
+      "appliances": ["Skillet", "Lemon squeezer"],
+      "ingredients": ["Shrimp", "Garlic", "Lemon", "Butter", "Parsley"],
+      "recipe": "1. Sauté minced garlic in butter...\n2. Add shrimp and cook until pink...\n3. Squeeze lemon juice over shrimp...\n4. Garnish with chopped parsley...",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Pasta Carbonara",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/pastaCarbonara.jpg?raw=true",
+      "time": "30 minutes",
+      "cost": "$12",
+      "filter": ["Italian", "Pasta"],
+      "appliances": ["Pot", "Pan"],
+      "ingredients": ["Spaghetti", "Eggs", "Parmesan cheese", "Pancetta"],
+      "recipe": "1. Cook spaghetti according to package instructions...\n2. Beat eggs and mix with grated Parmesan...\n3. Sauté pancetta until crispy...\n4. Toss cooked pasta in egg mixture...",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Vegetarian Tacos",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/vegetarianTacos.jpg?raw=true",
+      "time": "25 minutes",
+      "cost": "$10",
+      "filter": ["Mexican", "Vegetarian"],
+      "appliances": ["Skillet", "Tongs"],
+      "ingredients": ["Tortillas", "Black beans", "Corn", "Avocado", "Lettuce", "Salsa"],
+      "recipe": "1. Heat tortillas in a skillet...\n2. Fill with a mix of black beans, corn, and diced avocado...\n3. Top with lettuce and salsa...\n4. Serve warm...",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Beef Stir-Fry",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/beefStirFry.jpg?raw=true",
+      "time": "30 minutes",
+      "cost": "$22",
+      "filter": ["Asian", "Beef"],
+      "appliances": ["Wok", "Spatula"],
+      "ingredients": ["Beef strips", "Broccoli", "Carrots", "Soy sauce", "Sesame oil"],
+      "recipe": "1. Stir-fry beef strips in sesame oil...\n2. Add broccoli and carrots...\n3. Pour in soy sauce and toss until cooked...\n4. Serve hot...",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Berry Parfait",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/berryParfait.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$9",
+      "filter": ["Dessert", "Healthy"],
+      "appliances": ["Glass", "Spoon"],
+      "ingredients": ["Greek yogurt", "Mixed berries", "Granola", "Honey"],
+      "recipe": "1. Layer Greek yogurt, mixed berries, and granola in a glass...\n2. Repeat layers until the glass is filled...\n3. Drizzle honey on top...\n4. Enjoy!",
+      "owner": "john@foo.com"
     }
   ]
 
 }
-
 
