@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
+import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import swal from 'sweetalert';
@@ -22,6 +22,10 @@ const ListRecipeAdmin = () => {
   const [data, setData] = useState(recipes);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [editModalOpen, setEditModalOpen] = useState(false);
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
   const applySearch = () => {
     if (!searchTerm.trim()) {
@@ -83,23 +87,40 @@ const ListRecipeAdmin = () => {
 
   return ready ? (
     <Container id="list-recipe-admin-page" className="py-3">
-      <Row className="justify-content-center">
-        <Col>
-          <Col className="text-center">
-            <h2>List Recipes (Admin)</h2>
+      <Form>
+        <Row>
+          <Col>
+            <Form.Group>
+              <h1 className="text-center">List Recipe Admin</h1>
+              <Form.Control
+                type="text"
+                name="search"
+                placeholder="Search"
+                value={searchTerm}
+                onChange={handleSearchChange}
+              />
+            </Form.Group>
           </Col>
-          <Button variant="secondary" className="mt-3" onClick={resetSearch}>
-            Reset Search
-          </Button>
-        </Col>
-      </Row>
+        </Row>
+        <Button variant="secondary" className="mt-3" onClick={resetSearch}>
+          Reset Search
+        </Button>
+      </Form>
       <Row className="mt-4">
         {data.map((item, index) => (
           <Col key={index} sm={6} md={4} lg={6} className="mb-4">
-            <RecipeAdmin recipe={item} onDeleteClick={removeRecipe} />
-            <Button variant="info" onClick={() => openEditModal(item._id)}>
-              Edit Recipe
-            </Button>
+            <div className="recipe-card-container">
+              {/* Add some padding or margin to create space */}
+              <RecipeAdmin recipe={item} />
+              <div className="d-flex justify-content-between mt-4">
+                <Button variant="info" onClick={() => openEditModal(item._id)}>
+                  Edit Recipe
+                </Button>
+                <Button variant="danger" onClick={() => removeRecipe(item._id)}>
+                  Remove Recipe
+                </Button>
+              </div>
+            </div>
           </Col>
         ))}
       </Row>
