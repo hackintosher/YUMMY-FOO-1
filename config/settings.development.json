@@ -13,7 +13,7 @@
       "filter": ["Italian", "Homemade"],
       "appliances": ["Oven", "Rolling pin"],
       "ingredients": ["Pizza dough", "Tomato sauce", "Cheese", "Pepperoni"],
-      "recipe": "1. Roll out the pizza dough...\n2. Spread tomato sauce...\n3. Add cheese and pepperoni...\n4. Bake in the oven...",
+      "recipe": "|1. Roll out the pizza dough|2. Spread tomato sauce|3. Add cheese and pepperoni|4. Bake in the oven",
       "owner": "john@foo.com"
     },
     {
@@ -24,7 +24,7 @@
       "filter": ["Vegetarian", "Greek"],
       "appliances": ["Knife", "Bowl"],
       "ingredients": ["Cucumbers", "Tomatoes", "Feta cheese", "Olives", "Olive oil"],
-      "recipe": "1. Dice cucumbers and tomatoes...\n2. Crumble feta cheese...\n3. Combine all ingredients in a bowl...\n4. Drizzle with olive oil...",
+      "recipe": "|1. Dice cucumbers and tomatoes|2. Crumble feta cheese|3. Combine all ingredients in a bowl|4. Drizzle with olive oil",
       "owner": "john@foo.com"
     },
     {
@@ -35,7 +35,7 @@
       "filter": ["Dessert", "Chocolate"],
       "appliances": ["Baking pan", "Mixing bowl"],
       "ingredients": ["Flour", "Cocoa powder", "Sugar", "Butter", "Eggs"],
-      "recipe": "1. Mix flour and cocoa powder...\n2. Cream butter and sugar...\n3. Beat in eggs...\n4. Bake in a preheated oven...",
+      "recipe": "|1. Mix flour and cocoa powder|2. Cream butter and sugar|3. Beat in eggs|4. Bake in a preheated oven",
       "owner": "john@foo.com"
     },
     {
@@ -46,7 +46,7 @@
       "filter": ["Vegetarian", "Italian"],
       "appliances": ["Knife", "Plate"],
       "ingredients": ["Tomatoes", "Fresh mozzarella", "Basil leaves", "Balsamic glaze", "Salt", "Pepper"],
-      "recipe": "1. Slice tomatoes and fresh mozzarella...\n2. Arrange slices on a plate...\n3. Tuck basil leaves between slices...\n4. Drizzle with balsamic glaze...",
+      "recipe": "|1. Slice tomatoes and fresh mozzarella|2. Arrange slices on a plate|3. Tuck basil leaves between slices|4. Drizzle with balsamic glaze",
       "owner": "john@foo.com"
     },
     {
@@ -57,7 +57,7 @@
       "filter": ["Asian", "Poultry"],
       "appliances": ["Wok", "Spatula"],
       "ingredients": ["Chicken breast", "Broccoli", "Bell peppers", "Soy sauce", "Ginger", "Garlic", "Sesame oil"],
-      "recipe": "1. Cut chicken into bite-sized pieces...\n2. Stir-fry chicken in sesame oil...\n3. Add broccoli and bell peppers...\n4. Mix in soy sauce, ginger, and garlic...",
+      "recipe": "|1. Cut chicken into bite-sized pieces|2. Stir-fry chicken in sesame oil|3. Add broccoli and bell peppers|4. Mix in soy sauce, ginger, and garlic",
       "owner": "john@foo.com"
     },
     {
@@ -68,7 +68,7 @@
       "filter": ["Vegetarian", "Healthy"],
       "appliances": ["Saucepan", "Bowl"],
       "ingredients": ["Quinoa", "Avocado", "Cherry tomatoes", "Cucumber", "Red onion", "Lemon", "Olive oil", "Salt", "Pepper"],
-      "recipe": "1. Cook quinoa according to package instructions...\n2. Dice avocado, cherry tomatoes, cucumber, and red onion...\n3. Combine cooked quinoa and diced vegetables...\n4. Squeeze lemon juice, drizzle olive oil, and season with salt and pepper...",
+      "recipe": "|1. Cook quinoa according to package instructions|2. Dice avocado, cherry tomatoes, cucumber, and red onion|3. Combine cooked quinoa and diced vegetables|4. Squeeze lemon juice, drizzle olive oil, and season with salt and pepper",
       "owner": "john@foo.com"
     },
     {
@@ -79,7 +79,7 @@
       "filter": ["Italian", "Homemade"],
       "appliances": ["Oven", "Rolling pin"],
       "ingredients": ["Pizza dough", "Tomato sauce", "Fresh mozzarella", "Basil leaves"],
-      "recipe": "1. Roll out the pizza dough...\n2. Spread tomato sauce...\n3. Arrange fresh mozzarella slices...\n4. Tuck basil leaves on top...\n5. Bake in the oven...",
+      "recipe": "|1. Roll out the pizza dough|2. Spread tomato sauce|3. Arrange fresh mozzarella slices|4. Tuck basil leaves on top|5. Bake in the oven",
       "owner": "john@foo.com"
     },
     {
@@ -90,7 +90,7 @@
       "filter": ["Indian", "Vegetarian"],
       "appliances": ["Pot", "Spatula"],
       "ingredients": ["Basmati rice", "Mixed vegetables", "Spices", "Ghee"],
-      "recipe": "1. Rinse and soak basmati rice...\n2. Sauté spices in ghee...\n3. Add mixed vegetables and rice...\n4. Cook until rice is tender...",
+      "recipe": "|1. Rinse and soak basmati rice|2. Sauté spices in ghee|3. Add mixed vegetables and rice|4. Cook until rice is tender",
       "owner": "john@foo.com"
     },
     {
@@ -101,7 +101,7 @@
       "filter": ["Seafood"],
       "appliances": ["Skillet", "Lemon squeezer"],
       "ingredients": ["Shrimp", "Garlic", "Lemon", "Butter", "Parsley"],
-      "recipe": "1. Sauté minced garlic in butter...\n2. Add shrimp and cook until pink...\n3. Squeeze lemon juice over shrimp...\n4. Garnish with chopped parsley...",
+      "recipe": "|1. Sauté minced garlic in butter|2. Add shrimp and cook until pink|3. Squeeze lemon juice over shrimp|4. Garnish with chopped parsley",
       "owner": "john@foo.com"
     },
     {
@@ -112,7 +112,7 @@
       "filter": ["Italian", "Pasta"],
       "appliances": ["Pot", "Pan"],
       "ingredients": ["Spaghetti", "Eggs", "Parmesan cheese", "Pancetta"],
-      "recipe": "1. Cook spaghetti according to package instructions...\n2. Beat eggs and mix with grated Parmesan...\n3. Sauté pancetta until crispy...\n4. Toss cooked pasta in egg mixture...",
+      "recipe": "|1. Cook spaghetti according to package instructions|2. Beat eggs and mix with grated Parmesan|3. Sauté pancetta until crispy|4. Toss cooked pasta in egg mixture",
       "owner": "john@foo.com"
     },
     {
@@ -123,7 +123,7 @@
       "filter": ["Mexican", "Vegetarian"],
       "appliances": ["Skillet", "Tongs"],
       "ingredients": ["Tortillas", "Black beans", "Corn", "Avocado", "Lettuce", "Salsa"],
-      "recipe": "1. Heat tortillas in a skillet...\n2. Fill with a mix of black beans, corn, and diced avocado...\n3. Top with lettuce and salsa...\n4. Serve warm...",
+      "recipe": "|1. Heat tortillas in a skillet|2. Fill with a mix of black beans, corn, and diced avocado|3. Top with lettuce and salsa|4. Serve warm",
       "owner": "john@foo.com"
     },
     {
@@ -134,7 +134,7 @@
       "filter": ["Asian", "Beef"],
       "appliances": ["Wok", "Spatula"],
       "ingredients": ["Beef strips", "Broccoli", "Carrots", "Soy sauce", "Sesame oil"],
-      "recipe": "1. Stir-fry beef strips in sesame oil...\n2. Add broccoli and carrots...\n3. Pour in soy sauce and toss until cooked...\n4. Serve hot...",
+      "recipe": "|1. Stir-fry beef strips in sesame oil|2. Add broccoli and carrots|3. Pour in soy sauce and toss until cooked|4. Serve hot",
       "owner": "john@foo.com"
     },
     {
@@ -145,7 +145,7 @@
       "filter": ["Dessert", "Healthy"],
       "appliances": ["Glass", "Spoon"],
       "ingredients": ["Greek yogurt", "Mixed berries", "Granola", "Honey"],
-      "recipe": "1. Layer Greek yogurt, mixed berries, and granola in a glass...\n2. Repeat layers until the glass is filled...\n3. Drizzle honey on top...\n4. Enjoy!",
+      "recipe": "|1. Layer Greek yogurt, mixed berries, and granola in a glass|2. Repeat layers until the glass is filled|3. Drizzle honey on top|4. Enjoy!",
       "owner": "john@foo.com"
     }
   ]

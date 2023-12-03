@@ -45,7 +45,15 @@ const Recipe = ({ recipe, onDeleteClick }) => (
       <Card.Text>Filter: {recipe.filter.join(', ')}</Card.Text>
       <Card.Text>Appliances: {recipe.appliances.join(', ')}</Card.Text>
       <Card.Text>Ingredients: {recipe.ingredients.join(', ')}</Card.Text>
-      <Card.Text>Recipe: {recipe.recipe}</Card.Text>
+      <Card.Text>
+        Recipe:
+        {recipe.recipe.split('|').map((line, index) => (
+          <span key={index}>
+            {index > 0 && <br />}
+            {line.trim()}
+          </span>
+        ))}
+      </Card.Text>
     </Card.Body>
   </Card>
 );
