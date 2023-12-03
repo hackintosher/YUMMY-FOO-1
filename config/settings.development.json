@@ -249,7 +249,7 @@
     },
     {
       "name": "Microwave Baked Potato",
-      "image": "TODO",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-57/microwaveBakedPotato2.jpg?raw=true",
       "time": "15 minutes",
       "cost": "$5",
       "filter": ["Vegetarian", "Microwavable"],
