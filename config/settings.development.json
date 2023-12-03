@@ -147,7 +147,118 @@
       "ingredients": ["Greek yogurt", "Mixed berries", "Granola", "Honey"],
       "recipe": "|1. Layer Greek yogurt, mixed berries, and granola in a glass|2. Repeat layers until the glass is filled|3. Drizzle honey on top|4. Enjoy!",
       "owner": "john@foo.com"
+    },
+    {
+      "name": "One Pan Pasta",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-57/onePanPasta.jpg?raw=true",
+      "time": "15-20 minutes",
+      "cost": "$9",
+      "filter": ["Lunch", "Dinner", "Pasta"],
+      "appliances": ["Stove", "Pot", "Pan"],
+      "ingredients": ["Pasta of choice", "Cherry Tomatoes", "Garlic", "Olive oil", "Salt", "Pepper", "Fresh basil"],
+      "recipe": "|1. Boil pasta according to package instructions.|2. In a pan, saute minced garlic in olive oil until fragrant.|3. Add halved cherry tomatoes, salt, and pepper. Cook until tomatoes soften|4. Mix in the cooked pasta. Add fresh basil if available.",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Stir-Fry Rice Bowl",
+      "image": "TODO",
+      "time": "20-25 minutes",
+      "cost": "$11",
+      "filter": ["Asian", "Vegetarian"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Cooked rice", "Mixed vegetables", "Protein of choice(tofu, chicken, shrimp, etc)", "Soy sauce", "Sesame oil", "Garlic powder"],
+      "recipe": "|1. Cook rice according to package instructions.|2. In a pan, stir-fry the protein and mixed vegetables with soy sauce, sesame oil, and garlic powder.|3. Mix in the cooked rice until well combined.",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Quesadillas",
+      "image": "TODO",
+      "time": "15 minutes",
+      "cost": "$7",
+      "filter": ["Mexican", "Lunch", "Vegetarian"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Flour tortillas", "Shredded cheese", "Cooked chicken or beans", "Salsa"],
+      "recipe": "|1. Place a tortilla in a pan over medium heat.|2. Sprinkle shredded cheese on one half of the tortilla.|3. Add cooked chicken or beans on top of the cheese.|4. Fold the tortilla in half and press down. Cook until the cheese melts.|5. Serve with salsa if desired.",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Microwave Mug Omelette",
+      "image": "TODO",
+      "time": "5 minutes",
+      "cost": "$4",
+      "filter": ["Microwavable", "Breakfast"],
+      "appliances": ["Microwave", "Microwave-safe Mug"],
+      "ingredients": ["Eggs", "Milk", "Cheese", "Diced vegetables(bell peppers, onions, spinach", "Salt and pepper"],
+      "recipe": "|1. In a microwave-safe mug, whisk together eggs and a splash of milk.|2. Stir in diced vegetables, cheese, salt, and pepper.|3. Microwave in 30-second intervals, stirring between each, until the eggs are fully cooked.",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Peanut Butter Banana Wrap",
+      "image": "TODO",
+      "time": "5 minutes",
+      "cost": "$3",
+      "filter": ["Snack", "Vegetarian"],
+      "appliances": ["None needed!"],
+      "ingredients": ["Whole wheat tortilla", "Peanut butter", "Banana, sliced", "Honey"],
+      "recipe": "|1. Spread peanut butter on tortilla.|2. Place banana slices on one side of the tortilla.|3. Drizzle with honey if desired.|4. Fold the tortilla and enjoy!",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Vegetarian Chickpea Salad",
+      "image": "TODO",
+      "time": "10 minutes",
+      "cost": "$8",
+      "filter": ["Salad", "Vegetarian"],
+      "appliances": ["None needed!"],
+      "ingredients": ["Canned chickpeas, drained and rinsed", "Cherry tomatoes, halved", "Cucumber, diced", "Red onion, finely chopped", "Feta cheese, crumbled", "Olive oil", "Lemon juice", "Salt and pepper"],
+      "recipe": "|1. In a bowl, combine chickpeas, cherry tomatoes, cucumber, red onion, and feta cheese.|2. Drizzle with olive oil and lemon juice.|3. Season with salt and pepper.|4. Toss to combine",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Pesto Pasta with Cherry Tomatoes",
+      "image": "TODO",
+      "time": "15 minutes",
+      "cost": "$10",
+      "filter": ["Vegetarian", "Italian"],
+      "appliances": ["Stove", "Pot"],
+      "ingredients": ["Pasta of your choice", "Pesto sauce", "Cherry tomatoes, halved", "Parmesan cheese, grated"],
+      "recipe": "|1. Cook pasta according to package instructions.|2. Drain the pasta and mix in pesto sauce.|3. Add halved cherry tomatoes and grated Parmesan cheese.|4. Toss to combine",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Black Bean and Corn Quesadillas",
+      "image": "TODO",
+      "time": "15 minutes",
+      "cost": "$7",
+      "filter": ["Vegetarian", "Mexican"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Flour tortillas", "Canned black beans, drained and rinsed", "Frozen corn, thawed", "Shredded cheese", "Salsa"],
+      "recipe": "|1. In a pan, warm black beans and corn.|2. Place a tortilla in the pan, add beans, corn, and shredded cheese.|3. Top with another tortilla and cook until the cheese melts.|4. Serve with salsa.",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Caprese Sandwich",
+      "image": "TODO",
+      "time": "10 minutes",
+      "cost": "$7",
+      "filter": ["Vegetarian", "Lunch"],
+      "appliances": ["None needed!"],
+      "ingredients": ["Baguette or sandwich bread", "Fresh mozzarella, sliced", "Tomatoes, sliced", "Fresh basil leaves", "Balsamic glaze", "Salt and pepper"],
+      "recipe": "|1. Slice the baguette and layer with fresh mozzarella, tomatoes, and basil leaves.|2. Drizzle with balsamic glaze and season with salt and pepper.",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Microwave Baked Potato",
+      "image": "TODO",
+      "time": "15 minutes",
+      "cost": "$5",
+      "filter": ["Vegetarian", "Microwavable"],
+      "appliances": ["Microwave"],
+      "ingredients": ["Russet potatoes", "Olive oil", "Salt and pepper", "Toppings of your choice(sour cream, cheese, chives)"],
+      "recipe": "|1. Pierce the potatoes with a fork and rub with olive oil, salt, and pepper.|2. Microwave on high for 8-10 minutes or until tender.|3. Add your favorite toppings.",
+      "owner": "john@foo.com"
     }
+
   ]
 
 }
