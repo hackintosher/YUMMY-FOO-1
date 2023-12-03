@@ -55,6 +55,14 @@ class RecipesCollection {
         type: String,
         optional: true,
       },
+      dietary: {
+        type: Array,
+        optional: true,
+      },
+      'dietary.$': {
+        type: String,
+        allowedValues: ['Dairy-Free', 'Vegan', 'Gluten-Free', 'Vegetarian'],
+      },
       owner: {
         type: String,
         label: 'Owner',

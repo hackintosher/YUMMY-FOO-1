@@ -60,6 +60,7 @@ Recipe.propTypes = {
     image: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
     cost: PropTypes.string.isRequired,
+    dietary: PropTypes.arrayOf(PropTypes.oneOf(['Dairy-Free', 'Vegan', 'Gluten-Free', 'Vegetarian'])),
     filter: PropTypes.arrayOf(PropTypes.string).isRequired,
     appliances: PropTypes.arrayOf(PropTypes.string).isRequired,
     ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
