@@ -113,10 +113,10 @@ const ListRecipeAdmin = () => {
               {/* Add some padding or margin to create space */}
               <RecipeAdmin recipe={item} />
               <div className="d-flex justify-content-between mt-4">
-                <Button variant="info" onClick={() => openEditModal(item._id)}>
+                <Button variant="info" id="admin-edit-button" onClick={() => openEditModal(item._id)}>
                   Edit Recipe
                 </Button>
-                <Button variant="danger" onClick={() => removeRecipe(item._id)}>
+                <Button variant="danger" id="admin-remove-button" onClick={() => removeRecipe(item._id)}>
                   Remove Recipe
                 </Button>
               </div>

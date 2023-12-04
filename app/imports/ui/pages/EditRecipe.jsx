@@ -31,7 +31,7 @@ const EditRecipe = ({ recipe, onClose }) => {
       <Row className="justify-content-center">
         <Col>
           <Col className="text-center"><h2 className="text-white">Edit Recipe</h2></Col>
-          <AutoForm schema={bridge} onSubmit={submit} model={formData} />
+          <AutoForm id="admin-submit-button" schema={bridge} onSubmit={submit} model={formData} />
         </Col>
       </Row>
     </Container>

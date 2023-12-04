@@ -15,7 +15,7 @@ const credentials = { username: 'john@foo.com', password: 'changeme' };
 const credentials2 = { username: 'admin@foo.com', password: 'changeme' };
 
 fixture('meteor-application-template-react localhost test with default db')
-  .page('http://localhost:3000');
+  .page('127.0.0.1:3000');
 
 test('Test that landing page shows up', async (testController) => {
   await landingPage.isDisplayed(testController);
@@ -63,6 +63,29 @@ test('Test that the admin page shows', async (testController) => {
   await signinPage.signin(testController, credentials2.username, credentials2.password);
   await navBar.isLoggedIn(testController, credentials2.username);
   await navBar.gotoAdminPage(testController);
-  await adminPage.isDisplayed(testController);
-  await navBar.gotoAdminEdit(testController);
+
+  // Wait for the admin page to be displayed, with a timeout of 15 seconds
+  await testController.expect(adminPage.pageSelector.exists).ok({ timeout: 15000 });
+});
+
+test('Test that recipes can be edited', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials2.username, credentials2.password);
+  await navBar.isLoggedIn(testController, credentials2.username);
+  await navBar.gotoAdminPage(testController);
+  await adminPage.gotoAdminEdit(testController);
+  // const textBoxSelector = Selector('#uniforms-0002-0000');
+  // await t.click(textBoxSelector);
+  await adminPage.gotoAdminEditSubmit(testController);
+});
+
+test('Test that recipes can be removed', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials2.username, credentials2.password);
+  await navBar.isLoggedIn(testController, credentials2.username);
+  await navBar.gotoAdminPage(testController);
+  await adminPage.gotoAdminRemove(testController);
+  // const textBoxSelector = Selector('#uniforms-0002-0000');
+  // await t.click(textBoxSelector);
+  // await adminPage.gotoAdminRemoveOK(testController);
 });

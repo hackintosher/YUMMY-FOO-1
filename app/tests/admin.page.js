@@ -11,6 +11,22 @@ class AdminPage {
   async isDisplayed(testController) {
     await testController.expect(this.pageSelector.exists).ok();
   }
+
+  async gotoAdminEdit(testController) {
+    await testController.click('#admin-edit-button');
+  }
+
+  async gotoAdminEditSubmit(testController) {
+    await testController.click('#admin-submit-button');
+  }
+
+  async gotoAdminRemove(testController) {
+    await testController.click('#admin-remove-button');
+  }
+
+  async gotoAdminRemoveOK(testController) {
+    await testController.click('#admin-remove-ok');
+  }
 }
 
 export const adminPage = new AdminPage();
