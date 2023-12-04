@@ -5,9 +5,10 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Recipe from '../components/Recipe';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { Recipes } from '../../api/recipes/Recipes';
+import { FavRecipes } from '../../api/recipes/FavRecipes';
+import Recipe from '../components/Recipe';
+// import FavRecipe from '../components/FavRecipe';
 
 // eslint-disable-next-line react/prop-types
 const UserHome = () => {
@@ -16,11 +17,11 @@ const UserHome = () => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Stuff documents.
-    const subscription = Meteor.subscribe(Recipes.userPublicationName);
+    const subscription = Meteor.subscribe(FavRecipes.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the ContactAdmin documents
-    const recipeItems = Recipes.collection.find({}).fetch();
+    const recipeItems = FavRecipes.collection.find({}).fetch();
     return {
       recipeInfo: recipeItems,
       ready: rdy,

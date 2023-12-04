@@ -10,10 +10,10 @@ import { Link } from 'react-router-dom';
 import { FavRecipes } from '../../api/recipes/FavRecipes';
 
 const Recipe = ({ recipe }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(true);
 
   const handleFavoriteToggle = () => {
-    const existingFavorite = FavRecipes.collection.findOne({ _id: recipe._id, owner: Meteor.user().username });
+    const existingFavorite = FavRecipes.collection.findOne({ _id: recipe._id });
 
     if (existingFavorite) {
       // Recipe is already favorited, remove it from FavRecipes
