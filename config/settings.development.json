@@ -266,11 +266,117 @@
       "filter": ["Breakfast", "Healthy"],
       "appliances": ["Stove"],
       "ingredients": ["Bananas", "Oats", "Eggs", "Salt"],
-      "recipe": "1. Mash banana\n2. Whisk in eggs, salt, and oats\n3. Cook for about two minutes\n4. Enjoy!",
+      "recipe": "1. Mash banana\n2. Whisk in eggs, salt, and oats\n3. Cook for about two minutes",
       "owner": "john@foo.com",
       "dietary": ["Vegetarian", "Gluten-Free", "Dairy-Free"]
+    },
+    {
+      "name": "Chicken Pesto Pizza",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/chickenPestoPizza.webp?raw=true",
+      "time": "20 minutes",
+      "cost": "$10",
+      "filter": ["Family-sharing"],
+      "appliances": ["Oven"],
+      "ingredients": ["Pesto basil sauce", "Pre-baked pizza crust", "Chicken breast", "Artichoke", "Fontina cheese"],
+      "recipe": "1. Preheat the oven to 450 degrees F \n2. Spread pesto sauce over the pizza crust. Arrange chicken pieces and artichoke hearts over the sauce, and sprinkle with cheese.\n3. Bake for 8 to 10 minutes in the preheated oven, until cheese is melted and lightly browned at the edges.",
+      "owner": "john@foo.com",
+      "dietary": ["Dairy-Free"]
+    },
+    {
+      "name": "Spicy Ramen Noodles",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/spicyRamenNoods.webp?raw=true",
+      "time": "15 minutes",
+      "cost": "$4",
+      "filter": ["Quick"],
+      "appliances": ["Stove"],
+      "ingredients": ["Shoyu", "Sesame oil", "vinegar", "Salt", "Ramen noodles", "Green onions"],
+      "recipe": "1. Whisk soy sauce, sesame oil, brown sugar, rice vinegar, chili garlic sauce, and ginger together in a small bowl. Add peanut butter, whisking until well combined, and set aside.\n2. Bring 4 cups of water to a boil in a pot. Discard the flavor packet and add ramen noodles to the boiling water. Cook until noodles are tender, 4 to 5 minutes. Drain noodles, reserving some of the noodle water in case you need to thin out the sauce later.\n3. Pour sauce over ramen noodles, tossing until well coated. If sauce is too thick, thin out with a small amount of the reserved noodle water until you reach your desired consistency. Your hot noodles will soak up the sauce. Garnish with peanuts and green onion, and serve.",
+      "owner": "john@foo.com",
+      "dietary": ["Vegetarian", "Dairy-Free"]
+    },
+    {
+      "name": "Pork Tenderloin Diablo",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/porkTenderloinDiablo.webp?raw=true",
+      "time": "30 minutes",
+      "cost": "$12",
+      "filter": ["Easy"],
+      "appliances": ["Oven", "Skillet"],
+      "ingredients": ["Pork tenderloin", "chicken broth", "Heavy cream", "Horseradish", "Dijon mustard", "Cayenne pepper"],
+      "recipe": "1. Preheat oven to 375 degrees F. Season pork with salt and pepper.\n2. Heat oil in an ovenproof skillet over high heat. Cook pork until browned on one side, 3 to 4 minutes. Turn over...\n3. Remove any excess oil from the skillet and place it over medium-high heat. Pour in chicken broth and bring to a boil...\n4. Slice pork into 1/2-inch slices and serve topped with sauce.",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Baked Denver Omelet",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/denverBakedOmelet.webp?raw=true",
+      "time": "45 minutes",
+      "cost": "$10",
+      "filter": ["Easy"],
+      "appliances": ["Oven"],
+      "ingredients": ["Butter", "Onion", "Bell pepper", "Ham", "Eggs", "Milk", "Cheese"],
+      "recipe": "1. Preheat oven to 400 degrees F\n2. Melt butter in a large skillet over medium heat; cook and stir onion...\n3. Beat eggs and milk in a large bowl. Stir in Cheddar cheese and... \n4. Bake in preheated oven until eggs are browned and puffy, about 25 minutes. Serve warm.",
+      "owner": "john@foo.com",
+      "dietary": ["Gluten-Free"]
+    },
+    {
+      "name": "Vegan Sweet Potato Chickpea Curry",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/chickpeaCurry.webp?raw=true",
+      "time": "30 minutes",
+      "cost": "$9",
+      "filter": ["Healthy"],
+      "appliances": ["Stove"],
+      "ingredients": ["Onion", "Garlic", "Chickpeas", "Tomatoes", "Coconut milk", "Spinach"],
+      "recipe": "1. Heat oil in a skillet over medium heat. Cook onion, garlic, and ginger in hot oil until softened, about 5 minutes. Add chickpeas, tomatoes, coconut milk, and sweet potato. Bring to a boil, reduce heat to low, and simmer until tender, about 15 minutes.\n2. Season with garam masala, cumin, turmeric, salt, and chile flakes. Add spinach right before serving.",
+      "owner": "john@foo.com",
+      "dietary": ["Vegan", "Gluten-Free"]
+    },
+    {
+      "name": "Soy Honey-Glazed Salmon with Asparagus",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/soyGlazedSalmon.webp?raw=true",
+      "time": "20 minutes",
+      "cost": "$8",
+      "filter": ["Easy", "Healthy"],
+      "appliances": ["Stove"],
+      "ingredients": ["Asparagus", "Shoyu", "Olive oil", "Honey", "Salmon","Salt"],
+      "recipe": "1. Place a steamer insert into a saucepan and fill with water to just below the bottom of the steamer. Bring water to a boil. Add asparagus, cover, and steam until slightly tender, 2 to 4 minutes.\n2. Meanwhile, whisk together soy sauce and honey in a small bowl until glaze is smooth.\n3. Set an oven rack about 6 inches from the heat source; preheat the oven broiler. Line a baking sheet with aluminum foil and brush with olive oil. \n4. Place salmon fillet and steamed asparagus on the prepared baking sheet; season with salt and pepper. \n5. Cook under the preheated broiler for 5 minutes. Drizzle 2/3 of the glaze over salmon and asparagus. Continue broiling until fish flakes easily with a fork, 3 to 5 minutes. Drizzle remaining glaze over salmon.",
+      "owner": "john@foo.com",
+      "dietary": ["Gluten-Free", "Dairy-Free"]
+    },
+    {
+      "name": "Bagels",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/bagel.jpeg?raw=true",
+      "time": "30 minutes",
+      "cost": "$5",
+      "filter": ["Breakfast", "Easy"],
+      "appliances": ["Oven", "Air fryer"],
+      "ingredients": ["Flour", "Baking powder", "Salt", "Greek yogurt", "Egg"],
+      "recipe": "1. Preheat oven to 375F\n2 combine the flour, baking powder and salt and whisk well. Add the yogurt and mix with a fork or spatula until well combined, it will look like small crumbles. \n3. Knead the dough a few times \n4.Divide into 4 equal balls \n5.Top with egg wash and sprinkle both sides with seasoning of your choice. Bake on the top rack of the oven for 25 minutes. Let cool at least 15 minutes before cutting",
+      "owner": "john@foo.com",
+      "dietary": ["Vegetarian"]
+    },
+    {
+      "name": "Crepes",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/crepe.jpeg?raw=true",
+      "time": "30 minutes",
+      "cost": "$5",
+      "filter": ["Breakfast", "Sweet"],
+      "appliances": ["Frying pan", "Griddle"],
+      "ingredients": ["Flour", "Milk", "Eggs", "Salt", "Water", "Butter"],
+      "recipe": "1. Whisk flour and eggs together in a large mixing bowl; gradually add in milk and water, stirring to combine. Add salt and melted butter; beat until smooth.\n2. Heat a lightly oiled griddle or frying pan over medium-high heat...\n3. Cook until the top of the crêpe is no longer wet and the bottom has turned light brown...",
+      "owner": "john@foo.com",
+      "dietary": ["Vegetarian"]
+    },
+    {
+      "name": "Avocado Toast",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/bananaOatPancakes.jpeg?raw=true",
+      "time": "5 minutes",
+      "cost": "$3",
+      "filter": ["Light", "Healthy"],
+      "appliances": ["Toaster"],
+      "ingredients": ["Gluten-Free Bread", "Avocado", "Salt"],
+      "recipe": "1. Toast your slice of bread until golden and firm.\n2. Remove the pit from your avocado. Use a big spoon to scoop out the flesh. Put it in a bowl and mash it up with a fork until it’s as smooth as you like it. Mix in a pinch of salt (about 1/8 teaspoon) and add more to taste, if desired.\n3. Spread avocado on top of your toast. Enjoy as-is or top with any extras offered in this post (I highly recommend a light sprinkle of flaky sea salt, if you have it).",
+      "owner": "john@foo.com",
+      "dietary": ["Vegan", "Gluten-Free", "Dairy-Free"]
     }
-
   ]
 
 }
