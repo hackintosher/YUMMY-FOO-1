@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { FavRecipes } from '../../api/recipes/FavRecipes';
 import Recipe from '../components/Recipe';
-// import FavRecipe from '../components/FavRecipe';
 
 // eslint-disable-next-line react/prop-types
 const UserHome = () => {

@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import React from 'react';
 import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import swal from 'sweetalert';
 import { Card, Col, Row } from 'react-bootstrap';
@@ -8,26 +10,29 @@ import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 import { FavRecipes } from '../../api/recipes/FavRecipes';
+import LoadingSpinner from './LoadingSpinner';
 
 const Recipe = ({ recipe }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const { ready, recipeInfo } = useTracker(() => {
+    const subscription = Meteor.subscribe(FavRecipes.userPublicationName);
+    const rdy = subscription.ready();
+    const recipeItems = FavRecipes.collection.find({ owner: Meteor.user().username }).fetch();
+    return {
+      recipeInfo: recipeItems,
+      ready: rdy,
+    };
+  }, []);
+
+  const isFavorite = recipeInfo.some(item => item._id === recipe._id);
 
   const handleFavoriteToggle = () => {
-    const existingFavorite = FavRecipes.collection.findOne({ _id: recipe._id, owner: Meteor.user().username });
-
-    if (existingFavorite) {
+    if (isFavorite) {
       // Recipe is already favorited, remove it from FavRecipes
-      FavRecipes.collection.remove({ _id: existingFavorite._id, owner: Meteor.user().username }, (error) => {
+      const existingFavorite = recipeInfo.find(item => item._id === recipe._id);
+      FavRecipes.collection.remove({ _id: existingFavorite._id }, (error) => {
         if (error) {
           swal('Error', error.message, 'error');
-          // Revert local state on error
-          setIsFavorite(true);
-          localStorage.setItem(`isFavorite_${recipe._id}`, JSON.stringify(true));
         } else {
-          // Update localStorage
-          localStorage.setItem(`isFavorite_${recipe._id}`, JSON.stringify(false));
-          // Update button state
-          setIsFavorite(false);
           swal('Success', 'Item removed from favorites', 'success');
         }
       });
@@ -49,14 +54,7 @@ const Recipe = ({ recipe }) => {
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');
-            // Revert local state on error
-            setIsFavorite(false);
-            localStorage.setItem(`isFavorite_${recipe._id}`, JSON.stringify(false));
           } else {
-            // Update localStorage
-            localStorage.setItem(`isFavorite_${recipe._id}`, JSON.stringify(true));
-            // Update button state
-            setIsFavorite(true);
             swal('Success', 'Item added successfully to favorites', 'success');
           }
         },
@@ -64,7 +62,7 @@ const Recipe = ({ recipe }) => {
     }
   };
 
-  return (
+  return (ready ? (
     <Card className="h-100 grow-on-hover" style={{ boxShadow: '0 12px 24px rgba(0, 0, 0, 0.2)', border: 'none', borderRadius: '15px', borderBottomRadius: '0px', overflow: 'hidden', position: 'relative' }}>
       <Card.Header style={{ height: '250px', overflow: 'hidden', position: 'relative' }}>
         <Link to={`/examplerecipe/${recipe._id}`}>
@@ -139,7 +137,7 @@ const Recipe = ({ recipe }) => {
         </Card.Text>
       </Card.Body>
     </Card>
-  );
+  ) : <LoadingSpinner />);
 };
 
 Recipe.propTypes = {
