@@ -386,7 +386,7 @@
       "appliances": ["Microwave", "Microwave-safe Bowl"],
       "ingredients": ["Macaroni", "Cheddar cheese", "Milk", "Butter", "Salt"],
       "recipe": "|1. Cook macaroni in the microwave according to package instructions.|2. In a microwave-safe bowl, mix shredded cheddar, milk, and butter.|3. Microwave in 30-second intervals, stirring between each, until the cheese is melted and creamy.|4. Add salt to taste and enjoy!",
-      "owner": "student@example.com"
+      "owner": "john@foo.com"
     },
     {
       "name": "Vegetarian Ramen Bowl",
@@ -397,7 +397,7 @@
       "appliances": ["Stove", "Pot"],
       "ingredients": ["Ramen noodles", "Vegetable broth", "Tofu", "Vegetables (carrots, broccoli, mushrooms)", "Soy sauce", "Sesame oil"],
       "recipe": "|1. Cook ramen noodles according to package instructions.|2. In a pot, heat vegetable broth and add chopped tofu and vegetables.|3. Season with soy sauce and a drizzle of sesame oil.|4. Combine cooked noodles with the broth and vegetables. Serve hot.",
-      "owner": "student@example.com"
+      "owner": "john@foo.com"
     },
     {
       "name": "BBQ Chicken Quesadillas",
@@ -408,7 +408,7 @@
       "appliances": ["Stove", "Pan"],
       "ingredients": ["Flour tortillas", "Cooked chicken (shredded)", "BBQ sauce", "Cheddar cheese", "Red onion (sliced)"],
       "recipe": "|1. Place a tortilla in a pan over medium heat.|2. Spread shredded chicken on one half of the tortilla.|3. Drizzle BBQ sauce over the chicken, add sliced red onion, and sprinkle with cheddar cheese.|4. Fold the tortilla in half and cook until the cheese melts. Serve with extra BBQ sauce if desired.",
-      "owner": "student@example.com"
+      "owner": "john@foo.com"
     },
     {
       "name": "Caprese Wrap",
@@ -419,7 +419,7 @@
       "appliances": ["None needed!"],
       "ingredients": ["Whole wheat wrap", "Tomatoes", "Fresh mozzarella", "Basil leaves", "Balsamic glaze"],
       "recipe": "|1. Lay out the whole wheat wrap.|2. Layer slices of tomatoes, fresh mozzarella, and basil leaves on the wrap.|3. Drizzle with balsamic glaze.|4. Roll up the wrap and enjoy!",
-      "owner": "student@example.com"
+      "owner": "john@foo.com"
     },
     {
       "name": "Egg Fried Rice",
@@ -430,7 +430,7 @@
       "appliances": ["Stove", "Pan"],
       "ingredients": ["Cooked rice", "Eggs", "Frozen peas and carrots", "Soy sauce", "Sesame oil"],
       "recipe": "|1. Heat sesame oil in a pan and add frozen peas and carrots.|2. Push the vegetables to one side and pour beaten eggs on the other side.|3. Scramble the eggs and mix with the vegetables.|4. Add cooked rice and soy sauce, stir-frying until well combined. Serve hot.",
-      "owner": "student@example.com"
+      "owner": "john@foo.com"
     },
     {
       "name": "Mediterranean Chickpea Salad",
@@ -441,7 +441,7 @@
       "appliances": ["Bowl"],
       "ingredients": ["Canned chickpeas (drained and rinsed)", "Cherry tomatoes", "Cucumber", "Red onion", "Feta cheese", "Olive oil", "Lemon juice", "Salt", "Pepper"],
       "recipe": "|1. In a bowl, combine chickpeas, cherry tomatoes, cucumber, red onion, and crumbled feta cheese.|2. Drizzle with olive oil and lemon juice.|3. Season with salt and pepper. Toss to combine and enjoy!",
-      "owner": "student@example.com"
+      "owner": "john@foo.com"
     },
     {
       "name": "Peanut Butter Banana Smoothie",
@@ -452,7 +452,7 @@
       "appliances": ["Blender"],
       "ingredients": ["Banana", "Peanut butter", "Greek yogurt", "Milk", "Ice cubes"],
       "recipe": "|1. In a blender, combine banana, peanut butter, Greek yogurt, milk, and ice cubes.|2. Blend until smooth and creamy.|3. Pour into a glass and enjoy your peanut butter banana smoothie!",
-      "owner": "student@example.com"
+      "owner": "john@foo.com"
     },
     {
       "name": "Sheet Pan Chicken Fajitas",
@@ -463,7 +463,7 @@
       "appliances": ["Oven", "Sheet pan"],
       "ingredients": ["Chicken breast strips", "Bell peppers (sliced)", "Onions (sliced)", "Fajita seasoning", "Flour tortillas", "Salsa", "Sour cream"],
       "recipe": "|1. Preheat the oven and toss chicken, bell peppers, and onions with fajita seasoning on a sheet pan.|2. Bake until the chicken is cooked through and the vegetables are tender.|3. Warm the flour tortillas in the oven.|4. Serve the chicken and vegetables in tortillas with salsa and sour cream.",
-      "owner": "student@example.com"
+      "owner": "john@foo.com"
     },
     {
       "name": "One-Pot Spaghetti",
@@ -489,4 +489,8 @@
     }
   ]
 }
+
+
+
+
 
