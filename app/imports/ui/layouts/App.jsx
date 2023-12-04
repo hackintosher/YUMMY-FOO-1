@@ -25,7 +25,6 @@ import Search from '../pages/Search';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
-  const isLogged = Meteor.userId() !== null;
   const { ready } = useTracker(() => {
     const rdy = Roles.subscription.ready();
     return {
@@ -37,11 +36,7 @@ const App = () => {
       <div className="d-flex flex-column min-vh-100">
         <NavBar />
         <Routes>
-          {isLogged ? (
-            <Route path="/" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
-          ) : (
-            <Route path="/" element={<Landing />} />
-          )}
+          <Route path="/" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
           <Route exact path="/" element={<Landing />} />
           <Route exact path="/home" element={<Landing />} />
           <Route path="/signin" element={<SignIn />} />
