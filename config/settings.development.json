@@ -117,7 +117,7 @@
     },
     {
       "name": "Vegetarian Tacos",
-      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/vegetarianTacos.jpg?raw=true",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/vegetarianTacos.jpg?raw=true",
       "time": "25 minutes",
       "cost": "$10",
       "filter": ["Mexican", "Vegetarian"],
