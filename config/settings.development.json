@@ -257,6 +257,18 @@
       "ingredients": ["Russet potatoes", "Olive oil", "Salt and pepper", "Toppings of your choice(sour cream, cheese, chives)"],
       "recipe": "|1. Pierce the potatoes with a fork and rub with olive oil, salt, and pepper.|2. Microwave on high for 8-10 minutes or until tender.|3. Add your favorite toppings.",
       "owner": "john@foo.com"
+    },
+    {
+      "name": "Banana Oat Pancakes",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/bananaOatPancakes.jpeg?raw=true",
+      "time": "10 minutes",
+      "cost": "$3",
+      "filter": ["Breakfast", "Healthy"],
+      "appliances": ["Stove"],
+      "ingredients": ["Bananas", "Oats", "Eggs", "Salt"],
+      "recipe": "1. Mash banana\n2. Whisk in eggs, salt, and oats\n3. Cook for about two minutes\n4. Enjoy!",
+      "owner": "john@foo.com",
+      "dietary": ["Vegetarian", "Gluten-Free", "Dairy-Free"]
     }
 
   ]
