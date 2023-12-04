@@ -15,7 +15,7 @@ const credentials = { username: 'john@foo.com', password: 'changeme' };
 const credentials2 = { username: 'admin@foo.com', password: 'changeme' };
 
 fixture('meteor-application-template-react localhost test with default db')
-  .page('127.0.0.1:3000');
+  .page('localhost:3000');
 
 test('Test that landing page shows up', async (testController) => {
   await landingPage.isDisplayed(testController);
@@ -58,6 +58,16 @@ test('Test that the search page shows', async (testController) => {
   await searchPage.isDisplayed(testController);
 });
 
+test('Test that recipes can be searched for', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoSearchPage(testController);
+  await searchPage.typeInSearch(testController, 'Lemon Garlic Shrimp');
+  await testController.wait(1000);
+  await searchPage.assertRecipeName(testController, 'Lemon Garlic Shrimp');
+});
+
 test('Test that the admin page shows', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials2.username, credentials2.password);
@@ -73,10 +83,14 @@ test('Test that recipes can be edited', async (testController) => {
   await signinPage.signin(testController, credentials2.username, credentials2.password);
   await navBar.isLoggedIn(testController, credentials2.username);
   await navBar.gotoAdminPage(testController);
+  await adminPage.typeInSearch(testController, 'Crepes');
   await adminPage.gotoAdminEdit(testController);
+  await adminPage.editIsDisplayed(testController);
+  await adminPage.editRecipeName(testController, ' Test');
   // const textBoxSelector = Selector('#uniforms-0002-0000');
   // await t.click(textBoxSelector);
   await adminPage.gotoAdminEditSubmit(testController);
+  await adminPage.assertRecipeName(testController, 'Crepes Test');
 });
 
 test('Test that recipes can be removed', async (testController) => {
@@ -88,4 +102,20 @@ test('Test that recipes can be removed', async (testController) => {
   // const textBoxSelector = Selector('#uniforms-0002-0000');
   // await t.click(textBoxSelector);
   // await adminPage.gotoAdminRemoveOK(testController);
+});
+
+// admin.test.js
+
+test('Test that recipes can be searched for', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials2.username, credentials2.password);
+  await navBar.isLoggedIn(testController, credentials2.username);
+  await navBar.gotoAdminPage(testController);
+  await adminPage.typeInSearch(testController, 'Bagels');
+
+  // Make sure to wait for any asynchronous updates to the page
+  await testController.wait(1000);
+
+  // Assert that the correct recipe card is displayed
+  await adminPage.assertRecipeName(testController, 'Bagels');
 });

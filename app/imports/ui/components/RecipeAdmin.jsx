@@ -28,7 +28,7 @@ const RecipeAdmin = ({ recipe }) => (
       <Row>
         <Col>
           <Link to={`/examplerecipe/${recipe._id}`}>
-            <Card.Title style={{ fontSize: 'xx-large', marginBottom: '10px' }}>
+            <Card.Title id="admin-recipe-name" style={{ fontSize: 'xx-large', marginBottom: '10px' }}>
               {recipe.name}
             </Card.Title>
           </Link>

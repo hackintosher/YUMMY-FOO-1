@@ -13,23 +13,6 @@ const Recipe = ({ recipe }) => {
   const handleFavoriteToggle = () => {
     setIsFavorite(!isFavorite);
   };
-
-  // On submit, insert the data.
-  //  const handleFavoriteToggle = (recipe, formRef) => {
-  //    const { _id, name, image, time, cost, filter, appliances, ingredients, recipe } = data;
-  //   const owner = Meteor.user().username;
-  //     { name, quantity, condition, owner },
-  //     (error) => {
-  //       if (error) {
-  //         swal('Error', error.message, 'error');
-  //       } else {
-  //         swal('Success', 'Item added successfully', 'success');
-  //         formRef.reset();
-  //       }
-  //     },
-  //   );
-  // };
-
   return (
     <Card className="h-100 grow-on-hover" style={{ boxShadow: '0 12px 24px rgba(0, 0, 0, 0.2)', border: 'none', borderRadius: '15px', borderBottomRadius: '0px', overflow: 'hidden', position: 'relative' }}>
       <Card.Header style={{ height: '250px', overflow: 'hidden', position: 'relative' }}>
@@ -55,7 +38,7 @@ const Recipe = ({ recipe }) => {
         <Row>
           <Col>
             <Link to={`/examplerecipe/${recipe._id}`}>
-              <Card.Title style={{ fontSize: 'xx-large', marginBottom: '10px' }}>
+              <Card.Title id="recipe-name" style={{ fontSize: 'xx-large', marginBottom: '10px' }}>
                 {recipe.name}
               </Card.Title>
             </Link>

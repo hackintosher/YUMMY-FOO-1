@@ -93,6 +93,7 @@ const ListRecipeAdmin = () => {
             <Form.Group>
               <h1 className="text-center">List Recipe Admin</h1>
               <Form.Control
+                id="admin-searchbar"
                 type="text"
                 name="search"
                 placeholder="Search"

@@ -67,6 +67,7 @@ const Search = () => {
             <Form.Group>
               <h1 className="text-center py-4">Search Page</h1>
               <Form.Control
+                id="searchbar"
                 type="text"
                 name="search"
                 placeholder="Search"

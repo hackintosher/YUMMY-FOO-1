@@ -72,8 +72,6 @@ class NavBar {
   async gotoAdminPage(testController) {
     await testController.click('#list-stuff-admin-nav');
   }
-
-
 }
 
 export const navBar = new NavBar();
