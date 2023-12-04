@@ -18,6 +18,7 @@ fixture('meteor-application-template-react localhost test with default db')
   .page('localhost:3000');
 
 test('Test that landing page shows up', async (testController) => {
+  await navBar.gotoLandingPage(testController);
   await landingPage.isDisplayed(testController);
 });
 
