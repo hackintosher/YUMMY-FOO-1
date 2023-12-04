@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -15,6 +15,7 @@ const formSchema = new SimpleSchema({
   cost: String,
   ingredients: String,
   appliances: String,
+  filter: { type: String, optional: true },
   dietary: {
     type: Array,
     optional: true,
@@ -34,18 +35,29 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 
 const AddStuff = () => {
   const fRef = useRef();
+  const [checkedDietary, setCheckedDietary] = useState([]);
+
+  const handleCheckboxChange = (value) => {
+    if (checkedDietary.includes(value)) {
+      setCheckedDietary(checkedDietary.filter((option) => option !== value));
+    } else {
+      setCheckedDietary([...checkedDietary, value]);
+    }
+  };
   const submit = (data) => {
-    const { name, recipe, time, cost, ingredients, appliances, image, dietary } = data;
+    console.log('Form Data:', data);
+    const { name, recipe, time, cost, ingredients, appliances, image, filter } = data;
     const owner = Meteor.user().username;
     const imageFile = fRef?.current?.imageFile?.files[0]; // Assuming file input has a ref="imageFile"
     const imageId = imageFile ? RecipeImages.insert(imageFile) : null;
     Recipes.collection.insert(
-      { name, recipe, time, cost, ingredients, appliances, dietary, image, imageId, owner },
+      { name, recipe, time, cost, ingredients, appliances, dietary: checkedDietary, image, imageId, filter, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
           swal('Success', 'Item added successfully', 'success');
+          setCheckedDietary([]);
           fRef.reset();
         }
       },
@@ -63,6 +75,7 @@ const AddStuff = () => {
                   <Col><TextField name="name" label="Recipe Name" /></Col>
                   <Col><TextField name="time" label="Estimated Time" /></Col>
                   <Col><TextField name="cost" label="Estimated Cost" /></Col>
+                  <Col><TextField name="filter" label="Filter" /></Col>
                 </Row>
                 <LongTextField name="recipe" label="Recipe" />
                 <Row>
@@ -77,35 +90,19 @@ const AddStuff = () => {
                 <LongTextField label="" name="image" placeholder="URL of image" />
                 <Form>
                   <div key="default-checkbox" className="mb-3">
-                    Dietary Stuff
-                    <Form.Check
-                      type="checkbox"
-                      id="dairyFree"
-                      name="dietary"
-                      label="Dairy-Free"
-                      value="Dairy-Free"
-                    />
-                    <Form.Check
-                      type="checkbox"
-                      id="vegan"
-                      name="dietary"
-                      label="Vegan"
-                      value="Vegan"
-                    />
-                    <Form.Check
-                      type="checkbox"
-                      id="glutenFree"
-                      name="dietary"
-                      label="Gluten-Free"
-                      value="Gluten-Free"
-                    />
-                    <Form.Check
-                      type="checkbox"
-                      id="vegetarian"
-                      name="dietary"
-                      label="Vegetarian"
-                      value="Vegetarian"
-                    />
+                    Dietary Info
+                    {['Dairy-Free', 'Vegan', 'Gluten-Free', 'Vegetarian'].map((option) => (
+                      <Form.Check
+                        key={option}
+                        type="checkbox"
+                        id={option.toLowerCase().replace('-', '')}
+                        name="dietary"
+                        label={option}
+                        value={option}
+                        checked={checkedDietary.includes(option)}
+                        onChange={() => handleCheckboxChange(option)}
+                      />
+                    ))}
                   </div>
                 </Form>
                 <SubmitField value="Submit" className="text-center" />

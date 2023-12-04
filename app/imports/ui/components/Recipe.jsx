@@ -82,7 +82,27 @@ const Recipe = ({ recipe }) => {
         <Card.Text>Filter: {recipe.filter.join(', ')}</Card.Text>
         <Card.Text>Appliances: {recipe.appliances.join(', ')}</Card.Text>
         <Card.Text>Ingredients: {recipe.ingredients.join(', ')}</Card.Text>
-        <Card.Text>Recipe: {recipe.recipe}</Card.Text>
+        <Card.Text>
+          Recipe:
+          {recipe.recipe.split('|').map((line, index) => (
+            <span key={index}>
+              {index > 0 && <br />}
+              {line.trim()}
+            </span>
+          ))}
+        </Card.Text>
+        <Card.Text>
+          Dietary Info: {recipe.dietary && recipe.dietary.length > 0 ? (
+            recipe.dietary.map((option, index) => (
+              <span key={index}>
+                {index > 0 && ', '} {/* Add comma and space for options after the first one */}
+                {option}
+              </span>
+            ))
+          ) : (
+            <span>No dietary information</span>
+          )}
+        </Card.Text>
       </Card.Body>
     </Card>
   );
@@ -95,6 +115,7 @@ Recipe.propTypes = {
     image: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
     cost: PropTypes.string.isRequired,
+    dietary: PropTypes.arrayOf(PropTypes.oneOf(['Dairy-Free', 'Vegan', 'Gluten-Free', 'Vegetarian'])),
     filter: PropTypes.arrayOf(PropTypes.string).isRequired,
     appliances: PropTypes.arrayOf(PropTypes.string).isRequired,
     ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,

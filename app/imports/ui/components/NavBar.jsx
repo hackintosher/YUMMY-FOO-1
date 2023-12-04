@@ -61,6 +61,9 @@ const NavBar = () => {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <Nav className="justify-content-end p-1">
+        <div id="google_translate_element" />
+      </Nav>
     </Navbar>
   );
 };

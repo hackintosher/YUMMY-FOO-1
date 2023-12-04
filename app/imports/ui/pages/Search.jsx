@@ -65,7 +65,7 @@ const Search = () => {
         <Row>
           <Col>
             <Form.Group>
-              <h1 className="text-center">Search Page</h1>
+              <h1 className="text-center py-4">Search Page</h1>
               <Form.Control
                 type="text"
                 name="search"
