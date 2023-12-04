@@ -376,6 +376,116 @@
       "recipe": "|1. Toast your slice of bread until golden and firm.|2. Remove the pit from your avocado. Use a big spoon to scoop out the flesh. Put it in a bowl and mash it up with a fork until it’s as smooth as you like it. Mix in a pinch of salt (about 1/8 teaspoon) and add more to taste, if desired.|3. Spread avocado on top of your toast. Enjoy as-is or top with any extras offered in this post (I highly recommend a light sprinkle of flaky sea salt, if you have it).",
       "owner": "john@foo.com",
       "dietary": ["Vegan", "Gluten-Free", "Dairy-Free"]
+    },
+    {
+      "name": "Easy Microwave Mac and Cheese",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/mac_and_cheese.jpg?raw=true",
+      "time": "10 minutes",
+      "cost": "$5",
+      "filter": ["Quick", "Comfort Food"],
+      "appliances": ["Microwave", "Microwave-safe Bowl"],
+      "ingredients": ["Macaroni", "Cheddar cheese", "Milk", "Butter", "Salt"],
+      "recipe": "|1. Cook macaroni in the microwave according to package instructions.|2. In a microwave-safe bowl, mix shredded cheddar, milk, and butter.|3. Microwave in 30-second intervals, stirring between each, until the cheese is melted and creamy.|4. Add salt to taste and enjoy!",
+      "owner": "student@example.com"
+    },
+    {
+      "name": "Vegetarian Ramen Bowl",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/vegetarian_ramen.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$7",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Stove", "Pot"],
+      "ingredients": ["Ramen noodles", "Vegetable broth", "Tofu", "Vegetables (carrots, broccoli, mushrooms)", "Soy sauce", "Sesame oil"],
+      "recipe": "|1. Cook ramen noodles according to package instructions.|2. In a pot, heat vegetable broth and add chopped tofu and vegetables.|3. Season with soy sauce and a drizzle of sesame oil.|4. Combine cooked noodles with the broth and vegetables. Serve hot.",
+      "owner": "student@example.com"
+    },
+    {
+      "name": "BBQ Chicken Quesadillas",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/bbq_chicken_q.jpg?raw=true",
+      "time": "20 minutes",
+      "cost": "$8",
+      "filter": ["Mexican", "Chicken"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Flour tortillas", "Cooked chicken (shredded)", "BBQ sauce", "Cheddar cheese", "Red onion (sliced)"],
+      "recipe": "|1. Place a tortilla in a pan over medium heat.|2. Spread shredded chicken on one half of the tortilla.|3. Drizzle BBQ sauce over the chicken, add sliced red onion, and sprinkle with cheddar cheese.|4. Fold the tortilla in half and cook until the cheese melts. Serve with extra BBQ sauce if desired.",
+      "owner": "student@example.com"
+    },
+    {
+      "name": "Caprese Wrap",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/caprese_wrap.jpg?raw=true",
+      "time": "10 minutes",
+      "cost": "$6",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["None needed!"],
+      "ingredients": ["Whole wheat wrap", "Tomatoes", "Fresh mozzarella", "Basil leaves", "Balsamic glaze"],
+      "recipe": "|1. Lay out the whole wheat wrap.|2. Layer slices of tomatoes, fresh mozzarella, and basil leaves on the wrap.|3. Drizzle with balsamic glaze.|4. Roll up the wrap and enjoy!",
+      "owner": "student@example.com"
+    },
+    {
+      "name": "Egg Fried Rice",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/egg_friend_rice.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$5",
+      "filter": ["Asian", "Quick"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Cooked rice", "Eggs", "Frozen peas and carrots", "Soy sauce", "Sesame oil"],
+      "recipe": "|1. Heat sesame oil in a pan and add frozen peas and carrots.|2. Push the vegetables to one side and pour beaten eggs on the other side.|3. Scramble the eggs and mix with the vegetables.|4. Add cooked rice and soy sauce, stir-frying until well combined. Serve hot.",
+      "owner": "student@example.com"
+    },
+    {
+      "name": "Mediterranean Chickpea Salad",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/chickpea_salad.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$8",
+      "filter": ["Vegetarian", "Healthy"],
+      "appliances": ["Bowl"],
+      "ingredients": ["Canned chickpeas (drained and rinsed)", "Cherry tomatoes", "Cucumber", "Red onion", "Feta cheese", "Olive oil", "Lemon juice", "Salt", "Pepper"],
+      "recipe": "|1. In a bowl, combine chickpeas, cherry tomatoes, cucumber, red onion, and crumbled feta cheese.|2. Drizzle with olive oil and lemon juice.|3. Season with salt and pepper. Toss to combine and enjoy!",
+      "owner": "student@example.com"
+    },
+    {
+      "name": "Peanut Butter Banana Smoothie",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/pb_banana_smoothie.jpg?raw=true",
+      "time": "5 minutes",
+      "cost": "$4",
+      "filter": ["Quick", "Smoothie", "Healthy"],
+      "appliances": ["Blender"],
+      "ingredients": ["Banana", "Peanut butter", "Greek yogurt", "Milk", "Ice cubes"],
+      "recipe": "|1. In a blender, combine banana, peanut butter, Greek yogurt, milk, and ice cubes.|2. Blend until smooth and creamy.|3. Pour into a glass and enjoy your peanut butter banana smoothie!",
+      "owner": "student@example.com"
+    },
+    {
+      "name": "Sheet Pan Chicken Fajitas",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/sheetpan_chicken_fajitas.jpg?raw=true",
+      "time": "30 minutes",
+      "cost": "$10",
+      "filter": ["Mexican", "Chicken"],
+      "appliances": ["Oven", "Sheet pan"],
+      "ingredients": ["Chicken breast strips", "Bell peppers (sliced)", "Onions (sliced)", "Fajita seasoning", "Flour tortillas", "Salsa", "Sour cream"],
+      "recipe": "|1. Preheat the oven and toss chicken, bell peppers, and onions with fajita seasoning on a sheet pan.|2. Bake until the chicken is cooked through and the vegetables are tender.|3. Warm the flour tortillas in the oven.|4. Serve the chicken and vegetables in tortillas with salsa and sour cream.",
+      "owner": "student@example.com"
+    },
+    {
+      "name": "One-Pot Spaghetti",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/onePotSpaghetti.jpg?raw=true",
+      "time": "15-20 minutes",
+      "cost": "$10",
+      "filter": ["Lunch", "Dinner", "Pasta"],
+      "appliances": ["Stove", "Pot", "Pan"],
+      "ingredients": ["Spaghetti", "Olive oil", "Onion", "Garlic", "Tomato sauce", "Water", "Salt", "Pepper", "Fresh basil"],
+      "recipe": "|1. In a pot, heat olive oil over medium heat. Add chopped onions and garlic, sauté until softened.|2. Add spaghetti, tomato sauce, water, salt, and pepper to the pot. Break the spaghetti if needed to fit.|3. Bring to a boil, then reduce heat to a simmer. Cover and cook until the spaghetti is al dente, stirring occasionally.|4. Once cooked, top with fresh basil and serve hot.",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "Mango Salsa Chicken",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/mangoSalsaChicken.jpg?raw=true",
+      "time": "30 minutes",
+      "cost": "$15",
+      "filter": ["Dinner", "Chicken", "Fruity"],
+      "appliances": ["Oven", "Pan"],
+      "ingredients": ["Chicken breasts", "Salt", "Black pepper", "Olive oil", "Red onion", "Mango", "Tomato", "Cilantro", "Lime juice"],
+      "recipe": "|1. Preheat the oven to 375°F.|2. Season chicken breasts with salt and black pepper.|3. In an oven-safe pan, heat olive oil over medium-high heat. Sear the chicken until golden brown on both sides.|4. Transfer the pan to the oven and bake for about 20 minutes or until the chicken is cooked through.|5. While the chicken is baking, prepare the mango salsa. Combine diced red onion, mango, tomato, cilantro, and lime juice in a bowl.|6. Once the chicken is done, spoon the mango salsa over the top and serve.",
+      "owner": "john@foo.com"
     }
   ]
 }
