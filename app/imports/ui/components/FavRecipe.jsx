@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
-import { useTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import swal from 'sweetalert';
 import { Card, Col, Row } from 'react-bootstrap';
@@ -8,64 +7,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
-import { Recipes } from '../../api/recipes/Recipes';
-import LoadingSpinner from './LoadingSpinner';
+import { FavRecipes } from '../../api/recipes/FavRecipes';
 
 const Recipe = ({ recipe }) => {
-  const { ready, recipeInfo } = useTracker(() => {
-    const subscription = Meteor.subscribe(Recipes.userPublicationName);
-    const rdy = subscription.ready();
-    const recipeItems = Recipes.collection.find({ owner: Meteor.user().username }).fetch();
-    return {
-      recipeInfo: recipeItems,
-      ready: rdy,
-    };
-  }, []);
-
-  const isFavorite = recipeInfo.some(item => item._id === recipe._id);
-
-  const [userEmail, setUserEmail] = useState(null);
-
-  useEffect(() => {
-    // Ensure the user is logged in before accessing the email
-    if (Meteor.user()) {
-      setUserEmail(Meteor.user().emails[0].address);
-    }
-  }, []);
+  const [isFavorite, setIsFavorite] = useState(true);
 
   const handleFavoriteToggle = () => {
-    if (isFavorite) {
-      // Recipe is already favorited, remove the current user from the owner array
-      const existingFavorite = recipeInfo.find(item => item._id === recipe._id);
-      const newOwner = existingFavorite.owner.filter(owner => owner !== userEmail);
-      console.log(newOwner);
-      Recipes.collection.update(
-        { _id: existingFavorite._id },
-        { $set: { owner: newOwner } },
-        (error) => {
-          if (error) {
-            console.error('Update Error:', error);
-            swal('Error', error.message, 'error');
-          } else {
-            console.log('Item updated successfully');
-            swal('Success', 'Item removed from favorites', 'success');
-          }
-        },
-      );
-    } else {
+    const currentUsername = Meteor.user().username;
+    const existingFavorite = FavRecipes.collection.findOne({ _id: recipe._id });
 
-      const existingFavorite = Recipes.collection.findOne({ _id: recipe._id });
-      let newOwner = recipe.owner;
-      if (existingFavorite && Array.isArray(recipe.owner)) {
-        newOwner.push(userEmail);
-      } else {
-        newOwner = [userEmail];
-      }
-      console.log(recipe.owner);
-      console.log(newOwner);
-      Recipes.collection.update(
+    if (existingFavorite) {
+      // Recipe is already favorited, update it to add the current user to the owner array
+      FavRecipes.collection.update(
         { _id: recipe._id },
-        { $set: { owner: newOwner } },
+        {
+          $addToSet: { owner: 'admin@foo.com' },
+        },
         (error) => {
           if (error) {
             console.error('Update Error:', error);
@@ -76,8 +33,9 @@ const Recipe = ({ recipe }) => {
           }
         },
       );
+    } else {
       // Recipe is not favorited, add it to FavRecipes
-      Recipes.collection.insert(
+      FavRecipes.collection.insert(
         {
           _id: recipe._id,
           name: recipe.name,
@@ -88,12 +46,18 @@ const Recipe = ({ recipe }) => {
           appliances: recipe.appliances,
           ingredients: recipe.ingredients,
           recipe: recipe.recipe,
-          owner: Meteor.user().username,
+          owner: [currentUsername],
         },
         (error) => {
           if (error) {
+            console.error('Insert Error:', error);
             swal('Error', error.message, 'error');
           } else {
+            console.log('Item added successfully');
+            // Update localStorage
+            localStorage.setItem(`isFavorite_${recipe._id}`, JSON.stringify(true));
+            // Update button state
+            setIsFavorite(true);
             swal('Success', 'Item added successfully to favorites', 'success');
           }
         },
@@ -101,7 +65,7 @@ const Recipe = ({ recipe }) => {
     }
   };
 
-  return (ready ? (
+  return (
     <Card className="h-100 grow-on-hover" style={{ boxShadow: '0 12px 24px rgba(0, 0, 0, 0.2)', border: 'none', borderRadius: '15px', borderBottomRadius: '0px', overflow: 'hidden', position: 'relative' }}>
       <Card.Header style={{ height: '250px', overflow: 'hidden', position: 'relative' }}>
         <Link to={`/examplerecipe/${recipe._id}`}>
@@ -126,7 +90,7 @@ const Recipe = ({ recipe }) => {
         <Row>
           <Col>
             <Link to={`/examplerecipe/${recipe._id}`}>
-              <Card.Title id="recipe-name" style={{ fontSize: 'xx-large', marginBottom: '10px' }}>
+              <Card.Title style={{ fontSize: 'xx-large', marginBottom: '10px' }}>
                 {recipe.name}
               </Card.Title>
             </Link>
@@ -176,7 +140,7 @@ const Recipe = ({ recipe }) => {
         </Card.Text>
       </Card.Body>
     </Card>
-  ) : <LoadingSpinner />);
+  );
 };
 
 Recipe.propTypes = {
@@ -186,12 +150,11 @@ Recipe.propTypes = {
     image: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
     cost: PropTypes.string.isRequired,
-    recipe: PropTypes.string.isRequired,
     dietary: PropTypes.arrayOf(PropTypes.oneOf(['Dairy-Free', 'Vegan', 'Gluten-Free', 'Vegetarian'])),
     filter: PropTypes.arrayOf(PropTypes.string).isRequired,
     appliances: PropTypes.arrayOf(PropTypes.string).isRequired,
     ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
-    owner: PropTypes.arrayOf(PropTypes.string).isRequired,
+    recipe: PropTypes.string.isRequired,
   }).isRequired,
 };
 

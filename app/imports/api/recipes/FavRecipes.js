@@ -1,9 +1,9 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-class RecipesCollection {
+class FavRecipesCollection {
   constructor() {
-    this.name = 'RecipesCollection';
+    this.name = 'FavRecipesCollection';
     this.collection = new Mongo.Collection(this.name);
     this.schema = new SimpleSchema({
       name: {
@@ -63,6 +63,10 @@ class RecipesCollection {
         type: String,
         allowedValues: ['Dairy-Free', 'Vegan', 'Gluten-Free', 'Vegetarian'],
       },
+      _id: {
+        type: String,
+        label: '_id',
+      },
       owner: {
         type: Array,
         label: 'Owners',
@@ -78,4 +82,4 @@ class RecipesCollection {
   }
 }
 
-export const Recipes = new RecipesCollection();
+export const FavRecipes = new FavRecipesCollection();
