@@ -1,5 +1,4 @@
-// import React, { useState } from 'react';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -9,14 +8,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
-import { FavRecipes } from '../../api/recipes/FavRecipes';
+import { Recipes } from '../../api/recipes/Recipes';
 import LoadingSpinner from './LoadingSpinner';
 
 const Recipe = ({ recipe }) => {
   const { ready, recipeInfo } = useTracker(() => {
-    const subscription = Meteor.subscribe(FavRecipes.userPublicationName);
+    const subscription = Meteor.subscribe(Recipes.userPublicationName);
     const rdy = subscription.ready();
-    const recipeItems = FavRecipes.collection.find({ owner: Meteor.user().username }).fetch();
+    const recipeItems = Recipes.collection.find({ owner: Meteor.user().username }).fetch();
     return {
       recipeInfo: recipeItems,
       ready: rdy,
@@ -25,20 +24,60 @@ const Recipe = ({ recipe }) => {
 
   const isFavorite = recipeInfo.some(item => item._id === recipe._id);
 
+  const [userEmail, setUserEmail] = useState(null);
+
+  useEffect(() => {
+    // Ensure the user is logged in before accessing the email
+    if (Meteor.user()) {
+      setUserEmail(Meteor.user().emails[0].address);
+    }
+  }, []);
+
   const handleFavoriteToggle = () => {
     if (isFavorite) {
-      // Recipe is already favorited, remove it from FavRecipes
+      // Recipe is already favorited, remove the current user from the owner array
       const existingFavorite = recipeInfo.find(item => item._id === recipe._id);
-      FavRecipes.collection.remove({ _id: existingFavorite._id }, (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item removed from favorites', 'success');
-        }
-      });
+      const newOwner = existingFavorite.owner.filter(owner => owner !== userEmail);
+      console.log(newOwner);
+      Recipes.collection.update(
+        { _id: existingFavorite._id },
+        { $set: { owner: newOwner } },
+        (error) => {
+          if (error) {
+            console.error('Update Error:', error);
+            swal('Error', error.message, 'error');
+          } else {
+            console.log('Item updated successfully');
+            swal('Success', 'Item removed from favorites', 'success');
+          }
+        },
+      );
     } else {
+
+      const existingFavorite = Recipes.collection.findOne({ _id: recipe._id });
+      let newOwner = recipe.owner;
+      if (existingFavorite && Array.isArray(recipe.owner)) {
+        newOwner.push(userEmail);
+      } else {
+        newOwner = [userEmail];
+      }
+      console.log(recipe.owner);
+      console.log(newOwner);
+      Recipes.collection.update(
+        { _id: recipe._id },
+        { $set: { owner: newOwner } },
+        (error) => {
+          if (error) {
+            console.error('Update Error:', error);
+            swal('Error', error.message, 'error');
+          } else {
+            console.log('Item updated successfully');
+            swal('Success', 'Item added successfully to favorites', 'success');
+          }
+        },
+      );
       // Recipe is not favorited, add it to FavRecipes
-      FavRecipes.collection.insert(
+      Recipes.collection.insert(
         {
           _id: recipe._id,
           name: recipe.name,
@@ -147,11 +186,12 @@ Recipe.propTypes = {
     image: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
     cost: PropTypes.string.isRequired,
+    recipe: PropTypes.string.isRequired,
     dietary: PropTypes.arrayOf(PropTypes.oneOf(['Dairy-Free', 'Vegan', 'Gluten-Free', 'Vegetarian'])),
     filter: PropTypes.arrayOf(PropTypes.string).isRequired,
     appliances: PropTypes.arrayOf(PropTypes.string).isRequired,
     ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
-    recipe: PropTypes.string.isRequired,
+    owner: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
 };
 

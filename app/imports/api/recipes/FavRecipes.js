@@ -63,13 +63,16 @@ class FavRecipesCollection {
         type: String,
         allowedValues: ['Dairy-Free', 'Vegan', 'Gluten-Free', 'Vegetarian'],
       },
-      owner: {
-        type: String,
-        label: 'Owner',
-      },
       _id: {
         type: String,
         label: '_id',
+      },
+      owner: {
+        type: Array,
+        label: 'Owners',
+      },
+      'owner.$': {
+        type: String,
       },
     });
 

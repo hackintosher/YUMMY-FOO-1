@@ -13,24 +13,26 @@ const Recipe = ({ recipe }) => {
   const [isFavorite, setIsFavorite] = useState(true);
 
   const handleFavoriteToggle = () => {
+    const currentUsername = Meteor.user().username;
     const existingFavorite = FavRecipes.collection.findOne({ _id: recipe._id });
 
     if (existingFavorite) {
-      // Recipe is already favorited, remove it from FavRecipes
-      FavRecipes.collection.remove({ _id: existingFavorite._id, owner: Meteor.user().username }, (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-          // Revert local state on error
-          setIsFavorite(true);
-          localStorage.setItem(`isFavorite_${recipe._id}`, JSON.stringify(true));
-        } else {
-          // Update localStorage
-          localStorage.setItem(`isFavorite_${recipe._id}`, JSON.stringify(false));
-          // Update button state
-          setIsFavorite(false);
-          swal('Success', 'Item removed from favorites', 'success');
-        }
-      });
+      // Recipe is already favorited, update it to add the current user to the owner array
+      FavRecipes.collection.update(
+        { _id: recipe._id },
+        {
+          $addToSet: { owner: 'admin@foo.com' },
+        },
+        (error) => {
+          if (error) {
+            console.error('Update Error:', error);
+            swal('Error', error.message, 'error');
+          } else {
+            console.log('Item updated successfully');
+            swal('Success', 'Item added successfully to favorites', 'success');
+          }
+        },
+      );
     } else {
       // Recipe is not favorited, add it to FavRecipes
       FavRecipes.collection.insert(
@@ -44,15 +46,14 @@ const Recipe = ({ recipe }) => {
           appliances: recipe.appliances,
           ingredients: recipe.ingredients,
           recipe: recipe.recipe,
-          owner: Meteor.user().username,
+          owner: [currentUsername],
         },
         (error) => {
           if (error) {
+            console.error('Insert Error:', error);
             swal('Error', error.message, 'error');
-            // Revert local state on error
-            setIsFavorite(false);
-            localStorage.setItem(`isFavorite_${recipe._id}`, JSON.stringify(false));
           } else {
+            console.log('Item added successfully');
             // Update localStorage
             localStorage.setItem(`isFavorite_${recipe._id}`, JSON.stringify(true));
             // Update button state

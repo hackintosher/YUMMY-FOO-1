@@ -64,8 +64,11 @@ class RecipesCollection {
         allowedValues: ['Dairy-Free', 'Vegan', 'Gluten-Free', 'Vegetarian'],
       },
       owner: {
+        type: Array,
+        label: 'Owners',
+      },
+      'owner.$': {
         type: String,
-        label: 'Owner',
       },
     });
 

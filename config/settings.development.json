@@ -14,7 +14,7 @@
       "appliances": ["Oven", "Rolling pin"],
       "ingredients": ["Pizza dough", "Tomato sauce", "Cheese", "Pepperoni"],
       "recipe": "|1. Roll out the pizza dough|2. Spread tomato sauce|3. Add cheese and pepperoni|4. Bake in the oven",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Greek Salad",
@@ -25,7 +25,7 @@
       "appliances": ["Knife", "Bowl"],
       "ingredients": ["Cucumbers", "Tomatoes", "Feta cheese", "Olives", "Olive oil"],
       "recipe": "|1. Dice cucumbers and tomatoes|2. Crumble feta cheese|3. Combine all ingredients in a bowl|4. Drizzle with olive oil",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Chocolate Brownies",
@@ -36,7 +36,7 @@
       "appliances": ["Baking pan", "Mixing bowl"],
       "ingredients": ["Flour", "Cocoa powder", "Sugar", "Butter", "Eggs"],
       "recipe": "|1. Mix flour and cocoa powder|2. Cream butter and sugar|3. Beat in eggs|4. Bake in a preheated oven",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Caprese Salad",
@@ -47,7 +47,7 @@
       "appliances": ["Knife", "Plate"],
       "ingredients": ["Tomatoes", "Fresh mozzarella", "Basil leaves", "Balsamic glaze", "Salt", "Pepper"],
       "recipe": "|1. Slice tomatoes and fresh mozzarella|2. Arrange slices on a plate|3. Tuck basil leaves between slices|4. Drizzle with balsamic glaze",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Chicken Stir-Fry",
@@ -58,7 +58,7 @@
       "appliances": ["Wok", "Spatula"],
       "ingredients": ["Chicken breast", "Broccoli", "Bell peppers", "Soy sauce", "Ginger", "Garlic", "Sesame oil"],
       "recipe": "|1. Cut chicken into bite-sized pieces|2. Stir-fry chicken in sesame oil|3. Add broccoli and bell peppers|4. Mix in soy sauce, ginger, and garlic",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Quinoa Salad with Avocado",
@@ -69,7 +69,7 @@
       "appliances": ["Saucepan", "Bowl"],
       "ingredients": ["Quinoa", "Avocado", "Cherry tomatoes", "Cucumber", "Red onion", "Lemon", "Olive oil", "Salt", "Pepper"],
       "recipe": "|1. Cook quinoa according to package instructions|2. Dice avocado, cherry tomatoes, cucumber, and red onion|3. Combine cooked quinoa and diced vegetables|4. Squeeze lemon juice, drizzle olive oil, and season with salt and pepper",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Margherita Pizza",
@@ -80,7 +80,7 @@
       "appliances": ["Oven", "Rolling pin"],
       "ingredients": ["Pizza dough", "Tomato sauce", "Fresh mozzarella", "Basil leaves"],
       "recipe": "|1. Roll out the pizza dough|2. Spread tomato sauce|3. Arrange fresh mozzarella slices|4. Tuck basil leaves on top|5. Bake in the oven",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Vegetable Biryani",
@@ -91,7 +91,7 @@
       "appliances": ["Pot", "Spatula"],
       "ingredients": ["Basmati rice", "Mixed vegetables", "Spices", "Ghee"],
       "recipe": "|1. Rinse and soak basmati rice|2. Sauté spices in ghee|3. Add mixed vegetables and rice|4. Cook until rice is tender",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Lemon Garlic Shrimp",
@@ -102,7 +102,7 @@
       "appliances": ["Skillet", "Lemon squeezer"],
       "ingredients": ["Shrimp", "Garlic", "Lemon", "Butter", "Parsley"],
       "recipe": "|1. Sauté minced garlic in butter|2. Add shrimp and cook until pink|3. Squeeze lemon juice over shrimp|4. Garnish with chopped parsley",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Pasta Carbonara",
@@ -113,7 +113,7 @@
       "appliances": ["Pot", "Pan"],
       "ingredients": ["Spaghetti", "Eggs", "Parmesan cheese", "Pancetta"],
       "recipe": "|1. Cook spaghetti according to package instructions|2. Beat eggs and mix with grated Parmesan|3. Sauté pancetta until crispy|4. Toss cooked pasta in egg mixture",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Vegetarian Tacos",
@@ -124,7 +124,7 @@
       "appliances": ["Skillet", "Tongs"],
       "ingredients": ["Tortillas", "Black beans", "Corn", "Avocado", "Lettuce", "Salsa"],
       "recipe": "|1. Heat tortillas in a skillet|2. Fill with a mix of black beans, corn, and diced avocado|3. Top with lettuce and salsa|4. Serve warm",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Beef Stir-Fry",
@@ -135,7 +135,7 @@
       "appliances": ["Wok", "Spatula"],
       "ingredients": ["Beef strips", "Broccoli", "Carrots", "Soy sauce", "Sesame oil"],
       "recipe": "|1. Stir-fry beef strips in sesame oil|2. Add broccoli and carrots|3. Pour in soy sauce and toss until cooked|4. Serve hot",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Berry Parfait",
@@ -146,7 +146,7 @@
       "appliances": ["Glass", "Spoon"],
       "ingredients": ["Greek yogurt", "Mixed berries", "Granola", "Honey"],
       "recipe": "|1. Layer Greek yogurt, mixed berries, and granola in a glass|2. Repeat layers until the glass is filled|3. Drizzle honey on top|4. Enjoy!",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "One Pan Pasta",
@@ -157,7 +157,7 @@
       "appliances": ["Stove", "Pot", "Pan"],
       "ingredients": ["Pasta of choice", "Cherry Tomatoes", "Garlic", "Olive oil", "Salt", "Pepper", "Fresh basil"],
       "recipe": "|1. Boil pasta according to package instructions.|2. In a pan, saute minced garlic in olive oil until fragrant.|3. Add halved cherry tomatoes, salt, and pepper. Cook until tomatoes soften|4. Mix in the cooked pasta. Add fresh basil if available.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Stir-Fry Rice Bowl",
@@ -168,7 +168,7 @@
       "appliances": ["Stove", "Pan"],
       "ingredients": ["Cooked rice", "Mixed vegetables", "Protein of choice(tofu, chicken, shrimp, etc)", "Soy sauce", "Sesame oil", "Garlic powder"],
       "recipe": "|1. Cook rice according to package instructions.|2. In a pan, stir-fry the protein and mixed vegetables with soy sauce, sesame oil, and garlic powder.|3. Mix in the cooked rice until well combined.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Quesadillas",
@@ -179,7 +179,7 @@
       "appliances": ["Stove", "Pan"],
       "ingredients": ["Flour tortillas", "Shredded cheese", "Cooked chicken or beans", "Salsa"],
       "recipe": "|1. Place a tortilla in a pan over medium heat.|2. Sprinkle shredded cheese on one half of the tortilla.|3. Add cooked chicken or beans on top of the cheese.|4. Fold the tortilla in half and press down. Cook until the cheese melts.|5. Serve with salsa if desired.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Microwave Mug Omelette",
@@ -190,7 +190,7 @@
       "appliances": ["Microwave", "Microwave-safe Mug"],
       "ingredients": ["Eggs", "Milk", "Cheese", "Diced vegetables(bell peppers, onions, spinach", "Salt and pepper"],
       "recipe": "|1. In a microwave-safe mug, whisk together eggs and a splash of milk.|2. Stir in diced vegetables, cheese, salt, and pepper.|3. Microwave in 30-second intervals, stirring between each, until the eggs are fully cooked.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Peanut Butter Banana Wrap",
@@ -201,7 +201,7 @@
       "appliances": ["None needed!"],
       "ingredients": ["Whole wheat tortilla", "Peanut butter", "Banana, sliced", "Honey"],
       "recipe": "|1. Spread peanut butter on tortilla.|2. Place banana slices on one side of the tortilla.|3. Drizzle with honey if desired.|4. Fold the tortilla and enjoy!",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Vegetarian Chickpea Salad",
@@ -212,7 +212,7 @@
       "appliances": ["None needed!"],
       "ingredients": ["Canned chickpeas, drained and rinsed", "Cherry tomatoes, halved", "Cucumber, diced", "Red onion, finely chopped", "Feta cheese, crumbled", "Olive oil", "Lemon juice", "Salt and pepper"],
       "recipe": "|1. In a bowl, combine chickpeas, cherry tomatoes, cucumber, red onion, and feta cheese.|2. Drizzle with olive oil and lemon juice.|3. Season with salt and pepper.|4. Toss to combine",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Pesto Pasta with Cherry Tomatoes",
@@ -223,7 +223,7 @@
       "appliances": ["Stove", "Pot"],
       "ingredients": ["Pasta of your choice", "Pesto sauce", "Cherry tomatoes, halved", "Parmesan cheese, grated"],
       "recipe": "|1. Cook pasta according to package instructions.|2. Drain the pasta and mix in pesto sauce.|3. Add halved cherry tomatoes and grated Parmesan cheese.|4. Toss to combine",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Black Bean and Corn Quesadillas",
@@ -234,7 +234,7 @@
       "appliances": ["Stove", "Pan"],
       "ingredients": ["Flour tortillas", "Canned black beans, drained and rinsed", "Frozen corn, thawed", "Shredded cheese", "Salsa"],
       "recipe": "|1. In a pan, warm black beans and corn.|2. Place a tortilla in the pan, add beans, corn, and shredded cheese.|3. Top with another tortilla and cook until the cheese melts.|4. Serve with salsa.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Caprese Sandwich",
@@ -245,7 +245,7 @@
       "appliances": ["None needed!"],
       "ingredients": ["Baguette or sandwich bread", "Fresh mozzarella, sliced", "Tomatoes, sliced", "Fresh basil leaves", "Balsamic glaze", "Salt and pepper"],
       "recipe": "|1. Slice the baguette and layer with fresh mozzarella, tomatoes, and basil leaves.|2. Drizzle with balsamic glaze and season with salt and pepper.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Microwave Baked Potato",
@@ -256,7 +256,7 @@
       "appliances": ["Microwave"],
       "ingredients": ["Russet potatoes", "Olive oil", "Salt and pepper", "Toppings of your choice(sour cream, cheese, chives)"],
       "recipe": "|1. Pierce the potatoes with a fork and rub with olive oil, salt, and pepper.|2. Microwave on high for 8-10 minutes or until tender.|3. Add your favorite toppings.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Banana Oat Pancakes",
@@ -267,7 +267,7 @@
       "appliances": ["Stove"],
       "ingredients": ["Bananas", "Oats", "Eggs", "Salt"],
       "recipe": "|1. Mash banana|2. Whisk in eggs, salt, and oats|3. Cook for about two minutes",
-      "owner": "john@foo.com",
+      "owner": [],
       "dietary": ["Vegetarian", "Gluten-Free", "Dairy-Free"]
     },
     {
@@ -279,7 +279,7 @@
       "appliances": ["Oven"],
       "ingredients": ["Pesto basil sauce", "Pre-baked pizza crust", "Chicken breast", "Artichoke", "Fontina cheese"],
       "recipe": "|1. Preheat the oven to 450 degrees F |2. Spread pesto sauce over the pizza crust. Arrange chicken pieces and artichoke hearts over the sauce, and sprinkle with cheese.|3. Bake for 8 to 10 minutes in the preheated oven, until cheese is melted and lightly browned at the edges.",
-      "owner": "john@foo.com",
+      "owner": [],
       "dietary": ["Dairy-Free"]
     },
     {
@@ -291,7 +291,7 @@
       "appliances": ["Stove"],
       "ingredients": ["Shoyu", "Sesame oil", "vinegar", "Salt", "Ramen noodles", "Green onions"],
       "recipe": "|1. Whisk soy sauce, sesame oil, brown sugar, rice vinegar, chili garlic sauce, and ginger together in a small bowl. Add peanut butter, whisking until well combined, and set aside.|2. Bring 4 cups of water to a boil in a pot. Discard the flavor packet and add ramen noodles to the boiling water. Cook until noodles are tender, 4 to 5 minutes. Drain noodles, reserving some of the noodle water in case you need to thin out the sauce later.|3. Pour sauce over ramen noodles, tossing until well coated. If sauce is too thick, thin out with a small amount of the reserved noodle water until you reach your desired consistency. Your hot noodles will soak up the sauce. Garnish with peanuts and green onion, and serve.",
-      "owner": "john@foo.com",
+      "owner": [],
       "dietary": ["Vegetarian", "Dairy-Free"]
     },
     {
@@ -303,7 +303,7 @@
       "appliances": ["Oven", "Skillet"],
       "ingredients": ["Pork tenderloin", "chicken broth", "Heavy cream", "Horseradish", "Dijon mustard", "Cayenne pepper"],
       "recipe": "|1. Preheat oven to 375 degrees F. Season pork with salt and pepper.\n2. Heat oil in an ovenproof skillet over high heat. Cook pork until browned on one side, 3 to 4 minutes. Turn over...\n3. Remove any excess oil from the skillet and place it over medium-high heat. Pour in chicken broth and bring to a boil...\n4. Slice pork into 1/2-inch slices and serve topped with sauce.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Baked Denver Omelet",
@@ -314,7 +314,7 @@
       "appliances": ["Oven"],
       "ingredients": ["Butter", "Onion", "Bell pepper", "Ham", "Eggs", "Milk", "Cheese"],
       "recipe": "|1. Preheat oven to 400 degrees F|2. Melt butter in a large skillet over medium heat; cook and stir onion...|3. Beat eggs and milk in a large bowl. Stir in Cheddar cheese and... |4. Bake in preheated oven until eggs are browned and puffy, about 25 minutes. Serve warm.",
-      "owner": "john@foo.com",
+      "owner": [],
       "dietary": ["Gluten-Free"]
     },
     {
@@ -326,7 +326,7 @@
       "appliances": ["Stove"],
       "ingredients": ["Onion", "Garlic", "Chickpeas", "Tomatoes", "Coconut milk", "Spinach"],
       "recipe": "|1. Heat oil in a skillet over medium heat. Cook onion, garlic, and ginger in hot oil until softened, about 5 minutes. Add chickpeas, tomatoes, coconut milk, and sweet potato. Bring to a boil, reduce heat to low, and simmer until tender, about 15 minutes.|2. Season with garam masala, cumin, turmeric, salt, and chile flakes. Add spinach right before serving.",
-      "owner": "john@foo.com",
+      "owner": [],
       "dietary": ["Vegan", "Gluten-Free"]
     },
     {
@@ -338,7 +338,7 @@
       "appliances": ["Stove"],
       "ingredients": ["Asparagus", "Shoyu", "Olive oil", "Honey", "Salmon","Salt"],
       "recipe": "|1. Place a steamer insert into a saucepan and fill with water to just below the bottom of the steamer. Bring water to a boil. Add asparagus, cover, and steam until slightly tender, 2 to 4 minutes.|2. Meanwhile, whisk together soy sauce and honey in a small bowl until glaze is smooth.|3. Set an oven rack about 6 inches from the heat source; preheat the oven broiler. Line a baking sheet with aluminum foil and brush with olive oil. |4. Place salmon fillet and steamed asparagus on the prepared baking sheet; season with salt and pepper. |5. Cook under the preheated broiler for 5 minutes. Drizzle 2/3 of the glaze over salmon and asparagus. Continue broiling until fish flakes easily with a fork, 3 to 5 minutes. Drizzle remaining glaze over salmon.",
-      "owner": "john@foo.com",
+      "owner": [],
       "dietary": ["Gluten-Free", "Dairy-Free"]
     },
     {
@@ -350,7 +350,7 @@
       "appliances": ["Oven", "Air fryer"],
       "ingredients": ["Flour", "Baking powder", "Salt", "Greek yogurt", "Egg"],
       "recipe": "|1. Preheat oven to 375F|2 combine the flour, baking powder and salt and whisk well. Add the yogurt and mix with a fork or spatula until well combined, it will look like small crumbles. |3. Knead the dough a few times |4.Divide into 4 equal balls |5.Top with egg wash and sprinkle both sides with seasoning of your choice. Bake on the top rack of the oven for 25 minutes. Let cool at least 15 minutes before cutting",
-      "owner": "john@foo.com",
+      "owner": [],
       "dietary": ["Vegetarian"]
     },
     {
@@ -362,7 +362,7 @@
       "appliances": ["Frying pan", "Griddle"],
       "ingredients": ["Flour", "Milk", "Eggs", "Salt", "Water", "Butter"],
       "recipe": "|1. Whisk flour and eggs together in a large mixing bowl; gradually add in milk and water, stirring to combine. Add salt and melted butter; beat until smooth.|2. Heat a lightly oiled griddle or frying pan over medium-high heat...|3. Cook until the top of the crêpe is no longer wet and the bottom has turned light brown...",
-      "owner": "john@foo.com",
+      "owner": [],
       "dietary": ["Vegetarian"]
     },
     {
@@ -374,7 +374,7 @@
       "appliances": ["Toaster"],
       "ingredients": ["Gluten-Free Bread", "Avocado", "Salt"],
       "recipe": "|1. Toast your slice of bread until golden and firm.|2. Remove the pit from your avocado. Use a big spoon to scoop out the flesh. Put it in a bowl and mash it up with a fork until it’s as smooth as you like it. Mix in a pinch of salt (about 1/8 teaspoon) and add more to taste, if desired.|3. Spread avocado on top of your toast. Enjoy as-is or top with any extras offered in this post (I highly recommend a light sprinkle of flaky sea salt, if you have it).",
-      "owner": "john@foo.com",
+      "owner": [],
       "dietary": ["Vegan", "Gluten-Free", "Dairy-Free"]
     },
     {
@@ -386,7 +386,7 @@
       "appliances": ["Microwave", "Microwave-safe Bowl"],
       "ingredients": ["Macaroni", "Cheddar cheese", "Milk", "Butter", "Salt"],
       "recipe": "|1. Cook macaroni in the microwave according to package instructions.|2. In a microwave-safe bowl, mix shredded cheddar, milk, and butter.|3. Microwave in 30-second intervals, stirring between each, until the cheese is melted and creamy.|4. Add salt to taste and enjoy!",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Vegetarian Ramen Bowl",
@@ -397,7 +397,7 @@
       "appliances": ["Stove", "Pot"],
       "ingredients": ["Ramen noodles", "Vegetable broth", "Tofu", "Vegetables (carrots, broccoli, mushrooms)", "Soy sauce", "Sesame oil"],
       "recipe": "|1. Cook ramen noodles according to package instructions.|2. In a pot, heat vegetable broth and add chopped tofu and vegetables.|3. Season with soy sauce and a drizzle of sesame oil.|4. Combine cooked noodles with the broth and vegetables. Serve hot.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "BBQ Chicken Quesadillas",
@@ -408,7 +408,7 @@
       "appliances": ["Stove", "Pan"],
       "ingredients": ["Flour tortillas", "Cooked chicken (shredded)", "BBQ sauce", "Cheddar cheese", "Red onion (sliced)"],
       "recipe": "|1. Place a tortilla in a pan over medium heat.|2. Spread shredded chicken on one half of the tortilla.|3. Drizzle BBQ sauce over the chicken, add sliced red onion, and sprinkle with cheddar cheese.|4. Fold the tortilla in half and cook until the cheese melts. Serve with extra BBQ sauce if desired.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Caprese Wrap",
@@ -419,7 +419,7 @@
       "appliances": ["None needed!"],
       "ingredients": ["Whole wheat wrap", "Tomatoes", "Fresh mozzarella", "Basil leaves", "Balsamic glaze"],
       "recipe": "|1. Lay out the whole wheat wrap.|2. Layer slices of tomatoes, fresh mozzarella, and basil leaves on the wrap.|3. Drizzle with balsamic glaze.|4. Roll up the wrap and enjoy!",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Egg Fried Rice",
@@ -430,7 +430,7 @@
       "appliances": ["Stove", "Pan"],
       "ingredients": ["Cooked rice", "Eggs", "Frozen peas and carrots", "Soy sauce", "Sesame oil"],
       "recipe": "|1. Heat sesame oil in a pan and add frozen peas and carrots.|2. Push the vegetables to one side and pour beaten eggs on the other side.|3. Scramble the eggs and mix with the vegetables.|4. Add cooked rice and soy sauce, stir-frying until well combined. Serve hot.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Mediterranean Chickpea Salad",
@@ -441,7 +441,7 @@
       "appliances": ["Bowl"],
       "ingredients": ["Canned chickpeas (drained and rinsed)", "Cherry tomatoes", "Cucumber", "Red onion", "Feta cheese", "Olive oil", "Lemon juice", "Salt", "Pepper"],
       "recipe": "|1. In a bowl, combine chickpeas, cherry tomatoes, cucumber, red onion, and crumbled feta cheese.|2. Drizzle with olive oil and lemon juice.|3. Season with salt and pepper. Toss to combine and enjoy!",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Peanut Butter Banana Smoothie",
@@ -452,7 +452,7 @@
       "appliances": ["Blender"],
       "ingredients": ["Banana", "Peanut butter", "Greek yogurt", "Milk", "Ice cubes"],
       "recipe": "|1. In a blender, combine banana, peanut butter, Greek yogurt, milk, and ice cubes.|2. Blend until smooth and creamy.|3. Pour into a glass and enjoy your peanut butter banana smoothie!",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Sheet Pan Chicken Fajitas",
@@ -463,7 +463,7 @@
       "appliances": ["Oven", "Sheet pan"],
       "ingredients": ["Chicken breast strips", "Bell peppers (sliced)", "Onions (sliced)", "Fajita seasoning", "Flour tortillas", "Salsa", "Sour cream"],
       "recipe": "|1. Preheat the oven and toss chicken, bell peppers, and onions with fajita seasoning on a sheet pan.|2. Bake until the chicken is cooked through and the vegetables are tender.|3. Warm the flour tortillas in the oven.|4. Serve the chicken and vegetables in tortillas with salsa and sour cream.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "One-Pot Spaghetti",
@@ -474,7 +474,7 @@
       "appliances": ["Stove", "Pot", "Pan"],
       "ingredients": ["Spaghetti", "Olive oil", "Onion", "Garlic", "Tomato sauce", "Water", "Salt", "Pepper", "Fresh basil"],
       "recipe": "|1. In a pot, heat olive oil over medium heat. Add chopped onions and garlic, sauté until softened.|2. Add spaghetti, tomato sauce, water, salt, and pepper to the pot. Break the spaghetti if needed to fit.|3. Bring to a boil, then reduce heat to a simmer. Cover and cook until the spaghetti is al dente, stirring occasionally.|4. Once cooked, top with fresh basil and serve hot.",
-      "owner": "john@foo.com"
+      "owner": []
     },
     {
       "name": "Mango Salsa Chicken",
@@ -485,7 +485,7 @@
       "appliances": ["Oven", "Pan"],
       "ingredients": ["Chicken breasts", "Salt", "Black pepper", "Olive oil", "Red onion", "Mango", "Tomato", "Cilantro", "Lime juice"],
       "recipe": "|1. Preheat the oven to 375°F.|2. Season chicken breasts with salt and black pepper.|3. In an oven-safe pan, heat olive oil over medium-high heat. Sear the chicken until golden brown on both sides.|4. Transfer the pan to the oven and bake for about 20 minutes or until the chicken is cooked through.|5. While the chicken is baking, prepare the mango salsa. Combine diced red onion, mango, tomato, cilantro, and lime juice in a bowl.|6. Once the chicken is done, spoon the mango salsa over the top and serve.",
-      "owner": "john@foo.com"
+      "owner": []
     }
   ]
 }
