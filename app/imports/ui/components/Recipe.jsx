@@ -45,7 +45,6 @@ const Recipe = ({ recipe }) => {
         (error) => {
           if (error) {
             console.error('Update Error:', error);
-            swal('Error', error.message, 'error');
           } else {
             console.log('Item updated successfully');
             swal('Success', 'Item removed from favorites', 'success');
@@ -69,7 +68,6 @@ const Recipe = ({ recipe }) => {
         (error) => {
           if (error) {
             console.error('Update Error:', error);
-            swal('Error', error.message, 'error');
           } else {
             console.log('Item updated successfully');
             swal('Success', 'Item added successfully to favorites', 'success');
@@ -92,7 +90,7 @@ const Recipe = ({ recipe }) => {
         },
         (error) => {
           if (error) {
-            swal('Error', error.message, 'error');
+            console.log('error');
           } else {
             swal('Success', 'Item added successfully to favorites', 'success');
           }
