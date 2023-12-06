@@ -53,6 +53,10 @@ class NavBar {
     await testController.click('#login-dropdown-sign-up');
   }
 
+  async gotoLandingPage(testController) {
+    await testController.click('#nav-logo');
+  }
+
   async gotoAboutPage(testController) {
     await testController.click('#about-nav');
   }
