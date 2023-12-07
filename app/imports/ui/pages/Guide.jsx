@@ -63,26 +63,12 @@ const Guide = () => (
               </p>
               <img src="https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-46/img/search_step3.jpg?raw=true" alt="Step 3" style={{ maxWidth: '100%' }} />
             </div>
-          </Col>
-        </Row>
-      </Container>
-    </section>
-
-    <section>
-      <h3>How to Add a Recipe</h3>
-      <Container>
-        <Row>
-          <Col>
-            <p>
-              To add a new recipe to the website, follow these steps:
-            </p>
             <div>
-              <h4>Step 1</h4>
-              <img src="https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-46/img/addrecipe_step1.jpg?raw=true" alt="Step 1" style={{ maxWidth: '100%', marginBottom: '10px' }} />
-            </div>
-            <div>
-              <h4>Step 2</h4>
-              <img src="https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-46/img/addrecipe_step2.jpg?raw=true" alt="Step 2" style={{ maxWidth: '100%' }} />
+              <h4>Step 4</h4>
+              <p>
+                To view the recipe in full, click on the recipe link.
+              </p>
+              <img src="https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-46/img/search_step4.jpg?raw=true" alt="Step 3" style={{ maxWidth: '100%' }} />
             </div>
           </Col>
         </Row>
@@ -90,20 +76,30 @@ const Guide = () => (
     </section>
 
     <section>
-      <h3>How to Add a Recipe</h3>
+      <h3>How to Favorite and View Favorite Recipes</h3>
       <Container>
         <Row>
           <Col>
             <p>
-              To add a new recipe to the website, follow these steps:
+              To favorite and view your favorite recipes, follow these steps:
             </p>
             <div>
               <h4>Step 1</h4>
-              <img src="https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-46/img/addrecipe_step1.jpg?raw=true" alt="Step 1" style={{ maxWidth: '100%', marginBottom: '10px' }} />
+              <p>
+                After searching for a recipe, click the star icon on a recipe you like.
+              </p>
+              <img src="https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-46/img/fav_step1.jpg?raw=true" alt="Step 1" style={{ maxWidth: '100%', marginBottom: '10px' }} />
             </div>
             <div>
               <h4>Step 2</h4>
-              <img src="https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-46/img/addrecipe_step2.jpg?raw=true" alt="Step 2" style={{ maxWidth: '100%' }} />
+              <p>
+                Favorited recipes will have a gold star
+              </p>
+              <img src="https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-46/img/fav_star.jpg?raw=true" alt="Step 2" style={{ maxWidth: '100%' }} />
+              <p>
+                To view your favorite recipes, click the favorites tab
+              </p>
+              <img src="https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-46/img/fav_page.jpg?raw=true" alt="Step 2" style={{ maxWidth: '100%' }} />
             </div>
           </Col>
         </Row>
