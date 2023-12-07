@@ -14,8 +14,9 @@ import { searchPage } from './search.page';
 const credentials = { username: 'john@foo.com', password: 'changeme' };
 const credentials2 = { username: 'admin@foo.com', password: 'changeme' };
 
-fixture('meteor-application-template-react localhost test with default db')
-  .page('localhost:3000');
+fixture('meteor-application-template-react localhost test with default db').page('localhost:3000');
+
+// fixture('meteor-application-template-react localhost test with default db').page('127.0.0.1:3000');
 
 test('Test that landing page shows up', async (testController) => {
   await navBar.gotoLandingPage(testController);
