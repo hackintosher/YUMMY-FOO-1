@@ -22,6 +22,7 @@ import ExampleRecipe from '../pages/ExampleRecipe';
 import AddRecipe from '../pages/AddRecipe';
 import Favorites from '../pages/Favorites';
 import Search from '../pages/Search';
+import Guide from '../pages/Guide';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/addrecipe" element={<AddRecipe />} />
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
           <Route path="/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
+          <Route path="/guide" element={<ProtectedRoute><Guide /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
           <Route path="/search" element={<ProtectedRoute><Search /></ProtectedRoute>} />
           <Route path="/examplerecipe" element={<ProtectedRoute><ExampleRecipe /></ProtectedRoute>} />
