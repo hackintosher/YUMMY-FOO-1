@@ -8,7 +8,7 @@ import { adminPage } from './admin.page';
 import { addRecipePage } from './addrecipe.page';
 import { searchPage } from './search.page';
 
-/* global fixture:false, test:false */
+/* global fixture:false, test:false  */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'john@foo.com', password: 'changeme' };
