@@ -489,7 +489,7 @@
     },
     {
       "name": "Lentil Spinach Curry",
-      "image": "",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Lentil%20Spinach%20Curry.png?raw=true",
       "time": "30 minutes",
       "cost": "$8",
       "filter": ["Quick", "Vegetarian"],
@@ -500,7 +500,7 @@
     },
 {
       "name": "Chickpea Salad Bowl",
-      "image": "",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Chickpea%20Salad%20Bowl.png?raw=true",
       "time": "20 minutes",
       "cost": "$10",
       "filter": ["Quick", "Vegetarian"],
@@ -511,7 +511,7 @@
     },
  {
       "name": "Quinoa Stuffed Bell Peppers",
-      "image": "",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Quinoa%20Stuffed%20Bell%20Peppers.png?raw=true",
       "time": "40 minutes",
       "cost": "$12",
       "filter": ["Vegetarian"],
@@ -522,7 +522,7 @@
     },
 {
       "name": "Caprese Pasta Salad",
-      "image": "",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Caprese%20Pasta%20Salad.png?raw=true",
       "time": "25 minutes",
       "cost": "$9",
       "filter": ["Quick", "Vegetarian"],
@@ -533,7 +533,7 @@
     },
  {
       "name": "Sweet Potato and Black Bean Burritos",
-      "image": "",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Sweet%20Potato%20and%20Black%20Bean%20Burritos.png?raw=true",
       "time": "35 minutes",
       "cost": "$11",
       "filter": ["Vegetarian"],
@@ -544,7 +544,7 @@
     },
 {
       "name": "Mediterranean Quinoa Salad",
-      "image": "",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Mediterranean%20Quinoa%20Salad.png?raw=true",
       "time": "20 minutes",
       "cost": "$10",
       "filter": ["Quick", "Vegetarian"],
@@ -555,7 +555,7 @@
     },
  {
       "name": "Butternut Squash Risotto",
-      "image": "",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Butternut%20Squash%20Risotto.png?raw=true",
       "time": "45 minutes",
       "cost": "$15",
       "filter": ["Vegetarian"],
@@ -566,7 +566,7 @@
     },
 {
       "name": "Spinach and Mushroom Quesadillas",
-      "image": "",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Spinach%20and%20Mushroom%20Quesadillas.png?raw=true",
       "time": "25 minutes",
       "cost": "$9",
       "filter": ["Quick", "Vegetarian"],
@@ -577,7 +577,7 @@
     },
     {
       "name": "Avocado and Black Bean Wrap",
-      "image": "",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Avocado%20and%20Black%20Bean%20Wrap.png?raw=true",
       "time": "15 minutes",
       "cost": "$8",
       "filter": ["Quick", "Vegetarian"],
@@ -588,7 +588,7 @@
     },
      {
       "name": "Eggplant Parmesan",
-      "image": "",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Eggplant%20Parmesan.png?raw=true",
       "time": "50 minutes",
       "cost": "$13",
       "filter": ["Vegetarian"],
