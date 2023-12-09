@@ -486,6 +486,116 @@
       "ingredients": ["Chicken breasts", "Salt", "Black pepper", "Olive oil", "Red onion", "Mango", "Tomato", "Cilantro", "Lime juice"],
       "recipe": "|1. Preheat the oven to 375°F.|2. Season chicken breasts with salt and black pepper.|3. In an oven-safe pan, heat olive oil over medium-high heat. Sear the chicken until golden brown on both sides.|4. Transfer the pan to the oven and bake for about 20 minutes or until the chicken is cooked through.|5. While the chicken is baking, prepare the mango salsa. Combine diced red onion, mango, tomato, cilantro, and lime juice in a bowl.|6. Once the chicken is done, spoon the mango salsa over the top and serve.",
       "owner": []
+    },
+    {
+      "name": "Lentil Spinach Curry",
+      "image": "",
+      "time": "30 minutes",
+      "cost": "$8",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Lentils", "Spinach", "Tomatoes", "Onions", "Garlic", "Ginger", "Curry powder", "Cumin", "Coriander", "Salt"],
+      "recipe": "|1. Cook lentils according to package instructions.|2. In a pan, sauté onions, garlic, and ginger. Add tomatoes and spices.|3. Mix in cooked lentils and spinach. Simmer until spinach wilts.|4. Serve hot over rice.",
+      "owner": []
+    },
+{
+      "name": "Chickpea Salad Bowl",
+      "image": "",
+      "time": "20 minutes",
+      "cost": "$10",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Bowl", "Knife"],
+      "ingredients": ["Chickpeas", "Cucumbers", "Tomatoes", "Red onion", "Feta cheese", "Olive oil", "Lemon juice", "Salt", "Pepper"],
+      "recipe": "|1. Rinse and drain chickpeas. Chop vegetables and crumble feta.|2. In a bowl, mix chickpeas, vegetables, and feta.|3. Drizzle olive oil and lemon juice. Season with salt and pepper.|4. Toss well and enjoy.",
+      "owner": []
+    },
+ {
+      "name": "Quinoa Stuffed Bell Peppers",
+      "image": "",
+      "time": "40 minutes",
+      "cost": "$12",
+      "filter": ["Vegetarian"],
+      "appliances": ["Oven", "Baking dish"],
+      "ingredients": ["Quinoa", "Bell peppers", "Black beans", "Corn", "Tomatoes", "Cheese", "Cumin", "Chili powder", "Cilantro", "Salt"],
+      "recipe": "|1. Cook quinoa according to package instructions.|2. Mix quinoa with black beans, corn, tomatoes, cheese, and spices.|3. Cut bell peppers in half, stuff with quinoa mixture.|4. Bake until peppers are tender. Garnish with cilantro and serve.",
+      "owner": []
+    },
+{
+      "name": "Caprese Pasta Salad",
+      "image": "",
+      "time": "25 minutes",
+      "cost": "$9",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Pot", "Bowl"],
+      "ingredients": ["Pasta", "Cherry tomatoes", "Mozzarella", "Basil", "Olive oil", "Balsamic vinegar", "Garlic", "Salt", "Pepper"],
+      "recipe": "|1. Cook pasta according to package instructions.|2. Mix pasta with halved cherry tomatoes, mozzarella, and chopped basil.|3. In a bowl, whisk together olive oil, balsamic vinegar, minced garlic, salt, and pepper.|4. Toss pasta with the dressing. Serve chilled.",
+      "owner": []
+    },
+ {
+      "name": "Sweet Potato and Black Bean Burritos",
+      "image": "",
+      "time": "35 minutes",
+      "cost": "$11",
+      "filter": ["Vegetarian"],
+      "appliances": ["Oven", "Pan"],
+      "ingredients": ["Sweet potatoes", "Black beans", "Corn", "Onions", "Cilantro", "Lime juice", "Tortillas", "Cheese", "Cumin", "Chili powder"],
+      "recipe": "|1. Roast sweet potatoes in the oven until tender.|2. In a pan, sauté onions, add black beans, corn, and spices.|3. Mash sweet potatoes and mix with black bean mixture.|4. Spoon the mixture onto tortillas, add cheese, and roll into burritos.",
+      "owner": []
+    },
+{
+      "name": "Mediterranean Quinoa Salad",
+      "image": "",
+      "time": "20 minutes",
+      "cost": "$10",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Bowl", "Pot"],
+      "ingredients": ["Quinoa", "Cucumbers", "Cherry tomatoes", "Kalamata olives", "Feta cheese", "Red onion", "Olive oil", "Lemon juice", "Oregano", "Salt"],
+      "recipe": "|1. Cook quinoa according to package instructions.|2. In a bowl, combine quinoa, diced cucumbers, halved cherry tomatoes, olives, and crumbled feta.|3. Drizzle with olive oil, lemon juice, and sprinkle with oregano and salt.|4. Mix well and serve chilled.",
+      "owner": []
+    },
+ {
+      "name": "Butternut Squash Risotto",
+      "image": "",
+      "time": "45 minutes",
+      "cost": "$15",
+      "filter": ["Vegetarian"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Arborio rice", "Butternut squash", "Vegetable broth", "Onions", "Parmesan cheese", "White wine", "Butter", "Sage", "Salt", "Pepper"],
+      "recipe": "|1. Sauté onions and butternut squash in butter until softened.|2. Add Arborio rice, white wine, and cook until wine is absorbed.|3. Gradually add vegetable broth, stirring until rice is creamy and cooked.|4. Stir in Parmesan, sage, salt, and pepper. Serve hot.",
+      "owner": []
+    },
+{
+      "name": "Spinach and Mushroom Quesadillas",
+      "image": "",
+      "time": "25 minutes",
+      "cost": "$9",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Pan"],
+      "ingredients": ["Flour tortillas", "Spinach", "Mushrooms", "Cheese", "Onions", "Garlic", "Olive oil", "Cumin", "Chili powder", "Salt"],
+      "recipe": "|1. Sauté onions and mushrooms in olive oil until tender.|2. Add garlic, spinach, cumin, chili powder, and cook until spinach wilts.|3. Place tortillas on the pan, add cheese and the spinach-mushroom mixture.|4. Fold and cook until cheese melts. Slice and serve.",
+      "owner": []
+    },
+    {
+      "name": "Avocado and Black Bean Wrap",
+      "image": "",
+      "time": "15 minutes",
+      "cost": "$8",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Bowl", "Knife"],
+      "ingredients": ["Whole wheat wraps", "Avocado", "Black beans", "Corn", "Tomatoes", "Lime juice", "Cilantro", "Salt", "Pepper"],
+      "recipe": "|1. In a bowl, mash avocado and mix with black beans, corn, diced tomatoes, lime juice, and cilantro.|2. Season with salt and pepper.|3. Spoon the mixture onto whole wheat wraps, fold, and enjoy.",
+      "owner": []
+    },
+     {
+      "name": "Eggplant Parmesan",
+      "image": "",
+      "time": "50 minutes",
+      "cost": "$13",
+      "filter": ["Vegetarian"],
+      "appliances": ["Oven", "Baking dish"],
+      "ingredients": ["Eggplant", "Tomato sauce", "Mozzarella cheese", "Parmesan cheese", "Bread crumbs", "Eggs", "Basil", "Oregano", "Garlic powder", "Salt"],
+      "recipe": "|1. Slice eggplant, dip in beaten eggs, and coat with breadcrumbs. Bake until golden.|2. In a baking dish, layer eggplant, tomato sauce, mozzarella, and Parmesan.|3. Repeat layers, sprinkle with basil, oregano, garlic powder, and salt.|4. Bake until bubbly and golden. Let it cool before serving.",
+      "owner": []
     }
   ]
 }
