@@ -7,6 +7,7 @@ import { favoritesPage } from './favorites.page';
 import { adminPage } from './admin.page';
 import { addRecipePage } from './addrecipe.page';
 import { searchPage } from './search.page';
+import { formPage } from './form.page';
 
 /* global fixture:false, test:false  */
 
@@ -121,4 +122,22 @@ test('Test that recipes can be searched for', async (testController) => {
 
   // Assert that the correct recipe card is displayed
   await adminPage.assertRecipeName(testController, 'Bagels');
+});
+
+test('Test that the add recipe form submits', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoAddRecipePage(testController);
+  await addRecipePage.isDisplayed(testController);
+  await formPage.addRecipeName(testController, 'Avocado Toast');
+  await formPage.addRecipeTime(testController, '3 minutes');
+  await formPage.addRecipeCost(testController, '$5');
+  await formPage.addRecipeFilter(testController, 'Healthy, Quick');
+  await formPage.addRecipeDirections(testController, '|1. Toast bread|2. Spread Avocado');
+  await formPage.addRecipeIngredients(testController, 'Avocado, Toast');
+  await formPage.addRecipeAppliances(testController, 'Toaster');
+  await formPage.addRecipeLink(testController, 'https://feelgoodfoodie.net/wp-content/uploads/2023/09/Avocado-Toast-with-Egg-TIMG.jpg');
+  await formPage.addRecipeDietary(testController);
+  await formPage.addRecipeSubmit(testController);
 });
