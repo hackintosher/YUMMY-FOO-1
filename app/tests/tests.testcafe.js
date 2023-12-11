@@ -46,6 +46,78 @@ test('Test that the favorite page shows', async (testController) => {
   await favoritesPage.isDisplayed(testController);
 });
 
+test('Test that recipes show on favorites page when favorited', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoFavoritesPage(testController);
+  await favoritesPage.assertRecipeNameNOT(testController, 'Lemon Garlic Shrimp');
+  await favoritesPage.assertRecipeNameNOT(testController, 'Homemade Pizza');
+  // Go to the search page and favorite the first recipe
+  await navBar.gotoSearchPage(testController);
+  await searchPage.clickFavButton(testController);
+  await searchPage.typeInSearch(testController, 'Lemon Garlic Shrimp');
+  await searchPage.clickFavButton(testController);
+
+  // Go back to the favorites page and check if there is now 1 recipe
+  await navBar.gotoFavoritesPage(testController);
+  await testController.wait(1000);
+  await favoritesPage.assertRecipeNameOK(testController, 'Lemon Garlic Shrimp');
+  await favoritesPage.assertRecipeNameOK(testController, 'Homemade Pizza');
+});
+
+test('Test that users favorite are unique to them', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials2.username, credentials2.password);
+  await navBar.isLoggedIn(testController, credentials2.username);
+  await navBar.gotoFavoritesPage(testController);
+  await favoritesPage.assertRecipeNameNOT(testController, 'Lemon Garlic Shrimp');
+  await favoritesPage.assertRecipeNameNOT(testController, 'Homemade Pizza');
+  // Go to the search page and favorite the first recipe
+  await navBar.gotoSearchPage(testController);
+  await searchPage.typeInSearch(testController, 'Lemon Garlic Shrimp');
+  await searchPage.clickFavButton(testController);
+
+  // Go back to the favorites page and check if there is now 1 recipe
+  await navBar.gotoFavoritesPage(testController);
+  await testController.wait(1000);
+  await favoritesPage.assertRecipeNameOK(testController, 'Lemon Garlic Shrimp');
+});
+
+test('Test that removes recipes from favorites', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials2.username, credentials2.password);
+  await navBar.isLoggedIn(testController, credentials2.username);
+  // Go to favorites page and remove recipes from admin
+  await navBar.gotoFavoritesPage(testController);
+  await favoritesPage.assertRecipeNameOK(testController, 'Lemon Garlic Shrimp');
+  await searchPage.clickFavButton(testController);
+  await testController.wait(1000);
+  await favoritesPage.assertRecipeNameNOT(testController, 'Lemon Garlic Shrimp');
+
+  // Log out and into the other account
+  await navBar.logout(testController);
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoFavoritesPage(testController);
+  await favoritesPage.assertRecipeNameOK(testController, 'Lemon Garlic Shrimp');
+  await favoritesPage.assertRecipeNameOK(testController, 'Homemade Pizza');
+
+  // Go to favorites & search page and remove recipes from john
+  await navBar.gotoSearchPage(testController);
+  await searchPage.clickFavButton(testController);
+  await testController.wait(1000);
+  await navBar.gotoFavoritesPage(testController);
+  await favoritesPage.assertRecipeNameOK(testController, 'Lemon Garlic Shrimp');
+  await favoritesPage.assertRecipeNameNOT(testController, 'Homemade Pizza');
+  await testController.wait(1000);
+  await searchPage.clickFavButton(testController);
+  await favoritesPage.assertRecipeNameNOT(testController, 'Lemon Garlic Shrimp');
+  await favoritesPage.assertRecipeNameNOT(testController, 'Homemade Pizza');
+
+});
+
 test('Test that the add recipe page shows', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
