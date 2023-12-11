@@ -423,7 +423,7 @@
     },
     {
       "name": "Egg Fried Rice",
-      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/eggFriedRice.jpg?raw=true",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/eggFriedRice.jpg?raw=true",
       "time": "15 minutes",
       "cost": "$5",
       "filter": ["Asian", "Quick"],
@@ -588,7 +588,7 @@
     },
     {
       "name": "Eggplant Parmesan",
-      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/eggplantParm.jpg?raw=true",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/eggplantParm.jpg?raw=true",
       "time": "50 minutes",
       "cost": "$13",
       "filter": ["Vegetarian"],
