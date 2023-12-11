@@ -72,22 +72,22 @@ const AddStuff = () => {
             <Card>
               <Card.Body>
                 <Row>
-                  <Col><TextField name="name" label="Recipe Name" /></Col>
-                  <Col><TextField name="time" label="Estimated Time" /></Col>
-                  <Col><TextField name="cost" label="Estimated Cost" /></Col>
-                  <Col><TextField name="filter" label="Filter" /></Col>
+                  <Col><TextField name="name" label="Recipe Name" id="add-recipe-name" /></Col>
+                  <Col><TextField name="time" label="Estimated Time" id="add-recipe-time" /></Col>
+                  <Col><TextField name="cost" label="Estimated Cost" id="add-recipe-cost" /></Col>
+                  <Col><TextField name="filter" label="Filter" id="add-recipe-filter" /></Col>
                 </Row>
-                <LongTextField name="recipe" label="Recipe" />
+                <LongTextField name="recipe" label="Recipe" id="add-recipe-directions" />
                 <Row>
-                  <Col><LongTextField name="ingredients" label="List Ingredients Needed" /></Col>
-                  <Col><LongTextField name="appliances" label="List Appliances Needed" /></Col>
+                  <Col><LongTextField name="ingredients" label="List Ingredients Needed" id="add-recipe-ingredients" /></Col>
+                  <Col><LongTextField name="appliances" label="List Appliances Needed" id="add-recipe-appliances" /></Col>
                 </Row>
                 <Form.Group controlId="formFile" className="mb-3">
                   <Form.Label>Attach Image or URL of Dish</Form.Label>
                   {/* eslint-disable-next-line no-unused-expressions */}
                   <Form.Control type="file" ref={ref => { fRef && (fRef.imageFile = ref); }} />
                 </Form.Group>
-                <LongTextField label="" name="image" placeholder="URL of image" />
+                <LongTextField label="" name="image" placeholder="URL of image" id="add-recipe-link" />
                 <Form>
                   <div key="default-checkbox" className="mb-3">
                     Dietary Info
@@ -101,12 +101,13 @@ const AddStuff = () => {
                         value={option}
                         checked={checkedDietary.includes(option)}
                         onChange={() => handleCheckboxChange(option)}
+                        data-testid={`dietary-checkbox-${option.toLowerCase()}`}
                       />
                     ))}
                   </div>
                 </Form>
-                <SubmitField value="Submit" className="text-center" />
-                <ErrorsField />
+                <SubmitField value="Submit" className="text-center" id="add-recipe-submit" />
+                <ErrorsField id="add-recipe-error" />
               </Card.Body>
             </Card>
           </AutoForm>

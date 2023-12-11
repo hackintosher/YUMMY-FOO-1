@@ -4,8 +4,10 @@ import { Recipes } from '../../api/recipes/Recipes.js';
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
+let counter = 0;
 const addRecipe = (recipe) => {
-  console.log(`  Adding: ${recipe.name} (${recipe.owner})`);
+  console.log(`  Adding: ${recipe.name} (${recipe.owner})${counter}`);
+  counter++;
   Recipes.collection.insert(recipe);
 };
 
