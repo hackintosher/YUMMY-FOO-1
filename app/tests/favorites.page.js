@@ -13,9 +13,14 @@ class FavoritesPage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
-  async assertRecipeName(testController, expectedRecipeName) {
+  async assertRecipeNameOK(testController, expectedRecipeName) {
     const recipeNameElement = Selector('#recipe-name').withText(expectedRecipeName);
     await testController.expect(recipeNameElement.exists).ok();
+  }
+
+  async assertRecipeNameNOT(testController, expectedRecipeName) {
+    const recipeNameElement = Selector('#recipe-name').withText(expectedRecipeName);
+    await testController.expect(recipeNameElement.exists).notOk();
   }
 
   // Check the amount fo recipes on the favorites page (can't count added recipes)
