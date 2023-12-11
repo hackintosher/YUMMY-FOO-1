@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 import { Card, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
@@ -44,10 +44,10 @@ const Recipe = ({ recipe }) => {
         { $set: { owner: newOwner } },
         (error) => {
           if (error) {
-            console.error('Update Error:', error);
+            // console.error('Update Error:', error);
           } else {
             console.log('Item updated successfully');
-            swal('Success', 'Item removed from favorites', 'success');
+            // swal('Success', 'Item removed from favorites', 'success');
           }
         },
       );
@@ -67,10 +67,10 @@ const Recipe = ({ recipe }) => {
         { $set: { owner: newOwner } },
         (error) => {
           if (error) {
-            console.error('Update Error:', error);
+            // console.error('Update Error:', error);
           } else {
-            console.log('Item updated successfully');
-            swal('Success', 'Item added successfully to favorites', 'success');
+          //  console.log('Item updated successfully');
+          //  swal('Success', 'Item added successfully to favorites', 'success');
           }
         },
       );
@@ -90,9 +90,9 @@ const Recipe = ({ recipe }) => {
         },
         (error) => {
           if (error) {
-            console.log('error');
+            // console.log('error');
           } else {
-            swal('Success', 'Item added successfully to favorites', 'success');
+            // swal('Success', 'Item added successfully to favorites', 'success');
           }
         },
       );
@@ -100,7 +100,7 @@ const Recipe = ({ recipe }) => {
   };
 
   return (ready ? (
-    <Card className="h-100 grow-on-hover" style={{ boxShadow: '0 12px 24px rgba(0, 0, 0, 0.2)', border: 'none', borderRadius: '15px', borderBottomRadius: '0px', overflow: 'hidden', position: 'relative' }}>
+    <Card id="recipe-card" className="h-100 grow-on-hover" style={{ boxShadow: '0 12px 24px rgba(0, 0, 0, 0.2)', border: 'none', borderRadius: '15px', borderBottomRadius: '0px', overflow: 'hidden', position: 'relative' }}>
       <Card.Header style={{ height: '250px', overflow: 'hidden', position: 'relative' }}>
         <Link to={`/examplerecipe/${recipe._id}`}>
           <Card.Img
@@ -132,6 +132,7 @@ const Recipe = ({ recipe }) => {
           <Col>
             {/* eslint-disable-next-line react/button-has-type */}
             <button
+              id="fav-button"
               onClick={handleFavoriteToggle}
               style={{
                 position: 'absolute',
