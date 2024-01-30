@@ -3,7 +3,7 @@ import { Container, Carousel, Image, Row, Col } from 'react-bootstrap';
 
 const Landing = () => {
   const body = document.body;
-  body.style.backgroundColor = '#0000';
+  body.style.backgroundColor = '#00000';
   return (
     <Container id="landing-page" fluid className="my-auto text-center">
       <Carousel className="py-5" id="carousel">
